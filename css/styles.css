@@ -6,8 +6,14 @@ body {
     background-color: #f8f9fa;
     display: grid;
     grid-template-rows: auto 1fr auto; /* Header, contenido principal, footer */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
+/* Efecto al salir de la página */
+.page-transition {
+    opacity: 0; /* Suaviza el desvanecimiento */
+    transform: scale(0.98); /* Reduce ligeramente la escala */
+}
 /* Header */
 .header {
     display: grid;
@@ -76,7 +82,9 @@ body {
 .language-option {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 0.5rem; /* Espaciado entre imagen y texto */
+    background-color: #f8f9fa;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -102,6 +110,18 @@ body {
 .language-option.selected {
     background-color: rgba(36, 42, 90, 0.10);
     color: #002855;
+}
+
+.language-option .text-unselected {
+    color: #9a9a9a; /* Color más tenue si no está seleccionado */
+}
+
+.language-option a {
+    display: flex; /* Hace que la etiqueta <a> adopte flexbox */
+    align-items: center; /* Centra verticalmente */
+    gap: 0.5rem; /* Espaciado entre imagen y texto */
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del contenedor */
 }
 
 /* Menú */
@@ -410,10 +430,10 @@ body {
 
 /* Footer */
 footer .footer-bar {
-    background-color: #242A5A;
+    background-color: #002855;
     color: white;
     text-align: center;
-    padding: 1rem 0;
+    padding: 0.1rem 0;
 }
 
 
