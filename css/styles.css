@@ -437,26 +437,36 @@ footer .footer-bar {
 }
 
 
-/* Responsividad */
-/* Tablet */
+/* Media Queries */
 @media (min-width: 768px) {
     .hero {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablet */
+    }
+
+    .clients .logos {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas en tablet */
     }
 }
 
-/* Escritorio */
 @media (min-width: 1024px) {
     .hero {
-        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en escritorio */
+    }
+
+    .clients .logos {
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en escritorio */
     }
 }
 
-/* Desactivar hover en móviles */
+/* Desactivar efectos hover en móviles */
 @media (hover: none) and (pointer: coarse) {
     .card:hover .title,
     .card:hover .card-content {
         opacity: 1;
         transform: none;
+    }
+
+    .card:hover .image-container {
+        filter: none; /* Sin desenfoque en móviles */
     }
 }
