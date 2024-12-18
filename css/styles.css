@@ -6,7 +6,6 @@ body {
     background-color: #f8f9fa;
     display: grid;
     grid-template-rows: auto 1fr auto; /* Header, contenido principal, footer */
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 /* Efecto al salir de la página */
@@ -300,14 +299,15 @@ body {
 }
 
 .clients .logos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
-    gap: 1rem;
-    justify-items: center;
+    display: flex;
+    justify-content: space-around; /* Espaciado uniforme entre los logos */
+    align-items: center; /* Alineación vertical centrada */
+    gap: 1rem; /* Espaciado opcional adicional */
 }
 
 .clients .logos img {
-    width: clamp(4rem, 6vw, 8rem);
+    width: clamp(5rem, 8vw, 10rem); /* Tamaño responsivo relativo al viewport */
+    height: auto; /* Mantiene la proporción del logo */
 }
 
 /* WHATSAPP SECTION */
@@ -445,7 +445,12 @@ footer .footer-bar {
     }
 
     .clients .logos {
-        grid-template-columns: repeat(3, 1fr); /* Tres columnas en tablet */
+        flex-wrap: wrap; /* Permite varias filas en pantallas pequeñas */
+        gap: 4vw; /* Ajusta el espaciado entre los logos */
+    }
+
+    .clients .logos img {
+        width: clamp(4rem, 6vw, 8rem); /* Tamaño más pequeño para dispositivos móviles */
     }
 }
 
