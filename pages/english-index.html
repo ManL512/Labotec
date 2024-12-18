@@ -18,11 +18,13 @@
                 <span><i class="fas fa-phone"></i> 313 432 2778</span>
                 <span><i class="fas fa-envelope"></i> <a href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
             </div>
+            <!--  
             <div class="social-icons">
-                <img src="/assets/logos/facebook.svg" alt="facebook">
-                <img src="/assets/logos/instagram.svg" alt="instagram">
+                <img src="assets/logos/facebook.svg" alt="facebook">
+                <img src="assets/logos/instagram.svg" alt="instagram">
                 <p>@Labotec</p>
             </div>
+            -->
         </div>
         <div class="navbar">
             <div class="logo">
@@ -36,64 +38,74 @@
                     </a>
                 </div>
                 <div class="language-option selected">
-                    <img src="/assets/logos/usa.svg" alt="USA">
-                    <p>English</p>
+                    <a href="/index.html" class="language-change">
+                        <img src="/assets/logos/usa.svg" alt="USA">
+                        <p>English</p>
+                    </a>
                 </div>
             </div>
         </div>
         <div class="menu">
             <ul>
                 <li class="menu-selected"><img src="/icons/home.svg" alt="home"><a href="#inicio">Home</a></li>
-                <li><img src="/icons/about.svg" alt="home"><a href="#inicio">About us</a></li>
+                <li><img src="/icons/about.svg" alt="home"><a href="#inicio">About Us</a></li>
                 <li><img src="/icons/projects.svg" alt="home"><a href="#inicio">Projects</a></li>
             </ul>
         </div>
     </header>
     <main>
-
         <section class="hero">
-            <!-- Carta 1 -->
+
+            <!-- Card 1 -->
             <div class="card card-blue">
-                <div class="image-container" style="background-image: url('/img/analisis-de-agua.png');"></div>
+                <a href="/pages/water-analysis.html" class="image-link"> <!-- Link added -->
+                    <div class="image-container" style="background-image: url('/img/analisis-de-agua.png');"></div>
+                </a>
                 <h2 class="title">Water Analysis</h2>
                 <div class="card-content">
                     <h3 class="new-title">Water Analysis</h3>
                     <p>Services for chemical, physicochemical, and microbiological analysis of drinking water, treated water, and wastewater.</p>
-                    <button>See details</button>
+                    <button onclick="location.href='/pages/water-analysis.html'">See details</button>
                 </div>
             </div>
-            <!-- Carta 2 -->
+
+            <!-- Card 2 -->
             <div class="card card-orange">
                 <div class="image-container" style="background-image: url('/img/analisis-productos-nanotecnologicos.png');"></div>
                 <h2 class="title">Nanotechnology Product Analysis</h2>
                 <div class="card-content">
                     <h3 class="new-title">Nanotechnology Product Analysis</h3>
                     <p>Research and analysis services of nanotechnology products applied in the industry.</p>
-                    <button>See details</button>
+                    <a href="/pages/water-analysis.html">
+                        <button> <b>Learn more</b></button>
+                    </a>
                 </div>
             </div>
-            <!-- Carta 3 -->
+            <!-- Card 3 -->
             <div class="card card-blue">
                 <div class="image-container" style="background-image: url('/img/monitoreo-ambiental.png');"></div>
                 <h2 class="title">Environmental Monitoring of Water and Hydrocarbons</h2>
                 <div class="card-content">
                     <h3 class="new-title">Environmental Monitoring of Water and Hydrocarbons</h3>
                     <p>Water and hydrocarbon monitoring and analysis to meet environmental standards.</p>
-                    <button>See details</button>
+                    <a href="/pages/water-analysis.html">
+                        <button> <b>Learn more</b></button>
+                    </a>
                 </div>
             </div>
-            <!-- Carta 4 -->
+            <!-- Card 4 -->
             <div class="card card-orange">
                 <div class="image-container" style="background-image: url('/img/analisis-productos-nanotecnologicos.png');"></div>
                 <h2 class="title">Industrial Analysis</h2>
                 <div class="card-content">
                     <h3 class="new-title">Industrial Analysis</h3>
                     <p>Specialized services in high-precision and reliable industrial analysis.</p>
-                    <button>See details</button>
-                </div>
+                    <a href="/pages/water-analysis.html">
+                        <button> <b>Learn more</b></button>
+                    </a>
+                </div>  
             </div>
-        </section>
-        
+        </section>                
         <section class="clients">
             <h3 class="clients-text">Our clients support us</h3>
             <div class="logos">
@@ -106,25 +118,25 @@
         </section>
         
         <section class="whatsapp-button">
-            <!-- Botón flotante y caja de chat -->
+            <!-- Floating button and chat box -->
             <div class="whatsapp-container">
-                <!-- Icono flotante de WhatsApp -->
+                <!-- Floating WhatsApp icon -->
                 <div class="whatsapp-icon" id="whatsappIcon">
                     <img src="/icons/whatsapp.svg" alt="WhatsApp Icon">
                 </div>
 
-                <!-- Ventana emergente de WhatsApp -->
+                <!-- WhatsApp popup window -->
                 <div class="whatsapp-box" id="whatsappBox">
                     <div class="whatsapp-header">
-                        <p>Our customer support team is here and eager to assist you with any questions or concerns you may have. <br>
+                        <p>Our customer service team is ready to assist you and answer any questions you have. <br>
                             Would you like more information about any project?</p>
                     </div>
                     <a href="https://wa.me/+573134322778" target="_blank" class="whatsapp-link">
                         <div class="whatsapp-body">
                             <div class="agent-info">
-                                <img src="https://cdn-icons-png.flaticon.com/512/14837/14837773.png" alt="Asesora">
+                                <img src="https://cdn-icons-png.flaticon.com/512/14837/14837773.png" alt="Advisor">
                                 <div>
-                                    <p class="agent-name"><strong>Sales Advisor</strong></p>
+                                    <p class="agent-name"><strong>Commercial Advisor</strong></p>
                                     <p class="agent-status">Available</p>
                                 </div>
                             </div>
