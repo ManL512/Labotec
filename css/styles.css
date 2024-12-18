@@ -477,10 +477,20 @@ footer .footer-bar {
     }
 }
 
-@media (max-width: 768px) { /* Asumiendo 768px como punto de ruptura para móviles */
-    .image-link {
-        display: block; /* Asegurar que el enlace es bloque para ocupar todo el contenedor */
-        width: 100%;
-        height: 100%;
+@media (max-width: 768px) {
+    .card-content {
+        opacity: 0; /* Oculta la información adicional por defecto */
+        transform: translateY(100%); /* Mueve la información adicional fuera de la vista */
+        transition: opacity 0.3s, transform 0.3s; /* Transición suave para el despliegue */
+    }
+
+    .card.active .card-content {
+        opacity: 1; /* Muestra la información adicional */
+        transform: translateY(0); /* Posición inicial de la información adicional */
+    }
+
+    .card:hover .image-container {
+        filter: none; /* En móviles, remueve cualquier filtro aplicado por hover en escritorio */
     }
 }
+
