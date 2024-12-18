@@ -1,11 +1,13 @@
-/* General adjustments to prevent overflow */
 body {
+    font-family: 'Onest', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    font-family: 'Onest', Arial, sans-serif;
     line-height: 1.6;
+    background-color: #f8f9fa;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Header, contenido principal, footer */
 }
+
 /* Efecto al salir de la página */
 .page-transition {
     opacity: 0; /* Suaviza el desvanecimiento */
@@ -271,20 +273,20 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Botón */
+/* Botón en contenido de tarjeta */
 .card-content button {
-    margin-top: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: #ff8c00;
+    background: rgba(0, 0, 0, 0.20); /* Fondo negro con 20% de transparencia */
+    backdrop-filter: blur(2px); /* Efecto de desenfoque detrás del fondo */
     color: white;
     border: none;
-    border-radius: 0.3rem;
+    border-radius: 1rem; /* Bordes redondeados */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
 }
 
 .card-content button:hover {
-    background-color: #e07600;
+    background: rgba(0, 0, 0, 0.416); /* Oscurece ligeramente al pasar el ratón, ajustado a aproximadamente 40% */
 }
 
 /* CLIENTS SECTION */
@@ -472,5 +474,13 @@ footer .footer-bar {
 
     .card:hover .image-container {
         filter: none; /* Sin desenfoque en móviles */
+    }
+}
+
+@media (max-width: 768px) { /* Asumiendo 768px como punto de ruptura para móviles */
+    .image-link {
+        display: block; /* Asegurar que el enlace es bloque para ocupar todo el contenedor */
+        width: 100%;
+        height: 100%;
     }
 }
