@@ -6,6 +6,8 @@ body {
     background-color: #f8f9fa;
     display: grid;
     grid-template-rows: auto 1fr auto; /* Header, contenido principal, footer */
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    overflow-y: auto; /* Asegura que el contenido sea desplazable verticalmente si es necesario */
 }
 
 /* Efecto al salir de la página */
@@ -438,10 +440,71 @@ footer .footer-bar {
 }
 
 
-/* Media Queries */
-@media (min-width: 768px) {
+/* Media Query para dispositivos móviles (máximo 767px) */
+@media (max-width: 767px) {
+
+    .top-bar {
+        display: none; /* Oculta el top bar en dispositivos móviles */
+    }
+
+    /* Navbar */
+    .navbar {
+        flex-direction: column; /* Cambia a una columna para pantallas pequeñas */
+        gap: 1rem;
+        margin: 1rem 0; /* Reduce los márgenes */
+    }
+
+    .logo img {
+        width: clamp(6rem, 40vw, 8rem); /* Ajusta el tamaño del logo */
+    }
+
+    .menu {
+        flex-direction: column; /* Cambia el menú a columna */
+        gap: 1rem;
+        margin: 0; /* Elimina márgenes grandes */
+    }
+
+    .clients .logos {
+        flex-direction: column; /* Apilar logos en pantallas pequeñas */
+        gap: 1rem;
+    }
+
+    .contact-info {
+        flex-direction: column; /* Apilar los elementos de contacto */
+        align-items: flex-start;
+    }
+
+    /* Hero Section */
     .hero {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablet */
+        grid-template-columns: 1fr; /* Una columna por defecto */
+    }
+
+    /* WhatsApp Icon */
+    .whatsapp-container {
+        bottom: 2rem; /* Ajusta la posición para pantallas pequeñas */
+        right: 2rem;
+    }
+
+    /* Ajustes en el Card */
+    .card {
+        height: 18rem; /* Altura ajustada para pantallas más pequeñas */
+    }
+
+    /* Ajustes de títulos */
+    .title {
+        font-size: clamp(1rem, 5vw, 1.8rem); /* Reducir el tamaño en móviles */
+    }
+
+    /* Ajustes en el footer */
+    footer .footer-bar {
+        padding: 1rem; /* Reduce el padding en móviles */
+    }
+}
+
+/* Para tabletas (768px a 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas */
     }
 
     .clients .logos {
@@ -452,45 +515,19 @@ footer .footer-bar {
     .clients .logos img {
         width: clamp(4rem, 6vw, 8rem); /* Tamaño más pequeño para dispositivos móviles */
     }
+
+    .languages {
+        transform: rotate(-2rem); /* Rotación ajustada para tabletas */
+    }
 }
 
+/* Para escritorios (a partir de 1024px) */
 @media (min-width: 1024px) {
     .hero {
-        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en escritorio */
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en escritorios */
     }
 
     .clients .logos {
-        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en escritorio */
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas de logos en escritorios */
     }
 }
-
-/* Desactivar efectos hover en móviles */
-@media (hover: none) and (pointer: coarse) {
-    .card:hover .title,
-    .card:hover .card-content {
-        opacity: 1;
-        transform: none;
-    }
-
-    .card:hover .image-container {
-        filter: none; /* Sin desenfoque en móviles */
-    }
-}
-
-@media (max-width: 768px) {
-    .card-content {
-        opacity: 0; /* Oculta la información adicional por defecto */
-        transform: translateY(100%); /* Mueve la información adicional fuera de la vista */
-        transition: opacity 0.3s, transform 0.3s; /* Transición suave para el despliegue */
-    }
-
-    .card.active .card-content {
-        opacity: 1; /* Muestra la información adicional */
-        transform: translateY(0); /* Posición inicial de la información adicional */
-    }
-
-    .card:hover .image-container {
-        filter: none; /* En móviles, remueve cualquier filtro aplicado por hover en escritorio */
-    }
-}
-
