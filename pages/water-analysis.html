@@ -1,11 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Página en Construcción</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f3f3f3;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            margin: 0.5em 0;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 0.5em 0;
+        }
+        .icon {
+            font-size: 5rem;
+            color: #ff9900;
+        }
+        .button {
+            margin-top: 1em;
+        }
+        button {
+            padding: 0.8em 1.5em;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .icon {
+                font-size: 3rem;
+            }
+            button {
+                font-size: 0.9rem;
+                padding: 0.7em 1.2em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1> Water Analysis </h1>
+    <div class="container">
+        <div class="icon">🚧</div>
+        <h1>Página en construcción.</h1>
+        <p>.</p>
+        <div class="button">
+            <button onclick="window.history.back()">Volver</button>
+        </div>
+    </div>
 </body>
 </html>
