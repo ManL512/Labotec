@@ -9,6 +9,74 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilos para el menú hamburguesa */
+        .hamburger-menu {
+            display: none;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .hamburger-menu div {
+            width: 25px;
+            height: 3px;
+            background-color: #242A5A;
+            margin: 5px 0;
+            transition: 0.4s;
+            transform: translateY(1rem) !important;
+            margin-left: 1rem;
+        }
+
+        .menu-mobile {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .menu-mobile ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .menu-mobile a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .menu-mobile a:hover {
+            color: #C76A12;
+        }
+
+        .menu-mobile.open {
+            display: flex;
+        }
+
+        @media (max-width: 767px) {
+            .hamburger-menu {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,15 +86,13 @@
                 <span><i class="fas fa-phone"></i> 313 432 2778</span>
                 <span><i class="fas fa-envelope"></i> <a href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
             </div>
-            <!--  
-            <div class="social-icons">
-                <img src="assets/logos/facebook.svg" alt="facebook">
-                <img src="assets/logos/instagram.svg" alt="instagram">
-                <p>@Labotec</p>
-            </div>
-            -->
         </div>
         <div class="navbar">
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <div class="logo">
                 <img src="/img/labotec.png" alt="logo-labotec">
             </div>
@@ -45,11 +111,11 @@
                 </div>
             </div>
         </div>
-        <div class="menu">
+        <div class="menu-mobile" id="menuMobile">
             <ul>
-                <li class="menu-selected"><img src="/icons/home.svg" alt="inicio"><a href="#inicio">Inicio</a></li>
-                <li><img src="/icons/about.svg" alt="nosotros"><a href="#nosotros">Nosotros</a></li>
-                <li><img src="/icons/projects.svg" alt="proyectos"><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
             </ul>
         </div>
     </header>
@@ -61,53 +127,53 @@
                 <a href="/pages/water-analysis.html" class="image-link"> <!-- Link added -->
                     <div class="image-container" style="background-image: url('/img/analisis-de-agua.png');"></div>
                 </a>
-                <h2 class="title">Análisis de Agua</h2>
+                <h2 class="title">Water Analysis</h2>
                 <div class="card-content">
-                    <h3 class="new-title">Análisis de Agua</h3>
-                    <p>Servicios de análisis químico, fisicoquímico y microbiológico de agua potable, agua tratada y aguas residuales.</p>
-                    <button onclick="location.href='/pages/water-analysis.html'">Ver detalles</button>
+                    <h3 class="new-title">Water Analysis</h3>
+                    <p>Services for chemical, physicochemical, and microbiological analysis of drinking water, treated water, and wastewater.</p>
+                    <button onclick="location.href='/pages/water-analysis.html'">See details</button>
                 </div>
             </div>
 
             <!-- Card 2 -->
             <div class="card card-orange">
                 <div class="image-container" style="background-image: url('/img/analisis-productos-nanotecnologicos.png');"></div>
-                <h2 class="title">Análisis de Productos Nanotecnológicos</h2>
+                <h2 class="title">Nanotechnology Product Analysis</h2>
                 <div class="card-content">
-                    <h3 class="new-title">Análisis de Productos Nanotecnológicos</h3>
-                    <p>Servicios de investigación y análisis de productos nanotecnológicos aplicados en la industria.</p>
+                    <h3 class="new-title">Nanotechnology Product Analysis</h3>
+                    <p>Research and analysis services of nanotechnology products applied in the industry.</p>
                     <a href="/pages/water-analysis.html">
-                        <button> <b>Aprender más</b></button>
+                        <button> <b>Learn more</b></button>
                     </a>
                 </div>
             </div>
             <!-- Card 3 -->
             <div class="card card-blue">
                 <div class="image-container" style="background-image: url('/img/monitoreo-ambiental.png');"></div>
-                <h2 class="title">Monitoreo Ambiental de Agua e Hidrocarburos</h2>
+                <h2 class="title">Environmental Monitoring of Water and Hydrocarbons</h2>
                 <div class="card-content">
-                    <h3 class="new-title">Monitoreo Ambiental de Agua e Hidrocarburos</h3>
-                    <p>Monitoreo y análisis de agua e hidrocarburos para cumplir con las normativas ambientales.</p>
+                    <h3 class="new-title">Environmental Monitoring of Water and Hydrocarbons</h3>
+                    <p>Water and hydrocarbon monitoring and analysis to meet environmental standards.</p>
                     <a href="/pages/water-analysis.html">
-                        <button> <b>Aprender más</b></button>
+                        <button> <b>Learn more</b></button>
                     </a>
                 </div>
             </div>
             <!-- Card 4 -->
             <div class="card card-orange">
                 <div class="image-container" style="background-image: url('/img/analisis-productos-nanotecnologicos.png');"></div>
-                <h2 class="title">Análisis Industrial</h2>
+                <h2 class="title">Industrial Analysis</h2>
                 <div class="card-content">
-                    <h3 class="new-title">Análisis Industrial</h3>
-                    <p>Servicios especializados en análisis industriales de alta precisión y fiabilidad.</p>
+                    <h3 class="new-title">Industrial Analysis</h3>
+                    <p>Specialized services in high-precision and reliable industrial analysis.</p>
                     <a href="/pages/water-analysis.html">
-                        <button> <b>Aprender más</b></button>
+                        <button> <b>Learn more</b></button>
                     </a>
                 </div>  
             </div>
         </section>                
         <section class="clients">
-            <h3 class="clients-text">Nuestros clientes nos respaldan</h3>
+            <h3 class="clients-text">Our clients support us</h3>
             <div class="logos">
                 <img src="/img/britcham.png" alt="Britcham Colombia">
                 <img src="/img/unab.png" alt="UNAB">
@@ -122,22 +188,22 @@
             <div class="whatsapp-container">
                 <!-- Floating WhatsApp icon -->
                 <div class="whatsapp-icon" id="whatsappIcon">
-                    <img src="/icons/whatsapp.svg" alt="Icono WhatsApp">
+                    <img src="/icons/whatsapp.svg" alt="WhatsApp Icon">
                 </div>
 
                 <!-- WhatsApp popup window -->
                 <div class="whatsapp-box" id="whatsappBox">
                     <div class="whatsapp-header">
-                        <p>Nuestro equipo de atención al cliente está listo para asistirte y resolver cualquier duda que tengas. <br>
-                            ¿Te gustaría más información sobre algún proyecto?</p>
+                        <p>Our customer service team is ready to assist you and answer any questions you have. <br>
+                            Would you like more information about any project?</p>
                     </div>
                     <a href="https://wa.me/+573134322778" target="_blank" class="whatsapp-link">
                         <div class="whatsapp-body">
                             <div class="agent-info">
-                                <img src="https://cdn-icons-png.flaticon.com/512/14837/14837773.png" alt="Asesor">
+                                <img src="https://cdn-icons-png.flaticon.com/512/14837/14837773.png" alt="Advisor">
                                 <div>
-                                    <p class="agent-name"><strong>Asesor Comercial</strong></p>
-                                    <p class="agent-status">Disponible</p>
+                                    <p class="agent-name"><strong>Commercial Advisor</strong></p>
+                                    <p class="agent-status">Available</p>
                                 </div>
                             </div>
                         </div>
@@ -151,9 +217,19 @@
         <script src="/js/whatsapp.js"></script>
         
     </main>
+    <script>
+        // Lógica del menú hamburguesa
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const menuMobile = document.getElementById('menuMobile');
+
+        hamburgerMenu.addEventListener('click', () => {
+            menuMobile.classList.toggle('open');
+        });
+    </script>
+
     <footer>
         <div class="footer-bar">
-            <p>© 2024 LABOTEC | TODOS LOS DERECHOS RESERVADOS.</p>
+            <p>© 2024 LABOTEC | ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 </body>
