@@ -9,83 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        .hamburger-menu {
-            display: none;
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            z-index: 1000;
-            cursor: pointer;
-            transform: translateX(1rem);
-        }
-
-        .hamburger-menu div {
-            width: 30px;
-            height: 3.5px;
-            background-color: #ffc107;
-            margin: 6px 0;
-            transition: 0.4s;
-            transform: translateY(0.8rem);
-        }
-
-
-        .menu-mobile {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #F8FAFC;
-            color: white;
-            z-index: 999;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .menu-mobile ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu-mobile li {
-            padding: 0.5rem 0;
-            font-size: 1.8rem;
-            font-weight: bold;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s ease, color 0.3s ease;
-            
-        }
-
-        .menu-mobile-icons{
-            padding-right: 1rem;
-            transform: translateY(0.2rem);
-        }
-
-        .menu-mobile a {
-            text-decoration: none;
-            color: #242A5A;
-            font-size: 1.5rem;
-        }
-
-        .menu-mobile.open {
-            display: flex;
-        }
-
-        @media (max-width: 767px) {
-            .hamburger-menu {
-                display: block;
-            }
-
-            .menu {
-                display: none;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -126,14 +49,14 @@
             </div>
             <ul>
                 <li><img src="/icons/home.svg" alt="home" class="menu-mobile-icons"><a href="#english-index.html">Home</a></li>
-                <li><img src="/icons/about.svg" alt="home"  class="menu-mobile-icons"><a href="/pages/water-analysis.html">About ut</a></li>
+                <li><img src="/icons/about.svg" alt="home"  class="menu-mobile-icons"><a href="/pages/water-analysis.html">About us</a></li>
                 <li><img src="/icons/projects.svg" alt="home"  class="menu-mobile-icons"><a href="/pages/water-analysis.html">Projects</a></li>
             </ul>
         </div>
         <div class="menu">
             <ul>
                 <li class="menu-selected"><img src="/icons/home.svg" alt="home"><a href="#inicio">Home</a></li>
-                <li><img src="/icons/about.svg" alt="home"><a href="/pages/water-analysis.html">About ut</a></li>
+                <li><img src="/icons/about.svg" alt="home"><a href="/pages/water-analysis.html">About us</a></li>
                 <li><img src="/icons/projects.svg" alt="home"><a href="/pages/water-analysis.html">Projects</a></li>
             </ul>
         </div>
@@ -141,55 +64,45 @@
     <main>
         <section class="hero">
 
-            <!-- Card 1 -->
+           <!-- Card 1 -->
             <div class="card card-blue">
                 <a href="/pages/water-analysis.html" class="image-link"> <!-- Link added -->
                     <div class="image-container" style="background-image: url('/img/analisis-de-agua.png');"></div>
                 </a>
-                <h2 class="title">Water Analysis</h2>
+                <h2 class="title">Water Treatment</h2>
                 <div class="card-content">
-                    <h3 class="new-title">Water Analysis</h3>
-                    <p>Services for chemical, physicochemical, and microbiological analysis of drinking water, treated water, and wastewater.</p>
-                    <button onclick="location.href='/pages/water-analysis.html'">See details</button>
+                    <h3 class="new-title">Water Treatment</h3>
+                    <p>Advanced and sustainable solutions for drinking and wastewater treatment</p>
+                    <button onclick="location.href='/pages/water-analysis.html'">Learn More</button>
                 </div>
             </div>
 
             <!-- Card 2 -->
             <div class="card card-orange">
                 <div class="image-container" style="background-image: url('/img/analisis-productos-nanotecnologicos.png');"></div>
-                <h2 class="title">Nanotechnology Product Analysis</h2>
+                <h2 class="title">Hydrocarbons</h2>
                 <div class="card-content">
-                    <h3 class="new-title">Nanotechnology Product Analysis</h3>
-                    <p>Research and analysis services of nanotechnology products applied in the industry.</p>
+                    <h3 class="new-title">Hydrocarbons</h3>
+                    <p>Innovation in Hydrocarbon Extraction with Nanotechnology</p>
                     <a href="/pages/water-analysis.html">
-                        <button> <b>Learn more</b></button>
+                        <button> <b>Learn More</b></button>
                     </a>
                 </div>
             </div>
+
             <!-- Card 3 -->
             <div class="card card-blue">
                 <div class="image-container" style="background-image: url('/img/monitoreo-ambiental.png');"></div>
-                <h2 class="title">Environmental Monitoring of Water and Hydrocarbons</h2>
+                <h2 class="title">Nanotechnology in Industrial Processes</h2>
                 <div class="card-content">
-                    <h3 class="new-title">Environmental Monitoring of Water and Hydrocarbons</h3>
-                    <p>Water and hydrocarbon monitoring and analysis to meet environmental standards.</p>
+                    <h3 class="new-title">Nanotechnology in Industrial Processes</h3>
+                    <p>Innovation in Hydrocarbon Extraction with Nanotechnology</p>
                     <a href="/pages/water-analysis.html">
-                        <button> <b>Learn more</b></button>
+                        <button> <b>Learn More</b></button>
                     </a>
                 </div>
             </div>
-            <!-- Card 4 -->
-            <div class="card card-orange">
-                <div class="image-container" style="background-image: url('/img/analisis-productos-nanotecnologicos.png');"></div>
-                <h2 class="title">Industrial Analysis</h2>
-                <div class="card-content">
-                    <h3 class="new-title">Industrial Analysis</h3>
-                    <p>Specialized services in high-precision and reliable industrial analysis.</p>
-                    <a href="/pages/water-analysis.html">
-                        <button> <b>Learn more</b></button>
-                    </a>
-                </div>  
-            </div>
+
         </section>                
         <section class="clients">
             <h3 class="clients-text">Our clients support us</h3>
