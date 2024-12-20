@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labotec</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="contact-info">
+                <p>Contáctanos en</p>
+                <span><i class="fas fa-phone"></i> 313 432 2778</span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
+            </div>
+        </div>
+        <div class="navbar">
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="logo">
+                <img src="/img/labotec.png" alt="logo-labotec">
+            </div>
+            <div class="languages">
+                <div class="language-option selected">
+                    <a href="/index.html" class="language-change">
+                        <img src="/assets/logos/colombia.svg" alt="Colombia">
+                        <p>Español</p>
+                    </a>
+                </div>
+                <div class="language-option">
+                    <a href="/pages/english-index.html" class="language-change">
+                        <img src="/assets/logos/usa.svg" alt="USA">
+                        <p class="text-unselected">English</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="menu-mobile" id="menuMobile">
+            <div class="logo">
+                <img src="/img/labotec.png" alt="logo-labotec" style="width: 150px;">
+            </div>
+            <ul>
+                <li><img src="/icons/home.svg" alt="home"><a href="/index.html">Inicio</a></li>
+                <li><img src="/icons/about-selected.svg" alt="home"><a href="pages/water-analysis.html">Nosotros</a></li>
+                <li><img src="/icons/projects.svg" alt="home"><a href="pages/water-analysis.html">Proyectos</a></li>
+            </ul>
+        </div>
+        <div class="menu">
+            <ul>
+                <li ><img src="/icons/home.svg" alt="home"><a href="/index.html">Inicio</a></li>
+                <li class="menu-selected"><img src="/icons/about-selected.svg" alt="home"><a href="pages/water-analysis.html">Nosotros</a></li>
+                <li><img src="/icons/projects.svg" alt="home"><a href="pages/water-analysis.html">Proyectos</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="hero-nosotros">
+            <div class="info-box">
+                <h3>¿Quiénes somos?</h3>
+                <p>Somos un laboratorio especializado en soluciones tecnológicas avanzadas para los sectores de hidrocarburos y tratamiento de aguas.</p>
+                <button class="btn-more">Saber más</button>
+            </div>
+            <div class="info-box">
+                <h3>Visión</h3>
+                <p>Ser reconocidos por la eficiencia en procesos industriales y la sostenibilidad en nuestras operaciones.</p>
+                <button class="btn-more">Saber más</button>
+            </div>
+            <div class="info-box">
+                <h3>Misión</h3>
+                <p>Fomentar la innovación y el desarrollo tecnológico aplicado al tratamiento de aguas y la extracción sostenible.</p>
+                <button class="btn-more">Saber más</button>
+            </div>
+            <div class="info-box">
+                <h3>Objetivos</h3>
+                <ul>
+                    <li>Desarrollar soluciones nanotecnológicas.</li>
+                    <li>Optimizar procesos de tratamiento de agua.</li>
+                    <li>Promover la sostenibilidad ambiental.</li>
+                </ul>
+                <button class="btn-more">Saber más</button>
+            </div>
+        </section>
+        
+        <style>
+        .hero-nosotros {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+        
+        .info-box {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .info-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #242A5A;
+        }
+        
+        .info-box p, .info-box ul {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .info-box ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+        }
+        
+        .btn-more {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #242A5A;
+            color: white;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn-more:hover {
+            background-color: #1a1e40;
+        }
+        
+        @media (max-width: 767px) {
+            .hero-nosotros {
+                grid-template-columns: 1fr;
+            }
+        }
+        </style>
+        
+                       
+        
+        <section class="whatsapp-button">
+            <!-- Floating button and chat box -->
+            <div class="whatsapp-container">
+                <!-- Floating WhatsApp icon -->
+                <div class="whatsapp-icon" id="whatsappIcon">
+                    <img src="/icons/whatsapp.svg" alt="Ícono de WhatsApp">
+                </div>
+
+                <!-- WhatsApp popup window -->
+                <div class="whatsapp-box" id="whatsappBox">
+                    <div class="whatsapp-header">
+                        <p>Nuestro equipo de atención al cliente está listo para ayudarte y resolver cualquier duda que tengas. <br>
+                            ¿Te gustaría más información sobre algún proyecto?</p>
+                    </div>
+                    <a href="https://wa.me/+573134322778" target="_blank" class="whatsapp-link">
+                        <div class="whatsapp-body">
+                            <div class="agent-info">
+                                <img src="https://cdn-icons-png.flaticon.com/512/14837/14837773.png" alt="Asesor">
+                                <div>
+                                    <p class="agent-name"><strong>Asesor Comercial</strong></p>
+                                    <p class="agent-status">Disponible</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="close-button" id="closeChatBox">×</div>
+                </div>
+            </div>
+
+        </section>
+
+        <script src="/js/whatsapp.js"></script>
+        
+    </main>
+    <footer>
+        <div class="footer-bar">
+            <p>© 2024 LABOTEC | TODOS LOS DERECHOS RESERVADOS.</p>
+        </div>
+    </footer>
+    <script>
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const menuMobile = document.getElementById('menuMobile');
+
+        hamburgerMenu.addEventListener('click', () => {
+            menuMobile.classList.toggle('open');
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 767) {
+                menuMobile.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
