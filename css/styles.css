@@ -158,7 +158,7 @@ body {
 }
 
 .menu-selected {
-    width: 6rem;
+    width: calc(auto + 1rem);
     border-radius: 1.5rem;
     background: rgba(36, 42, 90, 0.10);
     text-align: center;
@@ -170,6 +170,75 @@ body {
     height: 1.5rem;
     margin-left: 0.5rem;
 }
+
+/*Menu Movil*/
+
+.hamburger-menu {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1000;
+    cursor: pointer;
+    transform: translateX(1rem);
+}
+
+.hamburger-menu div {
+    width: 30px;
+    height: 3.5px;
+    background-color: #ffc107;
+    margin: 6px 0;
+    transition: 0.4s;
+    transform: translateY(0.8rem);
+}
+
+
+.menu-mobile {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F8FAFC;
+    color: white;
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.menu-mobile ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-mobile li {
+    padding: 0.5rem 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+    
+}
+
+.menu-mobile-icons{
+    padding-right: 1rem;
+    transform: translateY(0.2rem);
+}
+
+.menu-mobile a {
+    text-decoration: none;
+    color: #242A5A;
+    font-size: 1.5rem;
+}
+
+.menu-mobile.open {
+    display: flex;
+}
+
 /* Hero Section */
 .hero {
     display: grid;
@@ -178,7 +247,6 @@ body {
     padding: 0;
     margin: 1.5rem;
 }
-
 
 /* Tarjetas */
 .card {
@@ -524,10 +592,21 @@ footer .footer-bar {
 /* Para escritorios (a partir de 1024px) */
 @media (min-width: 1024px) {
     .hero {
-        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en escritorios */
+        grid-template-columns: repeat(3, 1fr); /* Cuatro columnas en escritorios */
     }
 
     .clients .logos {
         grid-template-columns: repeat(4, 1fr); /* Cuatro columnas de logos en escritorios */
+    }
+}
+
+/*Menu Movil, por si hay algo que modificar y luego agregar a las media query*/
+@media (max-width: 767px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .menu {
+        display: none;
     }
 }
