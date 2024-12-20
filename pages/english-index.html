@@ -17,14 +17,16 @@
             left: 1rem;
             z-index: 1000;
             cursor: pointer;
+            transform: translateX(1rem);
         }
 
         .hamburger-menu div {
             width: 30px;
-            height: 3px;
+            height: 3.5px;
             background-color: #ffc107;
             margin: 6px 0;
             transition: 0.4s;
+            transform: translateY(0.8rem);
         }
 
 
@@ -56,6 +58,12 @@
             font-weight: bold;
             border-bottom: 2px solid transparent;
             transition: border-color 0.3s ease, color 0.3s ease;
+            
+        }
+
+        .menu-mobile-icons{
+            padding-right: 1rem;
+            transform: translateY(0.2rem);
         }
 
         .menu-mobile a {
@@ -117,9 +125,9 @@
                 <img src="/img/labotec.png" alt="logo-labotec" style="width: 150px;">
             </div>
             <ul>
-                <li><img src="/icons/home.svg" alt="home"><a href="#english-index.html">Home</a></li>
-                <li><img src="/icons/about.svg" alt="home"><a href="/pages/water-analysis.html">About ut</a></li>
-                <li><img src="/icons/projects.svg" alt="home"><a href="/pages/water-analysis.html">Projects</a></li>
+                <li><img src="/icons/home.svg" alt="home" class="menu-mobile-icons"><a href="#english-index.html">Home</a></li>
+                <li><img src="/icons/about.svg" alt="home"  class="menu-mobile-icons"><a href="/pages/water-analysis.html">About ut</a></li>
+                <li><img src="/icons/projects.svg" alt="home"  class="menu-mobile-icons"><a href="/pages/water-analysis.html">Projects</a></li>
             </ul>
         </div>
         <div class="menu">
