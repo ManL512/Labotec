@@ -9,83 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        .hamburger-menu {
-            display: none;
-            position: fixed;
-            top: 1rem; 
-            left: 1rem;
-            z-index: 1000;
-            cursor: pointer;
-            transform: translateX(1rem);
-        }
-
-        .hamburger-menu div {
-            width: 30px;
-            height: 3.5px;
-            background-color: #ffc107;
-            margin: 6px 0;
-            transition: 0.4s;
-            transform: translateY(0.8rem);
-        }
-
-
-        .menu-mobile {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #F8FAFC;
-            color: white;
-            z-index: 999;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .menu-mobile ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu-mobile li {
-            padding: 0.5rem 0;
-            font-size: 1.8rem;
-            font-weight: bold;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s ease, color 0.3s ease;
-            
-        }
-
-        .menu-mobile-icons{
-            padding-right: 1rem;
-            transform: translateY(0.2rem);
-        }
-
-        .menu-mobile a {
-            text-decoration: none;
-            color: #242A5A;
-            font-size: 1.5rem;
-        }
-
-        .menu-mobile.open {
-            display: flex;
-        }
-
-        @media (max-width: 767px) {
-            .hamburger-menu {
-                display: block;
-            }
-
-            .menu {
-                display: none;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -126,7 +49,7 @@
             </div>
             <ul>
                 <li><img src="/icons/home.svg" alt="home"><a href="#inicio">Inicio</a></li>
-                <li><img src="/icons/about.svg" alt="home"><a href="pages/water-analysis.html">Nosotros</a></li>
+                <li><img src="/icons/about.svg" alt="home"><a href="pages/nosotros.html">Nosotros</a></li>
                 <li><img src="/icons/projects.svg" alt="home"><a href="pages/water-analysis.html">Proyectos</a></li>
             </ul>
         </div>
