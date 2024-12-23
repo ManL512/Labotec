@@ -21,3 +21,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+const hamburgerMenu = document.getElementById('hamburgerMenu');
+const menuMobile = document.getElementById('menuMobile');
+
+hamburgerMenu.addEventListener('click', () => {
+    menuMobile.classList.toggle('open');
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 767) {
+        menuMobile.classList.remove('open');
+    }
+});
