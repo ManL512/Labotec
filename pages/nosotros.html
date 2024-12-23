@@ -64,22 +64,34 @@
     <main>
         <section class="hero-nosotros">
             <div class="info-box">
-                <h3> <img src="/icons/who-we-are.svg" alt="" class="nosotros-icon">¿Quiénes somos?</h3>
+                <div class="top-bar-info-box">
+                    <img src="/icons/who-we-are.svg" alt="" class="nosotros-icon">
+                    <h3>¿Quiénes somos?</h3>
+                </div>
                 <p>Somos un laboratorio especializado en soluciones tecnológicas avanzadas para los sectores de hidrocarburos y tratamiento de aguas.</p>
                 <button class="btn-more">Saber más</button>
             </div>
             <div class="info-box">
-                <h3> <img src="/icons/vision.svg" alt="">Visión</h3>
-                <p>Ser reconocidos por la eficiencia en procesos industriales y la sostenibilidad en nuestras operaciones.</p>
+                <div class="top-bar-info-box">
+                    <img src="/icons/vision.svg" alt="" class="nosotros-icon" style="background: rgba(243, 134, 7, 0.20);">
+                    <h3 style="color: #F38607;">Visión</h3>
+                </div>
+                <p>Ser reconocidos por la eficiencia en nuestros procesos industriales, en la investigación aplicada, diseño y operación de plantas de tratamiento de agua potable y residual, y en el sector de hidrocarburos  enfocándonos en la seguridad y respeto por el medio ambiente.</p>
                 <button class="btn-more">Saber más</button>
             </div>
             <div class="info-box">
-                <h3>  <img src="/icons/mision.svg" alt=""> Misión</h3>
-                <p>Fomentar la innovación y el desarrollo tecnológico aplicado al tratamiento de aguas y la extracción sostenible.</p>
+                <div class="top-bar-info-box">
+                    <img src="/icons/mision.svg" alt="" class="nosotros-icon">
+                    <h3>Misión</h3>
+                </div>
+                <p>Fomentar la innovación el desarrollo y las tecnologías aplicadas de excelencia enfocados en el tratamiento de aguas las extracciones sostenibles de hidrocarburos en arenas bituminosas  y el uso de la nanotecnología avanzada. Comprometido con generar soluciones eficientes y responsables que contribuyan al progreso científico, a los objetivos del desarrollo sostenible y al cuidado del medio ambiente.</p>
                 <button class="btn-more">Saber más</button>
             </div>
             <div class="info-box">
-                <h3> <img src="/icons/goals.svg" alt=""> Objetivos</h3>
+                <div class="top-bar-info-box">
+                    <img src="/icons/goals.svg" alt="" class="nosotros-icon" style="background: rgba(243, 134, 7, 0.20);">
+                    <h3 style="color: #F38607;">Objetivos</h3>
+                </div>
                 <ul>
                     <li>Desarrollar soluciones nanotecnológicas.</li>
                     <li>Optimizar procesos de tratamiento de agua.</li>
@@ -88,72 +100,7 @@
                 <button class="btn-more">Saber más</button>
             </div>
         </section>
-        
-        <style>
-        .hero-nosotros {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            padding: 2rem;
-            background-color: #f8f9fa;
-        }
-        
-        .info-box {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .info-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-        }
-        
-        .info-box h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #242A5A;
-            font-weight: bolder;
-        }
-        
-        .info-box p, .info-box ul {
-            font-size: 1rem;
-            color: #555;
-            line-height: 1.6;
-        }
-        
-        .info-box ul {
-            list-style: disc;
-            padding-left: 1.5rem;
-        }
-        
-        .btn-more {
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: #242A5A;
-            color: white;
-            border: none;
-            border-radius: 0.25rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .btn-more:hover {
-            background-color: #1a1e40;
-        }
-        
-        @media (max-width: 767px) {
-            .hero-nosotros {
-                grid-template-columns: 1fr;
-            }
-        }
-        </style>
-        
-                       
-        
+    
         <section class="whatsapp-button">
             <!-- Floating button and chat box -->
             <div class="whatsapp-container">
@@ -185,27 +132,12 @@
 
         </section>
 
-        <script src="/js/whatsapp.js"></script>
-        
+        <script src="/js/whatsapp.js"></script>     
     </main>
     <footer>
         <div class="footer-bar">
             <p>© 2024 LABOTEC | TODOS LOS DERECHOS RESERVADOS.</p>
         </div>
     </footer>
-    <script>
-        const hamburgerMenu = document.getElementById('hamburgerMenu');
-        const menuMobile = document.getElementById('menuMobile');
-
-        hamburgerMenu.addEventListener('click', () => {
-            menuMobile.classList.toggle('open');
-        });
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 767) {
-                menuMobile.classList.remove('open');
-            }
-        });
-    </script>
 </body>
 </html>
