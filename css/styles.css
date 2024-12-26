@@ -727,4 +727,16 @@ footer .footer-bar {
     .hero-nosotros {
         grid-template-columns: 1fr;
     }
+
+     /* Desactivar hover para las tarjetas */
+    .info-box:hover {
+        transform: none; /* Elimina la elevación y la escala */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Mantiene la sombra básica */
+    }
+
+    /* Desactivar hover para los botones */
+    .btn-modern:hover {
+        background-color: #002855; /* Color original del botón */
+        box-shadow: none; /* Elimina la sombra al pasar el mouse */
+    }
 }
