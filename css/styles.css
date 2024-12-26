@@ -508,7 +508,7 @@ footer .footer-bar {
 }
 
 /* PAGINA NOSOTROS */
-
+/* Configuración de la sección de tarjetas */
 .hero-nosotros {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -517,72 +517,110 @@ footer .footer-bar {
     background-color: #f8f9fa;
 }
 
+/* Contenedor de icono y título */
+.top-bar-info-box {
+    display: flex; /* Habilitamos flexbox */
+    align-items: center; /* Alineación vertical centrada */
+    gap: 0.8rem; /* Espaciado entre el icono y el texto */
+    margin-bottom: 1rem; /* Aseguramos un margen inferior para separar del contenido */
+}
+/* Títulos dentro del top-bar-info-box */
+.top-bar-info-box h3 {
+    font-size: 1.3rem;
+    color: #242A5A;
+    margin: 0; /* Eliminamos márgenes extra */
+    text-align: left;
+}
+
+/* Estilos básicos para las tarjetas */
 .info-box {
     background: white;
     border: 1px solid #ddd;
     border-radius: 0.5rem;
-    padding: 1.5rem;
+    padding: 1rem; /* Reducimos el padding interno */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    height: auto; /* Ajusta la altura automáticamente al contenido */
+    min-height: 250px; /* Altura mínima para mantener la consistencia */
 }
 
-.top-bar-info-box {
+/* Efecto Hover */
+.info-box:hover {
+    transform: translateY(-5px) scale(1.02); /* Eleva y aumenta ligeramente la escala */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Línea vertical decorativa */
+.vertical-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #242A5A; /* Color de la línea decorativa */
+}
+
+/* Contenido alineado a la izquierda */
+.info-box .content {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
+    flex-direction: column;
+    align-items: flex-start; /* Alinea el contenido a la izquierda */
+    text-align: left; /* Textos alineados a la izquierda */
+    padding: 0.5rem 1rem; /* Reduce el padding interno */
+    height: 100%;
 }
 
-.nosotros-icon {
-    padding: 0.3rem; /* Reduce padding para ajustar tamaño interno */
-    background-color: #f0f0f0;
+/* Iconos */
+.nosotros-icon.modern-icon {
+    background-color: #e3e6f1;
+    padding: 0.4rem; /* Reducimos el tamaño del icono */
     border-radius: 50%;
-    width: 2.1rem; /* Disminuye ancho */
-    height: 2.1rem; /* Disminuye altura */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    width: 2rem; /* Tamaño reducido */
+    height: 2rem;
+    margin-bottom: 0.8rem;
+    align-self: center; /* Mantiene el icono centrado */
 }
 
+/* Títulos alineados */
 .info-box h3 {
-    font-size: 1.8rem;
+    font-size: 1.4rem; /* Reducimos el tamaño del título */
     color: #242A5A;
     margin: 0;
-    line-height: 1.2;
+    margin-bottom: 0.8rem; /* Ajustamos la distancia entre título y contenido */
 }
 
-.info-box p, .info-box ul {
-    font-size: 1rem;
-    color: #242A5A;
-    line-height: 1.6;
-    font-weight: 600;
-}
-
+/* Textos de párrafo y listas con mayor tamaño */
+.info-box p,
 .info-box ul {
-    list-style: disc;
-    padding-left: 1.5rem;
+    margin-top: 0.5rem; /* Reduce el margen superior */
+    color: #242A5A;
+    line-height: 1.6; /* Mayor altura de línea para mejorar legibilidad */
+    font-size: 1.1rem; /* Tamaño de fuente aumentado */
+    list-style-position: inside;
 }
 
-.btn-more {
-    margin-top: auto;
-    padding: 0.5rem 1rem;
-    background-color: #242A5A;
-    color: white;
+/* Botones alineados a la izquierda */
+.btn-modern {
+    background-color: #002855;
+    color: #ffffff;
     border: none;
-    border-radius: 0.25rem;
+    padding: 0.6rem 1rem; /* Reducimos el tamaño del botón */
+    border-radius: 0.5rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    width: 8rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: auto;
+    align-self: flex-start; /* Alinea el botón a la izquierda */
 }
 
-.btn-more:hover {
-    background-color: #1a1e40;
+.btn-modern:hover {
+    background-color: #001d3d;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 /* Media Query para dispositivos móviles (máximo 767px) */
 @media (max-width: 767px) {
