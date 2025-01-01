@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labotec</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="contact-info">
+                <p>Comunícate al </p>
+                <span><i class="fas fa-phone"></i> 313 432 2778</span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
+            </div>
+        </div>
+        <div class="navbar">
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="logo">
+                <img src="/img/labotec.png" alt="logo-labotec">
+            </div>
+            <div class="languages">
+                <div class="language-option selected">
+                    <a href="/index.html" class="language-change">
+                        <img src="/assets/logos/colombia.svg" alt="Colombia">
+                        <p>Español</p>
+                    </a>
+                </div>
+                <div class="language-option">
+                    <a href="/pages/english-index.html" class="language-change">
+                        <img src="/assets/logos/usa.svg" alt="USA">
+                        <p class="text-unselected">English</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="menu-mobile" id="menuMobile">
+            <div class="logo">
+                <img src="/img/labotec.png" alt="logo-labotec" style="width: 150px;">
+            </div>
+            <ul>
+                <li><img src="/icons/home.svg" alt="home"><a href="#inicio">Inicio</a></li>
+                <li><img src="/icons/about.svg" alt="home"><a href="pages/nosotros.html">Nosotros</a></li>
+                <li><img src="/icons/projects.svg" alt="home"><a href="pages/water-analysis.html">Proyectos</a></li>
+            </ul>
+        </div>
+        <div class="menu">
+            <ul>
+                <li class="menu-selected"><img src="/icons/home-selected.svg" alt="home"><a href="#inicio">Inicio</a></li>
+                <li><img src="/icons/about.svg" alt="home"><a href="pages/nosotros.html">Nosotros</a></li>
+                <li><img src="/icons/projects.svg" alt="home"><a href="pages/water-analysis.html">Proyectos</a></li>
+            </ul>
+        </div>
+    </header>
+<style>
+    /* Hero Section */
+    .body{
+        background-color: #F5F5F5;
+    }
+    .hero-water-treatment {
+        display: grid;
+        grid-template-columns: 1fr; /* Una columna por defecto */
+        gap: 0;
+        padding: 0;
+        margin: 1.5rem;
+        background-color: #fff;
+    }
+
+/* Hero Header */
+.hero-header {
+    text-align: left;
+    margin-bottom: 2rem;
+    margin-left: 0.5rem;
+}
+
+.hero-header h1 {
+    font-size: 2rem;
+    color: #002855;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.hero-header h2 {
+    font-size: 1.2rem;
+    color: #002855;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-header p {
+    font-size: 1.2rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+/* Services Section */
+.hero-services {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.service {
+    flex: 1;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #eaeaea;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+}
+
+.service p {
+    font-size: 1rem;
+    color: #4a4a4a;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-services {
+        flex-direction: column;
+    }
+
+    .service {
+        margin-bottom: 1rem;
+    }
+}
+
+</style>
+    <main>
+        <section class="hero-water-treatment">
+            <div class="hero-header">
+                <h1>Tratamiento de aguas</h1>
+                <h2>Soluciones avanzadas y sostenibles para el tratamiento de agua potable y residual.</h2>
+                <p>Nos dedicamos al diseño, fabricación y operación de plantas de tratamiento de agua potable y residual, con un enfoque en la sostenibilidad y la eficiencia. Utilizamos tecnologías avanzadas, entre ellas los sistemas de floculación, coagulación y desinfección, que permiten optimizar los procesos de purificación y tratamiento de aguas, reduciendo el consumo de energía y productos químicos.</h2>
+            </div>
+            <div class="hero-services">
+                <div class="service">
+                  
+                </div>
+                <div class="service">
+                  
+                </div>
+                <div class="service">
+                    
+                </div>
+            </div>
+        </section>
+        
+                 
+        
+        <section class="whatsapp-button">
+            <!-- Floating button and chat box -->
+            <div class="whatsapp-container">
+                <!-- Floating WhatsApp icon -->
+                <div class="whatsapp-icon" id="whatsappIcon">
+                    <img src="/icons/whatsapp.svg" alt="Ícono de WhatsApp">
+                </div>
+
+                <!-- WhatsApp popup window -->
+                <div class="whatsapp-box" id="whatsappBox">
+                    <div class="whatsapp-header">
+                        <p>Nuestro equipo de atención al cliente está listo para ayudarte y resolver cualquier duda que tengas. <br>
+                            ¿Te gustaría más información sobre algún proyecto?</p>
+                    </div>
+                    <a href="https://wa.me/+573134322778" target="_blank" class="whatsapp-link">
+                        <div class="whatsapp-body">
+                            <div class="agent-info">
+                                <img src="https://cdn-icons-png.flaticon.com/512/14837/14837773.png" alt="Asesor">
+                                <div>
+                                    <p class="agent-name"><strong>Asesor Comercial</strong></p>
+                                    <p class="agent-status">Disponible</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="close-button" id="closeChatBox">×</div>
+                </div>
+            </div>
+
+        </section>
+
+        <script src="/js/whatsapp.js"></script>
+        
+    </main>
+    <footer>
+        <div class="footer-bar">
+            <p>© 2024 LABOTEC | TODOS LOS DERECHOS RESERVADOS.</p>
+        </div>
+    </footer>
+</body>
+</html>
