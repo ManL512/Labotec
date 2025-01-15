@@ -45,88 +45,65 @@
         </div>
     </header>
 <style>
-    /* Hero Section */
-    .body{
-        background-color: #F5F5F5;
-    }
-    .hero-water-treatment {
-        display: grid;
-        grid-template-columns: 1fr; /* Una columna por defecto */
-        gap: 0;
-        padding: 0;
-        margin: 1.5rem;
-        background-color: #fff;
-    }
+body {
+    background-color: #F5F5F5;
+}
 
-    /* Hero Header */
-    .hero-header {
-        text-align: left;
-        margin-bottom: 2rem;
-        margin-left: 1.5rem;
-    }
+.hero-water-treatment {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+    margin: 1.5rem;
+    background-color: #fff;
+    padding: 1.5rem;
+}
 
-    .hero-header h1 {
-        font-size: 2rem;
-        color: #002855;
-        font-weight: 800;
-        margin-bottom: 1rem;
-    }
+.hero-header h1, .hero-header h2 {
+    color: #002855;
+    margin-bottom: 1rem;
+}
 
-    .hero-header h2 {
-        font-size: 1.2rem;
-        color: #002855;
-        font-weight: 700;
-        margin-bottom: 1rem;
-    }
+.hero-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
 
-    .hero-header p {
-        font-size: 1.2rem;
-        color: #242A5A;
-        line-height: 1.6;
-    }
+.hero-header h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
 
-    /* Services Section */
+.hero-header p, .service p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #242A5A;
+}
+
+.hero-services {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.service {
+    flex: 1;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
     .hero-services {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
+        flex-direction: column;
     }
 
     .service {
-        flex: 1;
-        text-align: center;
-        background-color: #f8f9fa;
-        padding: 1rem;
-        border: 1px solid #d9d9d9;
-        border-radius: 8px;
+        margin-bottom: 1rem;
     }
-
-    .service-icon {
-        width: 80px;
-        height: 80px;
-        background-color: #eaeaea;
-        margin: 0 auto 1rem;
-        border-radius: 50%;
-    }
-
-    .service p {
-        font-size: 1rem;
-        color: #4a4a4a;
-        line-height: 1.5;
-    }
-
-
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .hero-services {
-            flex-direction: column;
-        }
-
-        .service {
-            margin-bottom: 1rem;
-        }
-    }
+}
 
 </style>
     <main>
