@@ -12,6 +12,7 @@
 </head>
 <body>
     <header>
+        <!-- Barra superior con información de contacto -->
         <div class="top-bar">
             <div class="contact-info">
                 <p>Comunícate al </p>
@@ -19,15 +20,19 @@
                 <span><i class="fas fa-envelope"></i> <a href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
             </div>
         </div>
+        <!-- Barra de navegación principal -->
         <div class="navbar">
+            <!-- Menú de hamburguesa para dispositivos móviles -->
             <div class="hamburger-menu" id="hamburgerMenu">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
+            <!-- Logotipo del sitio -->
             <div class="logo">
                 <img src="/img/labotec.png" alt="logo-labotec">
             </div>
+            <!-- Opciones de cambio de idioma -->
             <div class="languages">
                 <div class="language-option selected">
                     <a href="/index.html" class="language-change">
@@ -44,115 +49,56 @@
             </div>
         </div>
     </header>
-<style>
-body {
-    background-color: #F5F5F5;
-}
-
-.hero-water-treatment {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding: 0;
-    margin: 1.5rem;
-    background-color: #fff;
-    padding: 1.5rem;
-}
-
-.hero-header h1, .hero-header h2 {
-    color: #002855;
-    margin-bottom: 1rem;
-}
-
-.hero-header h1 {
-    font-size: 2rem;
-    font-weight: 800;
-}
-
-.hero-header h2 {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.hero-header p, .service p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #242A5A;
-}
-
-.hero-services {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-.service {
-    flex: 1;
-    text-align: center;
-    background-color: #f8f9fa;
-    padding: 1rem;
-    border: 1px solid #d9d9d9;
-    border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-    .hero-services {
-        flex-direction: column;
-    }
-
-    .service {
-        margin-bottom: 1rem;
-    }
-}
-
-</style>
     <main>
+        <!-- Enlace para volver a la página principal -->
         <a href="/index.html">
-            <img src="/icons/arrow_back.svg" alt="" style="margin-left: 1.5rem; margin-top: 1.5rem; width: 1.1rem; height: 1.1rem;">
-        </a>                
-        <section class="hero-water-treatment">
-            <div class="hero-header">
+            <img src="/icons/arrow_back.svg" alt="Volver" style="margin-left: 1.5rem; margin-top: 1.5rem; width: 1.1rem; height: 1.1rem;">
+        </a>
+
+        <!-- Sección de tratamiento de aguas -->
+        <section class="conocer-mas-hero">
+            <div class="conocer-mas-header">
+                <!-- Encabezado y descripción principal -->
                 <h1>Tratamiento de aguas</h1>
                 <h2>Soluciones avanzadas y sostenibles para el tratamiento de agua potable y residual.</h2>
-                <p>Nos dedicamos al diseño, fabricación y operación de plantas de tratamiento de agua potable y residual, con un enfoque en la sostenibilidad y la eficiencia. Utilizamos tecnologías avanzadas, entre ellas los sistemas de floculación, coagulación y desinfección, que permiten optimizar los procesos de purificación y tratamiento de aguas, reduciendo el consumo de energía y productos químicos.</p>
+                <p>Nos dedicamos al diseño, fabricación y operación de plantas de tratamiento de agua potable y residual, con un enfoque en la sostenibilidad y la eficiencia.</p>
 
+                <!-- Lista de servicios ofrecidos -->
                 <h2>Nuestros servicios incluyen:</h2>
-
                 <ul>
-                    <li> Investigación 	y Desarrollo de tecnologías de tratamiento de agua 	basadas en nanotecnología, que mejoran la calidad del agua y 	optimizan los procesos.</li>
-                    <li> Diseño 	y fabricación de plantas de tratamiento, 	adaptadas a las necesidades específicas de cada cliente.</li>
-                    <li> Consultoría 	y gestión de proyectos, 	garantizando soluciones personalizadas y optimizadas para el 	tratamiento de aguas industriales y municipales.</li>
-                    <li>Tecnologías 	avanzadas de floculación, coagulación y desinfección: 	Aplicamos sistemas de tratamiento que mejoran la purificación del 	agua mediante procesos eficientes y de bajo impacto ambiental.</li>
+                    <li>Investigación y desarrollo de tecnologías de tratamiento de agua basadas en nanotecnología.</li>
+                    <li>Diseño y fabricación de plantas de tratamiento adaptadas a las necesidades específicas.</li>
+                    <li>Consultoría y gestión de proyectos personalizados para tratamiento de aguas industriales y municipales.</li>
+                    <li>Tecnologías avanzadas de floculación, coagulación y desinfección para purificación del agua.</li>
                 </ul>
             </div>
-            <div class="hero-services">
+
+            <!-- Imágenes ilustrativas de servicios -->
+            <div class="conocer-mas-services">
                 <div class="service">
-                  <img src="" alt="FOTO-1">
+                    <img src="/img/agua.png" alt="FOTO-1">
                 </div>
                 <div class="service">
-                  
+                    <img src="/img/agua.png" alt="FOTO-2">
                 </div>
                 <div class="service">
-                    
+                    <img src="/img/agua.png" alt="FOTO-3">
                 </div>
             </div>
         </section>
-        
-                 
-        
+
+        <!-- Botón flotante de WhatsApp -->
         <section class="whatsapp-button">
-            <!-- Floating button and chat box -->
             <div class="whatsapp-container">
-                <!-- Floating WhatsApp icon -->
+                <!-- Ícono flotante de WhatsApp -->
                 <div class="whatsapp-icon" id="whatsappIcon">
-                    <img src="/icons/whatsapp.svg" alt="Ícono de WhatsApp">
+                    <img src="/icons/whatsapp.svg" alt="WhatsApp">
                 </div>
 
-                <!-- WhatsApp popup window -->
+                <!-- Ventana emergente de WhatsApp -->
                 <div class="whatsapp-box" id="whatsappBox">
                     <div class="whatsapp-header">
-                        <p>Nuestro equipo de atención al cliente está listo para ayudarte y resolver cualquier duda que tengas. <br>
-                            ¿Te gustaría más información sobre algún proyecto?</p>
+                        <p>Nuestro equipo de atención al cliente está listo para ayudarte. ¿Te gustaría más información sobre algún proyecto?</p>
                     </div>
                     <a href="https://wa.me/+573134322778" target="_blank" class="whatsapp-link">
                         <div class="whatsapp-body">
@@ -165,15 +111,17 @@ body {
                             </div>
                         </div>
                     </a>
+                    <!-- Botón para cerrar la ventana de whatsapp -->
                     <div class="close-button" id="closeChatBox">×</div>
                 </div>
             </div>
-
         </section>
 
+        <!-- Script para funcionalidades -->
         <script src="/js/whatsapp.js"></script>
-        
     </main>
+
+    <!-- Pie de página -->
     <footer>
         <div class="footer-bar">
             <p>© 2024 LABOTEC | TODOS LOS DERECHOS RESERVADOS.</p>
