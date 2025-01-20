@@ -61,6 +61,15 @@ body {
     font-size: 1.2rem;
 }
 
+/*lina blanca decorativa */
+.decorative-line {
+    border: none;
+    height: 2px;
+    background: #391111;
+    margin: 0 1.5rem; 
+    width: calc(100% - 3rem); 
+}
+
 /* Navbar */
 .navbar {
     display: flex;
