@@ -65,7 +65,7 @@ body {
 .decorative-line {
     border: none;
     height: 2px;
-    background: #391111;
+    background: #FFF;
     margin: 0 1.5rem; 
     width: calc(100% - 3rem); 
 }
@@ -260,7 +260,7 @@ body {
 /* Tarjetas */
 .card {
     position: relative;
-    height: clamp(14rem, 22vw, 24rem); /* Altura incrementada */
+    height: clamp(16rem, 25vw, 30rem); /* Altura ajustada */
     overflow: hidden;
     display: flex;
     align-items: flex-end;
