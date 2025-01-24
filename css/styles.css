@@ -182,12 +182,11 @@ body {
 .hamburger-menu div {
     width: 30px;
     height: 3.5px;
-    background-color: #ffc107;
+    background-color: #242A5A;
     margin: 6px 0;
     transition: 0.4s;
     transform: translateY(0.8rem);
 }
-
 .menu-mobile {
     display: none;
     position: fixed;
@@ -217,25 +216,35 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem; /* Add spacing between items */
 }
 
 .menu-mobile li {
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+    gap: 0.8rem; /* Add spacing between icon and text */
     padding: 0.5rem 0;
     font-size: 1.8rem;
     font-weight: bold;
     border-bottom: 2px solid transparent;
     transition: border-color 0.3s ease, color 0.3s ease;
+    width: 100%; /* Ensure full width for alignment consistency */
+    justify-content: flex-start; /* Align content to the left */
 }
 
 .menu-mobile a {
     text-decoration: none;
     color: #242A5A;
     font-size: 1.5rem;
+    display: flex;
+    align-items: center; /* Ensure link content is vertically aligned */
+    width: 100%; /* Ensure the link spans full width for alignment */
 }
 
 .menu-mobile-icons {
-    margin-right: 1rem;
-    transform: translateY(0.2rem);
+    width: 24px; /* Set a consistent width for icons */
+    height: 24px; /* Set a consistent height for icons */
+    flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 .menu-mobile.open {
