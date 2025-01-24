@@ -426,6 +426,10 @@ body {
 .whatsapp-icon:hover {
     transform: scale(1.1);
 }
+/*oculta whatsapp en menu movil*/
+.menu-mobile-active .whatsapp-container {
+    display: none;
+}
 
 /* Caja emergente de chat */
 .whatsapp-box {
