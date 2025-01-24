@@ -34,3 +34,26 @@ window.addEventListener('resize', () => {
         menuMobile.classList.remove('open');
     }
 });
+
+// Variable to store the previous scroll position
+let lastScrollPosition = 0;
+
+// Add a scroll event listener
+window.addEventListener('scroll', () => {
+    // Check if the screen width is less than or equal to 768px (mobile screens)
+    if (window.innerWidth <= 768) {
+        // Get the current scroll position
+        const currentScrollPosition = window.pageYOffset;
+
+        if (currentScrollPosition > lastScrollPosition) {
+            // If scrolling down, hide the hamburger menu
+            hamburgerMenu.style.display = 'none';
+        } else {
+            // If scrolling up, show the hamburger menu
+            hamburgerMenu.style.display = 'block';
+        }
+
+        // Update the last scroll position
+        lastScrollPosition = currentScrollPosition;
+    }
+});
