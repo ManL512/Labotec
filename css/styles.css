@@ -6,22 +6,15 @@ body {
     background-color: #F5F5F5;
     display: grid;
     grid-template-rows: auto 1fr auto; /* Header, contenido principal, footer */
-    overflow-x: hidden; /* Evita el desbordamiento horizontal */
-    overflow-y: auto; /* Asegura que el contenido sea desplazable verticalmente si es necesario */
+    overflow-x: hidden; 
+    overflow-y: auto; 
 }
-
-/* Efecto al salir de la página */
-.page-transition {
-    opacity: 0; /* Suaviza el desvanecimiento */
-    transform: scale(0.98); /* Reduce ligeramente la escala */
-}
-/* Header */
+/* --- PAGINA INDEX --- */
 .header {
     display: grid;
     grid-template-rows: auto auto auto; /* Top-bar, navbar, menu */
     gap: 0.5rem;
 }
-
 .top-bar {
     background-color: #002855;
     color: white;
@@ -31,36 +24,30 @@ body {
     display: flex;
     justify-content: center;
 }
-
 .contact-info {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap; /* Ajuste para móviles */
     align-items: center;
 }
-
 .contact-info span {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
-
 .contact-info a {
     color: white;
     text-decoration: none;
 }
-
 .social-icons {
     display: flex;
     justify-content: flex-end;
     gap: 0.5rem;
 }
-
 .social-icons a {
     color: white;
     font-size: 1.2rem;
 }
-
 /*lina blanca decorativa */
 .decorative-line {
     border: none;
@@ -201,7 +188,6 @@ body {
     transform: translateY(0.8rem);
 }
 
-
 .menu-mobile {
     display: none;
     position: fixed;
@@ -214,14 +200,23 @@ body {
     z-index: 999;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.menu-mobile .logo {
+    margin-bottom: 0; /* Remove bottom margin */
+    padding-bottom: 0; /* Remove padding */
 }
 
 .menu-mobile ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin-top: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .menu-mobile li {
@@ -230,12 +225,6 @@ body {
     font-weight: bold;
     border-bottom: 2px solid transparent;
     transition: border-color 0.3s ease, color 0.3s ease;
-    
-}
-
-.menu-mobile-icons{
-    padding-right: 1rem;
-    transform: translateY(0.2rem);
 }
 
 .menu-mobile a {
@@ -244,8 +233,26 @@ body {
     font-size: 1.5rem;
 }
 
+.menu-mobile-icons {
+    margin-right: 1rem;
+    transform: translateY(0.2rem);
+}
+
 .menu-mobile.open {
     display: flex;
+}
+
+.social-media {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 4rem 0; /* Add padding at the bottom */
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 /* Hero Section */
@@ -728,7 +735,10 @@ footer .footer-bar {
         bottom: 2rem; /* Ajusta la posición para pantallas pequeñas */
         right: 2rem;
     }
-
+    .whatsapp-icon{
+        width: 3rem;
+        height: 3rem;
+    }
     /* Ajustes en el Card */
     .card {
         height: 18rem; /* Altura ajustada para pantallas más pequeñas */
