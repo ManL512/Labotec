@@ -57,3 +57,15 @@ window.addEventListener('scroll', () => {
         lastScrollPosition = currentScrollPosition;
     }
 });
+
+//ocultar boton de whatsapp mientras se tiene abierto menu mobile
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const menuMobile = document.getElementById('menuMobile');
+    const body = document.body;
+
+    hamburgerMenu.addEventListener('click', () => {
+        menuMobile.classList.toggle('active');
+        body.classList.toggle('menu-mobile-active');
+    });
+});
