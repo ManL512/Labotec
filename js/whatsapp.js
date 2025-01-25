@@ -21,14 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
 const hamburgerMenu = document.getElementById('hamburgerMenu');
 const menuMobile = document.getElementById('menuMobile');
 
+// Toggle mobile menu visibility
 hamburgerMenu.addEventListener('click', () => {
     menuMobile.classList.toggle('open');
 });
 
+// Close the menu on window resize (if larger than 768px)
 window.addEventListener('resize', () => {
     if (window.innerWidth > 767) {
         menuMobile.classList.remove('open');
@@ -45,11 +46,16 @@ window.addEventListener('scroll', () => {
         // Get the current scroll position
         const currentScrollPosition = window.pageYOffset;
 
-        if (currentScrollPosition > lastScrollPosition) {
-            // If scrolling down, hide the hamburger menu
-            hamburgerMenu.style.display = 'none';
+        if (currentScrollPosition > 0) {
+            if (currentScrollPosition > lastScrollPosition) {
+                // If scrolling down, hide the hamburger menu
+                hamburgerMenu.style.display = 'none';
+            } else {
+                // If scrolling up, show the hamburger menu
+                hamburgerMenu.style.display = 'block';
+            }
         } else {
-            // If scrolling up, show the hamburger menu
+            // Always show the hamburger menu when at the top of the page
             hamburgerMenu.style.display = 'block';
         }
 
@@ -57,6 +63,7 @@ window.addEventListener('scroll', () => {
         lastScrollPosition = currentScrollPosition;
     }
 });
+
 
 //ocultar boton de whatsapp mientras se tiene abierto menu mobile
 document.addEventListener('DOMContentLoaded', () => {
