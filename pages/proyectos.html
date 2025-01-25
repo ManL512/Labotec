@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros</title>
+    <title>Nuestros proyectos</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,49 +12,52 @@
 </head>
 <body>
     <style>
-    .vertical-line {
-        background: linear-gradient(
-            180deg,
-            rgba(0, 40, 85, 1) 0%,         /* Azul oscuro intenso */
-            rgba(36, 82, 125, 0.9) 50%,   /* Azul intermedio */
-            rgb(255, 255, 255) 100%   /* Azul claro elegante */
-        );
+.vertical-line {
+    background: linear-gradient(
+        180deg,
+        rgba(0, 40, 85, 1) 0%,         /* Azul oscuro intenso */
+        rgba(36, 82, 125, 0.9) 50%,   /* Azul intermedio */
+        rgb(255, 255, 255) 100%   /* Azul claro elegante */
+    );
 
+}
+
+.info-box {
+    padding: 1.2rem;
+}
+
+.nosotros-icon.modern-icon {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-modern {
+    background-color: #002855;
+    color: white;
+    font-weight: bold;
+    padding: 0.7rem 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-modern:hover {
+    background-color: #1f3c5d;
+    color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .hero-nosotros {
+        grid-template-columns: 1fr;
+        padding: 1rem;
     }
 
     .info-box {
-        padding: 1.2rem;
+        margin-bottom: 1.5rem;
     }
+}
 
-    .nosotros-icon.modern-icon {
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
 
-    .btn-modern {
-        background-color: #002855;
-        color: white;
-        font-weight: bold;
-        padding: 0.7rem 1.5rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .btn-modern:hover {
-        background-color: #1f3c5d;
-        color: #fff;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    @media (max-width: 768px) {
-        .hero-nosotros {
-            grid-template-columns: 1fr;
-            padding: 1rem;
-        }
-
-        .info-box {
-            margin-bottom: 1.5rem;
-        }
-    }
     </style>
+    
     <header>
         <div class="top-bar">
             <div class="contact-info">
@@ -104,8 +107,8 @@
         <div class="menu">
             <ul>
                 <li ><img src="/icons/home.svg" alt="home"><a href="/index.html">Inicio</a></li>
-                <li class="menu-selected" style="padding-right: 0.5rem;"><img src="/icons/about-selected.svg" alt="home"><a href="nosotros.html">Nosotros</a></li>
-                <li><img src="/icons/projects.svg" alt="home"><a href="proyectos.html">Proyectos</a></li>
+                <li><img src="/icons/about.svg" alt="home"><a href="nosotros.html">Nosotros</a></li>
+                <li class="menu-selected" style="padding-right: 0.5rem;"><img src="/icons/projects.svg" alt="home"><a href="pages/water-analysis.html">Proyectos</a></li>
             </ul>
         </div>
     </header>

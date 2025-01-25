@@ -154,12 +154,11 @@ body {
 }
 
 .menu-selected {
-    width: calc(auto + 1rem);
     border-radius: 1.5rem;
     background: rgba(36, 42, 90, 0.10);
-    text-align: center;
     font-weight: 600;
 }
+
 
 .menu li img {
     width: 1.5rem; /* Tamaño consistente para los iconos */
@@ -452,7 +451,6 @@ body {
     display: none; /* Inicialmente oculto */
     animation: fadeIn 0.3s ease-in-out;
     overflow: hidden;
-    font-family: Arial, sans-serif;
 }
 
 /* Cabecera del chat */
@@ -472,38 +470,49 @@ body {
     background-color: #ffffff;
 }
 
+/* Perfil Whatsapp */
 .agent-info {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 1rem;
+    margin-top: 0.5rem;
 }
 
 .agent-info img {
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .agent-name {
     font-size: 1rem;
+    font-weight: bold;
+    color: #242A5A;
     margin: 0;
-    color: #333;
 }
 
 .agent-status {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #25D366;
     margin: 0;
 }
-
+.whatsapp-text{
+    text-align: justify; 
+    line-height: 1.4; 
+    margin: 0 1rem; 
+    font-size: 1rem;
+    color: #FFF;
+    word-break: break-word; 
+    hyphens: auto;
+}
 /* Estilos del enlace de WhatsApp */
 .whatsapp-link {
-    text-decoration: none; /* Quita el subrayado */
-    color: inherit; /* Usa los colores heredados */
-    display: block; /* Hace que el enlace ocupe todo el contenedor */
+    text-decoration: none; 
+    color: inherit; 
+    display: block; 
     cursor: pointer;
 }
-
 /* Botón de cerrar */
 .close-button {
     position: absolute;
