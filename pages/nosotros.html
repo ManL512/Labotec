@@ -9,53 +9,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+            .hero-nosotros {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            .info-box {
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <style>
-    .vertical-line {
-        background: linear-gradient(
-            180deg,
-            rgba(0, 40, 85, 1) 0%,         /* Azul oscuro intenso */
-            rgba(36, 82, 125, 0.9) 50%,   /* Azul intermedio */
-            rgb(255, 255, 255) 100%   /* Azul claro elegante */
-        );
-
-    }
-
-    .info-box {
-        padding: 1.2rem;
-    }
-
-    .nosotros-icon.modern-icon {
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .btn-modern {
-        background-color: #002855;
-        color: white;
-        font-weight: bold;
-        padding: 0.7rem 1.5rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .btn-modern:hover {
-        background-color: #1f3c5d;
-        color: #fff;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    @media (max-width: 768px) {
-        .hero-nosotros {
-            grid-template-columns: 1fr;
-            padding: 1rem;
-        }
-
-        .info-box {
-            margin-bottom: 1.5rem;
-        }
-    }
-    </style>
     <header>
+        <!-- Top Bar -->
         <div class="top-bar">
             <div class="contact-info">
                 <p>Contáctanos en</p>
@@ -63,6 +31,8 @@
                 <span><i class="fas fa-envelope"></i> <a href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
             </div>
         </div>
+
+        <!-- Navbar -->
         <div class="navbar">
             <div class="hamburger-menu" id="hamburgerMenu">
                 <div></div>
@@ -88,29 +58,33 @@
             </div>
         </div>
 
-        <!-- Decorative horizontal line -->
+        <!-- Decorative Line -->
         <hr class="decorative-line">
 
+        <!-- Mobile Menu -->
         <div class="menu-mobile" id="menuMobile">
             <div class="logo">
                 <img src="/img/labotec.png" alt="logo-labotec" style="width: 150px;">
             </div>
             <ul>
                 <li><img src="/icons/home.svg" alt="home"><a href="/index.html">Inicio</a></li>
-                <li><img src="/icons/about-selected.svg" alt="home"><a href="nosotros.html">Nosotros</a></li>
-                <li><img src="/icons/projects.svg" alt="home"><a href="pages/water-analysis.html">Proyectos</a></li>
+                <li><img src="/icons/about-selected.svg" alt="about"><a href="nosotros.html">Nosotros</a></li>
+                <li><img src="/icons/projects.svg" alt="projects"><a href="pages/water-analysis.html">Proyectos</a></li>
             </ul>
         </div>
+
+        <!-- Desktop Menu -->
         <div class="menu">
             <ul>
-                <li ><img src="/icons/home.svg" alt="home"><a href="/index.html">Inicio</a></li>
-                <li class="menu-selected" style="padding-right: 0.5rem;"><img src="/icons/about-selected.svg" alt="home"><a href="nosotros.html">Nosotros</a></li>
-                <li><img src="/icons/projects.svg" alt="home"><a href="proyectos.html">Proyectos</a></li>
+                <li><img src="/icons/home.svg" alt="home"><a href="/index.html">Inicio</a></li>
+                <li class="menu-selected"><img src="/icons/about-selected.svg" alt="about"><a href="nosotros.html">Nosotros</a></li>
+                <li><img src="/icons/projects.svg" alt="projects"><a href="proyectos.html">Proyectos</a></li>
             </ul>
         </div>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero-nosotros">
             <!-- Quiénes Somos -->
             <div class="info-box modern">
@@ -121,10 +95,10 @@
                         <h3>¿Quiénes somos?</h3>
                     </div>
                     <p>Somos un laboratorio especializado en el desarrollo de soluciones tecnológicas avanzadas para los sectores de hidrocarburos y tratamiento de aguas, con un enfoque innovador basado en la nanotecnología.</p>
-                    <a href="tratamiento-de-aguas.html"> <button class="btn-modern">Saber más</button> </a>
+                    <a href="tratamiento-de-aguas.html"><button class="btn-modern">Saber más</button></a>
                 </div>
             </div>
-        
+
             <!-- Visión -->
             <div class="info-box modern">
                 <div class="vertical-line"></div>
@@ -133,10 +107,10 @@
                         <img src="/icons/vision.svg" alt="Ícono de visión" class="nosotros-icon modern-icon" style="background: rgba(243, 134, 7, 0.20);">
                         <h3 style="color: #F38607;">Visión</h3>
                     </div>
-                    <p>Ser reconocidos por la eficiencia en nuestros procesos industriales, en la investigación aplicada, diseño y operación de plantas de tratamiento de agua potable y residual, y en el sector de hidrocarburos  enfocándonos en la seguridad y respeto por el medio ambiente.  </p>
+                    <p>Ser reconocidos por la eficiencia en nuestros procesos industriales, en la investigación aplicada, diseño y operación de plantas de tratamiento de agua potable y residual, y en el sector de hidrocarburos enfocándonos en la seguridad y respeto por el medio ambiente.</p>
                 </div>
             </div>
-        
+
             <!-- Misión -->
             <div class="info-box modern">
                 <div class="vertical-line"></div>
@@ -145,44 +119,41 @@
                         <img src="/icons/mision.svg" alt="Ícono de misión" class="nosotros-icon modern-icon">
                         <h3>Misión</h3>
                     </div>
-                    <p>Fomentar la innovación en tecnologías para el tratamiento de aguas, extracción sostenible de hidrocarburos y nanotecnología, generando soluciones eficientes y responsables que contribuyan al progreso científico, a los objetivos del desarrollo sostenible y al cuidado del medio ambiente. </p>
+                    <p>Fomentar la innovación en tecnologías para el tratamiento de aguas, extracción sostenible de hidrocarburos y nanotecnología, generando soluciones eficientes y responsables que contribuyan al progreso científico, a los objetivos del desarrollo sostenible y al cuidado del medio ambiente.</p>
                 </div>
             </div>
-        
+
             <!-- Objetivos -->
             <div class="info-box modern">
                 <div class="vertical-line"></div>
                 <div class="content">
                     <div class="top-bar-info-box">
                         <img src="/icons/goals.svg" alt="Ícono de objetivos" class="nosotros-icon modern-icon" style="background: rgba(243, 134, 7, 0.20);">
-                        <h3  style="color: #F38607;">Objetivos</h3>
+                        <h3 style="color: #F38607;">Objetivos</h3>
                     </div>
-                    <ul style="transform: translateX(-2rem);">
+                    <ul>
                         <li>Desarrollar soluciones nanotecnológicas.</li>
                         <li>Optimizar procesos de tratamiento de agua.</li>
                         <li>Promover la sostenibilidad ambiental.</li>
                     </ul>
-                    <a href="tratamiento-de-aguas.html"> <button class="btn-modern">Saber más</button> </a>
+                    <a href="tratamiento-de-aguas.html"><button class="btn-modern">Saber más</button></a>
                 </div>
             </div>
-        </section>    
-    
+        </section>
+
+        <!-- WhatsApp Button -->
         <section class="whatsapp-button">
-            <!-- Floating button and chat box -->
             <div class="whatsapp-container">
-                <!-- Floating WhatsApp icon -->
                 <div class="whatsapp-icon" id="whatsappIcon">
                     <img src="/icons/whatsapp.svg" alt="Ícono de WhatsApp">
                 </div>
-
-                <!-- WhatsApp popup window -->
                 <div class="whatsapp-box" id="whatsappBox">
                     <div class="whatsapp-header">
                         <p class="whatsapp-text">
-                             <strong>Nuestro equipo de atención al cliente está a tu disposición.</strong>
-                             <br> 
-                             <br>
-                             ¿Te interesa obtener más información sobre alguno de nuestros proyectos?</p>
+                            <strong>Nuestro equipo de atención al cliente está a tu disposición.</strong>
+                            <br><br>
+                            Escríbenos para obtener más información sobre alguno de nuestros proyectos.
+                        </p>
                     </div>
                     <a href="https://wa.me/+573134322778" target="_blank" class="whatsapp-link">
                         <div class="whatsapp-body">
@@ -198,11 +169,11 @@
                     <div class="close-button" id="closeChatBox">×</div>
                 </div>
             </div>
-
         </section>
 
-        <script src="/js/whatsapp.js"></script>     
+        <script src="/js/whatsapp.js"></script>
     </main>
+
     <footer>
         <div class="footer-bar">
             <p>© 2024 LABOTEC | TODOS LOS DERECHOS RESERVADOS.</p>
