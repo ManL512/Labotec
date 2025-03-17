@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanotecnología en Procesos Industriales</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <!-- Barra superior con información de contacto -->
+        <div class="top-bar">
+            <div class="contact-info">
+                <p>Comunícate al </p>
+                <span><i class="fas fa-phone"></i> 313 432 2778</span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
+            </div>
+        </div>
+        <!-- Barra de navegación principal -->
+        <div class="navbar">
+            <!-- Menú de hamburguesa para dispositivos móviles -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <!-- Logotipo del sitio -->
+            <div class="logo">
+                <img src="/img/labotec.png" alt="logo-labotec">
+            </div>
+            <!-- Opciones de cambio de idioma -->
+            <div class="languages">
+                <div class="language-option selected">
+                    <a href="/index.html" class="language-change">
+                        <img src="/assets/logos/colombia.svg" alt="Colombia">
+                        <p>Español</p>
+                    </a>
+                </div>
+                <div class="language-option">
+                    <a href="/pages/english-index.html" class="language-change">
+                        <img src="/assets/logos/usa.svg" alt="USA">
+                        <p class="text-unselected">English</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Decorative horizontal line -->
+    <hr class="decorative-line">
+
+    <main>
+        <!-- Enlace para volver a la página principal -->
+        <a href="/index.html">
+            <img src="/icons/arrow_back.svg" alt="Volver" style="margin-left: 1.5rem; margin-top: 1.5rem; width: 1.1rem; height: 1.1rem;">
+        </a>
+
+        <!-- Sección de tratamiento de aguas -->
+        <section class="conocer-mas-hero">
+            <div class="conocer-mas-header">
+                <!-- Encabezado y descripción principal -->
+                <h1 style="color: #242A5A">Tratamiento de aguas</h1>
+                <h2 style="color: #242A5A">Soluciones avanzadas y sostenibles para el tratamiento de agua potable y residual.</h2>
+                <p>Nos dedicamos al diseño, fabricación y operación de plantas de tratamiento de agua potable y residual, con un enfoque en la sostenibilidad y la eficiencia.</p>
+
+                <!-- Lista de servicios ofrecidos -->
+                <h2 style="color: #242A5A">Nuestros servicios incluyen:</h2>
+                <ul>
+                    <li style="color: #242A5A">Investigación y desarrollo de tecnologías de tratamiento de agua basadas en nanotecnología.</li>
+                    <li style="color: #242A5A">Diseño y fabricación de plantas de tratamiento adaptadas a las necesidades específicas.</li>
+                    <li style="color: #242A5A">Consultoría y gestión de proyectos personalizados para tratamiento de aguas industriales y municipales.</li>
+                    <li style="color: #242A5A">Tecnologías avanzadas de floculación, coagulación y desinfección para purificación del agua.</li>
+                </ul>
+            </div>
+
+            <!-- Imágenes ilustrativas de servicios -->
+            <div class="conocer-mas-services">
+                <div class="service">
+                    <img src="/img/tratamiento-de-aguas/tratamiento-de-aguas-1.jpg" alt="FOTO-1">
+                </div>
+                <div class="service">
+                    <img src="/img/tratamiento-de-aguas/tratamiento-de-aguas-2.jpg" alt="FOTO-2">
+                </div>
+                <div class="service">
+                    <img src="/img/tratamiento-de-aguas/tratamiento-de-aguas-3.jpg" alt="FOTO-3">
+                </div>
+            </div>
+        </section>
+
+        <!-- Botón flotante de WhatsApp -->
+        <section class="whatsapp-button">
+            <div class="whatsapp-container">
+                <!-- Ícono flotante de WhatsApp -->
+                <div class="whatsapp-icon" id="whatsappIcon">
+                    <img src="/icons/whatsapp.svg" alt="WhatsApp">
+                </div>
+
+                <!-- Ventana emergente de WhatsApp -->
+                <div class="whatsapp-box" id="whatsappBox">
+                    <div class="whatsapp-header">
+                        <p>Nuestro equipo de atención al cliente está listo para ayudarte. ¿Te gustaría más información sobre algún proyecto?</p>
+                    </div>
+                    <a href="https://wa.me/+573134322778" target="_blank" class="whatsapp-link">
+                        <div class="whatsapp-body">
+                            <div class="agent-info">
+                                <img src="https://cdn-icons-png.flaticon.com/512/14837/14837773.png" alt="Asesor">
+                                <div>
+                                    <p class="agent-name"><strong>Asesor Comercial</strong></p>
+                                    <p class="agent-status">Disponible</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Botón para cerrar la ventana de whatsapp -->
+                    <div class="close-button" id="closeChatBox">×</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Script para funcionalidades -->
+        <script src="/js/whatsapp.js"></script>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-bar">
+            <p>© 2024 LABOTEC | TODOS LOS DERECHOS RESERVADOS.</p>
+        </div>
+    </footer>
+</body>
+</html>
