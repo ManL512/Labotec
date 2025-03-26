@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     <header>
@@ -50,6 +52,12 @@
         <!-- Decorative Line -->
         <hr class="decorative-line">
 
+        <!-- Botón de menú móvil con Ionicons -->
+        <div class="mobile-menu-toggle" id="mobileMenuToggle">
+            <ion-icon name="menu" class="hamburger-icon"></ion-icon>
+            <ion-icon name="close" class="close-icon" style="display: none;"></ion-icon>
+        </div>
+
         <!-- Mobile Menu -->
         <div class="menu-mobile" id="menuMobile">
             <div class="menu-header">
@@ -62,10 +70,10 @@
                 <li><img class="menu-mobile-icons" src="/icons/about.svg" alt="about"><a href="pages/espanol/nosotros.html">Nosotros</a></li>
                 <li><img class="menu-mobile-icons" src="/icons/projects.svg" alt="projects"><a href="pages/water-analysis.html">Proyectos</a></li>
             </ul>
-            <div class="social-media">
-                <a href="https://facebook.com/labotec" target="_blank"><img src="/icons/facebook.svg" alt="Facebook" class="social-icon"></a>
-                <a href="https://instagram.com/labotec" target="_blank"><img src="/icons/instagram.svg" alt="Instagram" class="social-icon"></a>
-                <a href="https://twitter.com/labotec" target="_blank"><img src="/icons/linkedin.svg" alt="Twitter" class="social-icon"></a>
+            <div class="social-media" style="margin-top: 15em;">
+                <a href="https://facebook.com/labotec" target="_blank" style="margin-right: 1em;"><img src="/icons/facebook.svg" alt="Facebook" class="social-icon"></a>
+                <a href="https://instagram.com/labotec" target="_blank" style="margin-right: 1em;"><img src="/icons/instagram.svg" alt="Instagram" class="social-icon"></a>
+                <a href="https://twitter.com/labotec" target="_blank" style="margin-right: 1em;"><img src="/icons/linkedin.svg" alt="LinkedIn" class="social-icon"></a>
             </div>
         </div>
 
@@ -161,6 +169,7 @@
         </section>
 
         <script src="/js/whatsapp.js"></script>
+        <script src="/js/menu-movil.js"></script>
     </main>
 
     <footer>

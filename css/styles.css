@@ -158,24 +158,16 @@ body {
 }
 
 /*Menu Movil*/
-.hamburger-menu {
-    display: none;
+
+/* Bloquear el scroll del body cuando el menú está activo */
+body.menu-open {
+    overflow: hidden;
     position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1000;
-    cursor: pointer;
-    transform: translateX(1rem);
+    width: 100%;
+    height: 100%;
 }
 
-.hamburger-menu div {
-    width: 30px;
-    height: 3.5px;
-    background-color: #242A5A;
-    margin: 6px 0;
-    transition: 0.4s;
-    transform: translateY(0.8rem);
-}
+
 .menu-mobile {
     display: none;
     position: fixed;
@@ -186,39 +178,37 @@ body {
     background-color: #F8FAFC;
     color: white;
     z-index: 999;
+    display: flex; /* Para usar flexbox */
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Centra en el eje Y */
+    text-align: center;
     padding-top: 1rem;
 }
-
-.menu-mobile .logo {
-    margin-bottom: 0; /* Remove bottom margin */
-    padding-bottom: 0; /* Remove padding */
+.menu-header .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
-
 .menu-mobile ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 2rem;
-    flex-grow: 1;
+    margin-top: 2em; /* Remueve el margen para que no afecte el centrado */
+    flex-grow: 0; /* Evita que ocupe todo el espacio disponible */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem; /* Add spacing between items */
+    gap: 2rem;
 }
-
 .menu-mobile li {
     display: flex;
-    align-items: center; /* Align icon and text vertically */
-    gap: 0.8rem; /* Add spacing between icon and text */
-    padding: 0.5rem 0;
+    align-items: center;
+    gap: 0.8rem;
     font-size: 1.8rem;
     font-weight: bold;
     border-bottom: 2px solid transparent;
     transition: border-color 0.3s ease, color 0.3s ease;
-    width: 100%; /* Ensure full width for alignment consistency */
-    justify-content: flex-start; /* Align content to the left */
+    width: auto; /* Ajusta automáticamente el ancho según el contenido */
+    justify-content: center; /* Centra los elementos dentro del <li> */
 }
 
 .menu-mobile a {
@@ -226,8 +216,8 @@ body {
     color: #242A5A;
     font-size: 1.5rem;
     display: flex;
-    align-items: center; /* Ensure link content is vertically aligned */
-    width: 100%; /* Ensure the link spans full width for alignment */
+    align-items: center;
+    justify-content: center; /* Centra el texto y el icono */
 }
 
 .menu-mobile-icons {
@@ -244,7 +234,7 @@ body {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
-    padding: 4rem 0; /* Add padding at the bottom */
+    padding: 2rem 0; 
 }
 
 .social-icon {
@@ -253,6 +243,34 @@ body {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.mobile-menu-toggle {
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px; /* Ubicar en la izquierda */
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    font-size: 2em; /* Tamaño del ícono */
+    color: #242A5A; /* Color del ícono */
+    transform: translateY(0.8em);
+}
+
+.menu-mobile {
+    display: none;
+    position: absolute; /* Cambiado de fixed a absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.menu-mobile.active {
+    display: block;
+}
 /* Hero Section */
 .hero {
     display: grid;
