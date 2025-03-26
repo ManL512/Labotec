@@ -192,7 +192,7 @@ body.menu-open {
     gap: 0.5rem;
 }
 .menu-mobile ul {
-    margin-top: 2em; /* Remueve el margen para que no afecte el centrado */
+    margin-top: 4em; /* Remueve el margen para que no afecte el centrado */
     flex-grow: 0; /* Evita que ocupe todo el espacio disponible */
     display: flex;
     flex-direction: column;
@@ -221,9 +221,9 @@ body.menu-open {
 }
 
 .menu-mobile-icons {
-    width: 24px; /* Set a consistent width for icons */
-    height: 24px; /* Set a consistent height for icons */
-    flex-shrink: 0; /* Prevent icon from shrinking */
+    width: 24px; 
+    height: 24px; 
+    flex-shrink: 0;
 }
 
 .menu-mobile.open {
@@ -234,7 +234,7 @@ body.menu-open {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
-    padding: 2rem 0; 
+    padding: 8rem 0 0 2rem; /* Arriba: 8rem, Derecha: 0, Abajo: 0, Izquierda: 5rem */
 }
 
 .social-icon {
