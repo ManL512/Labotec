@@ -1,0 +1,306 @@
+/* --- VARIABLES Y ESTILOS GENERALES --- */
+:root {
+    --primary-color: #002855;
+    --secondary-color: #242A5A;
+    --accent-color: #00A0E3;
+    --light-color: #F5F9FC;
+    --text-color: #333333;
+    --border-radius: 12px;
+    --box-shadow: 0 8px 24px rgba(0, 40, 85, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Onest', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--light-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* --- BOTÓN VOLVER --- */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #e0e0e0;
+}
+
+.back-button img {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+/* --- SECCIÓN PRINCIPAL --- */
+.conocer-mas-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 1.5rem;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.conocer-mas-header h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.conocer-mas-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.conocer-mas-header h2 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 1.5rem 0 1rem;
+}
+
+.conocer-mas-header p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.conocer-mas-header ul {
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.conocer-mas-header li {
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.conocer-mas-header li::before {
+    content: '•';
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* --- SECCIÓN SERVICIOS (MOBILE FIRST) --- */
+.conocer-mas-services {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.service {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.service img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.service-content {
+    padding: 1.2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.service h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.service p {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.service .btn {
+    align-self: flex-start;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* --- EFECTOS HOVER SOLO PARA DISPOSITIVOS CON HOVER --- */
+@media (hover: hover) {
+    .back-button {
+        transition: var(--transition);
+    }
+    
+    .back-button:hover {
+        background-color: var(--primary-color);
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .back-button:hover img {
+        filter: brightness(0) invert(1);
+    }
+    
+    .service {
+        transition: var(--transition);
+    }
+    
+    .service:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 40, 85, 0.15);
+    }
+    
+    .service:hover img {
+        opacity: 0.9;
+    }
+    
+    .service::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: var(--accent-color);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+    }
+    
+    .service:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    
+    .service .btn {
+        transition: var(--transition);
+    }
+    
+    .service .btn:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-2px);
+    }
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Tablet (768px en adelante) */
+@media (min-width: 768px) {
+    .conocer-mas-hero {
+        margin: 2rem auto;
+        max-width: 1200px;
+        padding: 2rem;
+    }
+    
+    .conocer-mas-services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .service img {
+        height: 200px;
+    }
+    
+    .service-content {
+        padding: 1.5rem;
+    }
+    
+    .service h3 {
+        font-size: 1.2rem;
+    }
+    
+    .service p {
+        font-size: 0.95rem;
+    }
+    
+    .service .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Desktop (1024px en adelante) */
+@media (min-width: 1024px) {
+    .conocer-mas-services {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .service img {
+        height: 220px;
+    }
+    
+    .conocer-mas-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .conocer-mas-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Pequeños móviles (menos de 400px) */
+@media (max-width: 400px) {
+    .conocer-mas-hero {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    .service img {
+        height: 150px;
+    }
+    
+    .service-content {
+        padding: 1rem;
+    }
+    
+    .service h3 {
+        font-size: 1rem;
+    }
+    
+    .service p {
+        font-size: 0.85rem;
+    }
+    
+    .service .btn {
+        font-size: 0.85rem;
+    }
+}
