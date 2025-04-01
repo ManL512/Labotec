@@ -574,7 +574,6 @@ footer .footer-bar {
     margin: 0; /* Eliminamos márgenes extra */
     text-align: left;
 }
-
 /* Estilos básicos para las tarjetas */
 .info-box {
     background: #FFFFFF;
@@ -590,13 +589,11 @@ footer .footer-bar {
     height: auto;
     min-height: 250px;
 }
-
 /* Efecto Hover */
 .info-box:hover {
     transform: translateY(-5px) scale(1.02); /* Eleva y aumenta ligeramente la escala */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
-
 /* Línea vertical decorativa */
 .vertical-line {
     position: absolute;
@@ -611,7 +608,6 @@ footer .footer-bar {
         rgb(255, 255, 255) 100%    
     );
 }
-
 /* Contenido alineado a la izquierda */
 .info-box .content {
     display: flex;
@@ -621,7 +617,6 @@ footer .footer-bar {
     padding: 0.5rem 1rem; /* Reduce el padding interno */
     height: 100%;
 }
-
 /* Iconos */
 .nosotros-icon.modern-icon {
     background-color: #e3e6f1;
@@ -633,13 +628,12 @@ footer .footer-bar {
     align-self: center; /* Mantiene el icono centrado */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 /* Títulos alineados */
 .info-box h3 {
-    font-size: 1.4rem; /* Reducimos el tamaño del título */
+    font-size: 1.4rem; 
     color: #242A5A;
     margin: 0;
-    margin-bottom: 0.8rem; /* Ajustamos la distancia entre título y contenido */
+    margin-bottom: 0.8rem; 
 }
 /* Textos de párrafo y listas con mayor tamaño */
 .info-box p,
@@ -649,13 +643,12 @@ footer .footer-bar {
   line-height: 1.6;
   font-size: 1.1rem;
   text-align: justify;
-  text-justify: inter-word; /* Distribuye el espacio entre palabras */
-  -webkit-hyphens: none; /* Evita cortes de palabras en navegadores WebKit */
+  text-justify: inter-word; 
+  -webkit-hyphens: none; 
   -moz-hyphens: none; 
   -ms-hyphens: none; 
   hyphens: none; 
 }
-
 /* Botones alineados a la izquierda */
 .btn-modern {
     background-color: #002855;
@@ -670,70 +663,22 @@ footer .footer-bar {
     font-weight: bold;
     padding: 0.7rem 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Onest', sans-serif;
 }
-
 .btn-modern:hover {
     background-color: #1f3c5d;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 /* --- TERMINA PAGINA NOSOTROS --- */
 
-/* --- PAGINA TRATAMIENTO DE AGUAS --- */
-.conocer-mas-hero {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
-    margin: 1.5rem;
-    background-color: #fff;
-    padding: 1.5rem;
-}
-
-.conocer-mas-header h1, .hero-header h2 {
-    color: #002855;
-    margin-bottom: 1rem;
-}
-
-.conocer-mas-header h1 {
-    font-size: 2rem;
-    font-weight: 800;
-}
-
-.conocer-mas-header h2 {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.conocer-mas-header p, .service p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #242A5A;
-}
-
-.conocer-mas-services {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-.service {
-    flex: 1;
-    text-align: center;
-    background-color: #fff;
-
-    border-radius: 8px;
-    margin: 0 10px; /* Añade un margen entre los servicios */
-}
-
-.service img {
-    max-width: 100%;
-    max-height: 25rem;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    border: 1px solid #d9d9d9;
-}
-
 /* --- MEDIA QUERIES --- */
+
+/* Tablet (768px en adelante) */
+@media (min-width: 768px) {
+    .service img {
+        height: 200px;
+    }
+}
 
 /* ----------- MÓVILES (máximo 767px) ----------- */
 @media (max-width: 767px) {
@@ -757,7 +702,6 @@ footer .footer-bar {
     .menu {
         display: none; /* Oculta el menú de escritorio */
     }
-    /* Menú a columna (si hubiera .menu en mobile) */
     .menu {
         flex-direction: column;
         gap: 1rem;
@@ -801,23 +745,6 @@ footer .footer-bar {
     /* Footer */
     footer .footer-bar {
         padding: 1rem;
-    }
-    /* Página Tratamiento de Aguas */
-    .hero-services {
-        flex-direction: column;
-    }
-    .service {
-        margin: 0; /* Elimina el margen horizontal */
-        margin-bottom: 1rem; /* Añade margen inferior para separar las imágenes */
-    }
-    .conocer-mas-services {
-        display: flex;
-        flex-direction: column; /* Cambia la dirección a columna para móviles */
-        gap: 1rem; /* Espacio entre las imágenes */
-    }
-    .service img {
-        max-height: 15rem; 
-        width: 100%; 
     }
     /* Desactivar hover en tarjetas y botones (opcional en móvil) */
     .info-box:hover {
