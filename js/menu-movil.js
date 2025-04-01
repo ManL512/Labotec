@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburgerIcon = menuToggle.querySelector('.hamburger-icon');
     const closeIcon = menuToggle.querySelector('.close-icon');
     const body = document.body;
+    const whatsappSection = document.querySelector('.whatsapp-button');
 
     menuToggle.addEventListener('click', function() {
         // Alternar la visibilidad del menú
@@ -14,10 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburgerIcon.style.display = 'none';
             closeIcon.style.display = 'block';
             body.classList.add('menu-open'); // Bloquear scroll
+            if (whatsappSection) whatsappSection.style.display = 'none';
         } else {
             hamburgerIcon.style.display = 'block';
             closeIcon.style.display = 'none';
             body.classList.remove('menu-open'); // Permitir scroll
+            if (whatsappSection) whatsappSection.style.display = 'block';
         }
     });
 });
