@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nanotecnología en Procesos Industriales</title>
+    <title>Nanotecnología Industrial | LABOTEC</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles-nanotecnologia.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="hero-nanotec">
         <!-- Barra superior con información de contacto -->
         <div class="top-bar">
             <div class="contact-info">
@@ -20,6 +21,7 @@
                 <span><i class="fas fa-envelope"></i> <a href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
             </div>
         </div>
+        
         <!-- Barra de navegación principal -->
         <div class="navbar">
             <!-- Menú de hamburguesa para dispositivos móviles -->
@@ -30,7 +32,9 @@
             </div>
             <!-- Logotipo del sitio -->
             <div class="logo">
-                <img src="/img/labotec.png" alt="logo-labotec">
+                <a href="/index.html">
+                    <img src="/img/labotec.png" alt="logo-labotec">
+                </a>
             </div>
             <!-- Opciones de cambio de idioma -->
             <div class="languages">
@@ -48,83 +52,165 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Hero Banner -->
+        <div class="hero-content">
+            <h1>Nanotecnología Industrial</h1>
+            <p class="hero-subtitle">Soluciones avanzadas para procesos más eficientes y sostenibles</p>
+            <a href="#servicios" class="btn-hero">Ver servicios</a>
+        </div>
     </header>
 
-    <!-- Decorative horizontal line -->
-    <hr class="decorative-line">
-
     <main>
-        <!-- Enlace para volver a la página principal -->
-        <a href="/index.html">
-            <img src="/icons/arrow_back.svg" alt="Volver" style="margin-left: 1.5rem; margin-top: 1.5rem; width: 1.1rem; height: 1.1rem;">
-        </a>
-
-        <!-- Sección de tratamiento de aguas -->
-        <section class="conocer-mas-hero">
-            <div class="conocer-mas-header">
-                <!-- Encabezado y descripción principal -->
-                <h1 style="color: #242A5A">Nanotecnología en Procesos Industriales</h1>
-                <!-- Lista de servicios ofrecidos -->
-                <ul>
-                    <li style="color: #242A5A">Desarrollo de <strong>soluciones nanotecnológicas</strong> para la <strong>mejora de procesos industriales</strong>, enfocándonos en la optimización de recursos y la reducción del impacto ambiental.</li>
-                    <li style="color: #242A5A"> <strong>Investigación aplicada:</strong> Implementamos nanotecnología para lograr procesos más eficientes en la purificación del agua, la extracción de hidrocarburos y otras aplicaciones industriales.</li>
-                    <li style="color: #242A5A"> <strong>Consultoría y diseño personalizado: </strong>Ofrecemos soluciones a medida los procesos existentes para lograr mayores rendimientos y menores costos operativos.</li>
-                </ul>
-            </div>
-
-            <!-- Imágenes ilustrativas de servicios -->
-            <div class="conocer-mas-services">
-                <div class="service">
-                    <img src="/img/nanotecnologia-en-procesos-industriales/nanotecnologia-en-procesos-industriales-1.jpg" alt="FOTO-1">
+        <!-- Sección de Introducción -->
+        <section class="intro-section">
+            <div class="intro-container">
+                <div class="intro-text">
+                    <h2>Innovación a escala molecular</h2>
+                    <p>Desarrollamos soluciones nanotecnológicas que revolucionan los procesos industriales, optimizando recursos y minimizando el impacto ambiental mediante innovación a escala nanométrica.</p>
+                    <div class="intro-features">
+                        <div class="feature-item">
+                            <i class="fas fa-atom"></i>
+                            <span>Tecnología de vanguardia</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Sostenibilidad ambiental</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Eficiencia comprobada</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="service">
-                    <img src="/img/nanotecnologia-en-procesos-industriales/nanotecnologia-en-procesos-industriales-2.jpg" alt="FOTO-2">
-                </div>
-                <div class="service">
-                    <img src="/img/nanotecnologia-en-procesos-industriales/nanotecnologia-en-procesos-industriales-3.jpg" alt="FOTO-3">
+                <div class="intro-image">
+                    <img src="/img/nanotecnologia/nano-1.jpg" alt="Aplicaciones de nanotecnología">
                 </div>
             </div>
         </section>
 
-        <!-- Botón flotante de WhatsApp -->
-        <section class="whatsapp-button">
-            <div class="whatsapp-container">
-                <!-- Ícono flotante de WhatsApp -->
-                <div class="whatsapp-icon" id="whatsappIcon">
-                    <img src="/icons/whatsapp.svg" alt="WhatsApp">
-                </div>
-
-                <!-- Ventana emergente de WhatsApp -->
-                <div class="whatsapp-box" id="whatsappBox">
-                    <div class="whatsapp-header">
-                        <p>Nuestro equipo de atención al cliente está listo para ayudarte. ¿Te gustaría más información sobre algún proyecto?</p>
+        <!-- Sección de Servicios -->
+        <section class="services-section" id="servicios">
+            <h2 class="section-title">Nuestros servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="/img/nanotecnologia/nano-2.jpg" alt="Desarrollo nanotecnológico">
+                    <div class="service-content">
+                        <h3>Desarrollo de soluciones</h3>
+                        <p>Tecnologías avanzadas para mejora de procesos industriales con enfoque en optimización de recursos.</p>
+                        <a href="#" class="service-btn">Más información</a>
                     </div>
-                    <a href="https://wa.me/+573134322778" target="_blank" class="whatsapp-link">
-                        <div class="whatsapp-body">
-                            <div class="agent-info">
-                                <img src="https://cdn-icons-png.flaticon.com/512/14837/14837773.png" alt="Asesor">
-                                <div>
-                                    <p class="agent-name"><strong>Asesor Comercial</strong></p>
-                                    <p class="agent-status">Disponible</p>
-                                </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="/img/nanotecnologia/nano-3.jpg" alt="Investigación aplicada">
+                    <div class="service-content">
+                        <h3>Investigación aplicada</h3>
+                        <p>Implementamos nanotecnología para procesos más eficientes en diversas aplicaciones industriales.</p>
+                        <a href="#" class="service-btn">Más información</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="/img/nanotecnologia/nano-4.jpg" alt="Consultoría especializada">
+                    <div class="service-content">
+                        <h3>Consultoría técnica</h3>
+                        <p>Soluciones personalizadas para procesos existentes que mejoran rendimientos y reducen costos.</p>
+                        <a href="#" class="service-btn">Más información</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Beneficios -->
+        <section class="benefits-section">
+            <div class="benefits-container">
+                <div class="benefits-image">
+                    <img src="/img/nanotecnologia/nano-5.jpg" alt="Beneficios nanotecnología">
+                </div>
+                <div class="benefits-content">
+                    <h2>Ventajas competitivas</h2>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-number">01</div>
+                            <div>
+                                <h3>Eficiencia mejorada</h3>
+                                <p>Aumento en productividad industrial mediante catalizadores nanotecnológicos.</p>
                             </div>
                         </div>
-                    </a>
-                    <!-- Botón para cerrar la ventana de whatsapp -->
-                    <div class="close-button" id="closeChatBox">×</div>
+                        <div class="benefit-item">
+                            <div class="benefit-number">02</div>
+                            <div>
+                                <h3>Sostenibilidad</h3>
+                                <p>Reducción en consumo energético y menor generación de residuos.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-number">03</div>
+                            <div>
+                                <h3>Precisión molecular</h3>
+                                <p>Control exacto de materiales a nanoescala para resultados superiores.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Script para funcionalidades -->
-        <script src="/js/whatsapp.js"></script>
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2>¿Listo para innovar tus procesos industriales?</h2>
+                <p>Contáctanos para una consultoría gratuita sobre cómo la nanotecnología puede transformar tu operación.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:contacto@labotec.com" class="btn-cta">
+                        <i class="fas fa-envelope"></i> Escríbenos
+                    </a>
+                    <a href="https://wa.me/+573134322778" class="btn-cta whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Pie de página -->
     <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="/index.html">
+                    <img src="/img/labotec.png" alt="LABOTEC">
+                </a>
+                <p>Innovación tecnológica para procesos industriales avanzados.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Servicios</h3>
+                <ul>
+                    <li><a href="/servicios/nanotecnologia">Nanotecnología</a></li>
+                    <li><a href="/servicios/tratamiento-aguas">Tratamiento de Aguas</a></li>
+                    <li><a href="/servicios/hidrocarburos">Hidrocarburos</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-phone"></i> 313 432 2778</p>
+                <p><i class="fas fa-envelope"></i> contacto@labotec.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
         <div class="footer-bar">
-            <p>© 2024 LABOTEC | TODOS LOS DERECHOS RESERVADOS.</p>
+            <p>© 2024 LABOTEC | Todos los derechos reservados</p>
         </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="/js/whatsapp.js"></script>
 </body>
 </html>
