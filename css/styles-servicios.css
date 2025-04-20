@@ -88,6 +88,7 @@ body {
 .conocer-mas-header ul {
     padding-left: 1.5rem;
     margin-bottom: 2rem;
+    list-style-type: none; 
 }
 
 .conocer-mas-header li {
