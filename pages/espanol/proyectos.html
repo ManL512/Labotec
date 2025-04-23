@@ -59,19 +59,17 @@
     </style>
     
     <header>
+        <!-- Top Bar -->
         <div class="top-bar">
             <div class="contact-info">
-                <p>Contáctanos en</p>
-                <span><i class="fas fa-phone"></i> 313 432 2778</span>
+                <p>Comunícate al</p>
+                <span><i class="fas fa-phone"></i> <a href="https://wa.me/573134322778?text=Hola,%20estoy%20interesado%20en%20obtener%20más%20información%20sobre%20sus%20servicios." target="_blank">313 432 2778</a></span>
                 <span><i class="fas fa-envelope"></i> <a href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
             </div>
         </div>
+
+        <!-- Navbar de Desktop -->
         <div class="navbar">
-            <div class="hamburger-menu" id="hamburgerMenu">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
             <div class="logo">
                 <img src="/img/labotec.png" alt="logo-labotec">
             </div>
@@ -83,7 +81,7 @@
                     </a>
                 </div>
                 <div class="language-option">
-                    <a href="/pages/english-nosotros.html" class="language-change">
+                    <a href="/pages/ingles/english-index.html" class="language-change">
                         <img src="/assets/logos/usa.svg" alt="USA">
                         <p class="text-unselected">English</p>
                     </a>
@@ -91,24 +89,67 @@
             </div>
         </div>
 
-        <!-- Decorative horizontal line -->
+        <!-- Decorative Line -->
         <hr class="decorative-line">
 
-        <div class="menu-mobile" id="menuMobile">
-            <div class="logo">
-                <img src="/img/labotec.png" alt="logo-labotec" style="width: 150px;">
+        <!-- Botón de menú móvil -->
+        <button id="mobileMenuToggle" class="menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-icon">☰</span>
+            <span class="close-icon" style="display: none;">×</span>
+        </button>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="menuMobile">
+            <div class="menu-mobile-container">
+                <!-- Logo en la parte superior -->
+                <div class="menu-header">
+                    <div class="logo">
+                        <img src="/img/labotec.png" alt="logo-labotec">
+                    </div>
+                </div>
+                
+                <!-- Menú central -->
+                <ul class="mobile-nav-list">
+                    <li>
+                        <a href="/index.html">
+                            <img class="menu-mobile-icons" src="/icons/home.svg" alt="home">
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/pages/espanol/nosotros.html">
+                            <img class="menu-mobile-icons" src="/icons/about.svg" alt="about">
+                            <span>Nosotros</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/pages/espanol/proyectos.html">
+                            <img class="menu-mobile-icons" src="/icons/projects.svg" alt="projects">
+                            <span>Proyectos</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Redes sociales en la parte inferior -->
+                <div class="mobile-social-media">
+                    <a href="https://www.facebook.com/share/16PZecLqx5/?mibextid=wwXIfr" target="_blank">
+                        <img src="/icons/facebook.svg" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="https://instagram.com/labotec" target="_blank">
+                        <img src="/icons/instagram.svg" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="https://twitter.com/labotec" target="_blank">
+                        <img src="/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
+                    </a>
+                </div>
             </div>
-            <ul>
-                <li><img src="/icons/home.svg" alt="home"><a href="/index.html">Inicio</a></li>
-                <li><img src="/icons/about-selected.svg" alt="home"><a href="nosotros.html">Nosotros</a></li>
-                <li><img src="/icons/projects.svg" alt="home"><a href="pages/water-analysis.html">Proyectos</a></li>
-            </ul>
         </div>
+        <!-- Desktop Menu -->
         <div class="menu">
             <ul>
-                <li ><img src="/icons/home.svg" alt="home"><a href="/index.html">Inicio</a></li>
-                <li><img src="/icons/about.svg" alt="home"><a href="nosotros.html">Nosotros</a></li>
-                <li class="menu-selected" style="padding-right: 0.5rem;"><img src="/icons/projects.svg" alt="home"><a href="pages/water-analysis.html">Proyectos</a></li>
+                <li><img src="/icons/home.svg" alt="home"><a href="/index.html">Inicio</a></li>
+                <li ><img src="/icons/about.svg" alt="about"><a href="/pages/espanol/nosotros.html">Nosotros</a></li>
+                <li class="menu-selected"><img src="/icons/projects.svg" alt="projects"><a href="/pages/espanol/proyectos.html">Proyectos</a></li>
             </ul>
         </div>
     </header>
@@ -204,12 +245,15 @@
 
         </section>
 
-        <script src="/js/whatsapp.js"></script>     
+
     </main>
     <footer>
         <div class="footer-bar">
             <p>© 2024 LABOTEC | TODOS LOS DERECHOS RESERVADOS.</p>
         </div>
     </footer>
+    <!-- Script para funcionalidades -->
+    <script src="/js/whatsapp.js"></script>     
+    <script src="/js/menu-movil.js"></script>
 </body>
 </html>
