@@ -21,6 +21,160 @@
                 margin-bottom: 1.5rem;
             }
         }
+/* Estilos del botón del menú */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 15px;
+    z-index: 1001;
+    position: fixed;
+    top: 20px;
+    color: #242A5A;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Overlay del menú móvil */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-mobile-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Logo en la parte superior */
+.menu-header {
+    text-align: center;
+    padding: 20px 0;
+    flex-shrink: 0;
+}
+
+.menu-header .logo img {
+    max-height: 60px;
+    width: auto;
+}
+
+/* Menú central - crece para ocupar el espacio disponible */
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.mobile-nav-list li {
+    margin: 25px 0;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.4s ease;
+}
+
+.mobile-menu-overlay.active .mobile-nav-list li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-nav-list li a {
+    display: flex;
+    align-items: center;
+    color: #242A5A;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu-mobile-icons {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+}
+
+/* Redes sociales en la parte inferior */
+.mobile-social-media {
+    text-align: center;
+    padding: 30px 0;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.4s;
+}
+
+.mobile-menu-overlay.active .mobile-social-media {
+    opacity: 1;
+}
+
+.mobile-social-media a {
+    display: inline-block;
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+}
+
+.mobile-social-media a:hover {
+    transform: scale(1.1);
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+}
+
+/* Efectos de animación escalonada */
+.mobile-nav-list li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.mobile-nav-list li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.mobile-nav-list li:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+/* Bloquear scroll cuando el menú está abierto */
+.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
     </style>
 </head>
 <body>
@@ -28,19 +182,14 @@
         <!-- Top Bar -->
         <div class="top-bar">
             <div class="contact-info">
-                <p>Contáctanos en</p>
-                <span><i class="fas fa-phone"></i> 313 432 2778</span>
+                <p>Comunícate al</p>
+                <span><i class="fas fa-phone"></i> <a href="https://wa.me/573134322778?text=Hola,%20estoy%20interesado%20en%20obtener%20más%20información%20sobre%20sus%20servicios." target="_blank">313 432 2778</a></span>
                 <span><i class="fas fa-envelope"></i> <a href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
             </div>
         </div>
 
-        <!-- Navbar -->
+        <!-- Navbar de Desktop -->
         <div class="navbar">
-            <div class="hamburger-menu" id="hamburgerMenu">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
             <div class="logo">
                 <img src="/img/labotec.png" alt="logo-labotec">
             </div>
@@ -52,7 +201,7 @@
                     </a>
                 </div>
                 <div class="language-option">
-                    <a href="/pages/ingles/english-nosotros.html" class="language-change">
+                    <a href="/pages/ingles/english-index.html" class="language-change">
                         <img src="/assets/logos/usa.svg" alt="USA">
                         <p class="text-unselected">English</p>
                     </a>
@@ -63,37 +212,64 @@
         <!-- Decorative Line -->
         <hr class="decorative-line">
 
-        <!-- Botón de menú móvil con Ionicons -->
-        <div class="mobile-menu-toggle" id="mobileMenuToggle">
-            <ion-icon name="menu" class="hamburger-icon"></ion-icon>
-            <ion-icon name="close" class="close-icon" style="display: none;"></ion-icon>
-        </div>
+        <!-- Botón de menú móvil -->
+        <button id="mobileMenuToggle" class="menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-icon">☰</span>
+            <span class="close-icon" style="display: none;">×</span>
+        </button>
 
-        <!-- Mobile Menu -->
-        <div class="menu-mobile" id="menuMobile">
-            <div class="menu-header">
-                <div class="logo">
-                    <img src="/img/labotec.png" alt="logo-labotec">
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="menuMobile">
+            <div class="menu-mobile-container">
+                <!-- Logo en la parte superior -->
+                <div class="menu-header">
+                    <div class="logo">
+                        <img src="/img/labotec.png" alt="logo-labotec">
+                    </div>
+                </div>
+                
+                <!-- Menú central -->
+                <ul class="mobile-nav-list">
+                    <li>
+                        <a href="/index.html">
+                            <img class="menu-mobile-icons" src="/icons/home.svg" alt="home">
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/pages/espanol/nosotros.html">
+                            <img class="menu-mobile-icons" src="/icons/about.svg" alt="about">
+                            <span>Nosotros</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/pages/espanol/proyectos.html">
+                            <img class="menu-mobile-icons" src="/icons/projects.svg" alt="projects">
+                            <span>Proyectos</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Redes sociales en la parte inferior -->
+                <div class="mobile-social-media">
+                    <a href="https://www.facebook.com/share/16PZecLqx5/?mibextid=wwXIfr" target="_blank">
+                        <img src="/icons/facebook.svg" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="https://instagram.com/labotec" target="_blank">
+                        <img src="/icons/instagram.svg" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="https://twitter.com/labotec" target="_blank">
+                        <img src="/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
+                    </a>
                 </div>
             </div>
-            <ul style="margin-right: 2em;">
-                <li><img class="menu-mobile-icons" src="/icons/home.svg" alt="home"><a href="/index.html">Inicio</a></li>
-                <li><img class="menu-mobile-icons" src="/icons/about.svg" alt="about"><a href="/pages/espanol/nosotros.html">Nosotros</a></li>
-                <li><img class="menu-mobile-icons" src="/icons/projects.svg" alt="projects"><a href="/pages/espanol/">Proyectos</a></li>
-            </ul>
-            <div class="social-media" style="margin-top: 15em;">
-                <a href="https://facebook.com/labotec" target="_blank" style="margin-right: 1em;"><img src="/icons/facebook.svg" alt="Facebook" class="social-icon"></a>
-                <a href="https://instagram.com/labotec" target="_blank" style="margin-right: 1em;"><img src="/icons/instagram.svg" alt="Instagram" class="social-icon"></a>
-                <a href="https://twitter.com/labotec" target="_blank" style="margin-right: 1em;"><img src="/icons/linkedin.svg" alt="LinkedIn" class="social-icon"></a>
-            </div>
         </div>
-
         <!-- Desktop Menu -->
         <div class="menu">
             <ul>
-                <li><img src="/icons/home.svg" alt="home"><a href="/index.html">Inicio</a></li>
-                <li class="menu-selected"><img src="/icons/about-selected.svg" alt="about"><a href="nosotros.html">Nosotros</a></li>
-                <li><img src="/icons/projects.svg" alt="projects"><a href="proyectos.html">Proyectos</a></li>
+                <li><img src="/icons/home.svg" alt="home"><a href="#inicio">Inicio</a></li>
+                <li class="menu-selected"><img src="/icons/about-selected.svg" alt="about"><a href="/pages/espanol/nosotros.html">Nosotros</a></li>
+                <li><img src="/icons/projects.svg" alt="projects"><a href="/pages/espanol/proyectos.html">Proyectos</a></li>
             </ul>
         </div>
     </header>
