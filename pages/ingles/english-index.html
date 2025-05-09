@@ -14,31 +14,29 @@
 </head>
 <body>
     <header>
+        <!-- Top Bar -->
         <div class="top-bar">
             <div class="contact-info">
                 <p>Contact us at</p>
-                <span><i class="fas fa-phone"></i> <a href="https://wa.me/573134322778?text=Hello%20Labotec,%20I%20would%20like%20to%20get%20more%20information%20about%20your%20services.">313 432 2778</a></span>
-                <span><i class="fas fa-envelope"></i> <a href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
+                <span><i class="fas fa-phone"></i> <a href="https://wa.me/573134322778?text=Hello,%20I%20am%20interested%20in%20getting%20more%20information%20about%20your%20services." target="_blank">313 432 2778</a></span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:contact@labotec.com">contact@labotec.com</a></span>
             </div>
         </div>
+
+        <!-- Navbar de Desktop -->
         <div class="navbar">
-            <div class="hamburger-menu" id="hamburgerMenu">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
             <div class="logo">
-                <img src="/img/labotec.png" alt="logo-labotec">
+                <img src="/img/labotec.png" alt="labotec-logo">
             </div>
             <div class="languages">
                 <div class="language-option">
                     <a href="/index.html" class="language-change">
                         <img src="/assets/logos/colombia.svg" alt="Colombia">
-                        <p class="text-unselected">Español</p>
+                        <p class="text-unselected">Spanish</p>
                     </a>
                 </div>
                 <div class="language-option selected">
-                    <a href="/index.html" class="language-change">
+                    <a href="/pages/english/english-index.html" class="language-change">
                         <img src="/assets/logos/usa.svg" alt="USA">
                         <p>English</p>
                     </a>
@@ -46,56 +44,84 @@
             </div>
         </div>
 
-        <!-- Decorative horizontal line -->
+        <!-- Decorative Line -->
         <hr class="decorative-line">
-                
-        <!-- Botón de menú móvil con Ionicons -->
-        <div class="mobile-menu-toggle" id="mobileMenuToggle">
-            <ion-icon name="menu" class="hamburger-icon"></ion-icon>
-            <ion-icon name="close" class="close-icon" style="display: none;"></ion-icon>
-        </div>
 
-        <!-- Mobile Menu -->
-        <div class="menu-mobile" id="menuMobile">
-            <div class="menu-header">
-                <div class="logo">
-                    <img src="/img/labotec.png" alt="logo-labotec">
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuToggle" class="menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger-icon">☰</span>
+            <span class="close-icon" style="display: none;">×</span>
+        </button>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="menuMobile">
+            <div class="menu-mobile-container">
+                <!-- Logo at the top -->
+                <div class="menu-header">
+                    <div class="logo">
+                        <img src="/img/labotec.png" alt="labotec-logo">
+                    </div>
+                </div>
+                
+                <!-- Central menu -->
+                <ul class="mobile-nav-list">
+                    <li>
+                        <a href="#home">
+                            <img class="menu-mobile-icons" src="/icons/home.svg" alt="home">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/english/about-us.html">
+                            <img class="menu-mobile-icons" src="/icons/about.svg" alt="about">
+                            <span>About Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/english/projects.html">
+                            <img class="menu-mobile-icons" src="/icons/projects.svg" alt="projects">
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Social media at the bottom -->
+                <div class="mobile-social-media">
+                    <a href="https://www.facebook.com/share/16PZecLqx5/?mibextid=wwXIfr" target="_blank">
+                        <img src="/icons/facebook.svg" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="https://instagram.com/labotec" target="_blank">
+                        <img src="/icons/instagram.svg" alt="Instagram" class="social-icon">
+                    </a>
+                    <a href="https://twitter.com/labotec" target="_blank">
+                        <img src="/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
+                    </a>
                 </div>
             </div>
-            <ul style="margin-right: 2em;">
-                <li><img class="menu-mobile-icons" src="/icons/home.svg" alt="home"><a href="/pages/ingles/english-index.html">Home</a></li>
-                <li><img class="menu-mobile-icons" src="/icons/about.svg" alt="about"><a href="/pages/ingles/english-nosotros.html">About us</a></li>
-                <li><img class="menu-mobile-icons" src="/icons/projects.svg" alt="projects"><a href="pages/water-analysis.html">Projects</a></li>
-            </ul>
-            <div class="social-media" style="margin-top: 15em;">
-                <a href="https://facebook.com/labotec" target="_blank" style="margin-right: 1em;"><img src="/icons/facebook.svg" alt="Facebook" class="social-icon"></a>
-                <a href="https://instagram.com/labotec" target="_blank" style="margin-right: 1em;"><img src="/icons/instagram.svg" alt="Instagram" class="social-icon"></a>
-                <a href="https://twitter.com/labotec" target="_blank" style="margin-right: 1em;"><img src="/icons/linkedin.svg" alt="LinkedIn" class="social-icon"></a>
-            </div>
         </div>
-
         <!-- Desktop Menu -->
         <div class="menu">
             <ul>
-                <li class="menu-selected"><img src="/icons/home.svg" alt="home"><a href="#inicio">Home</a></li>
-                <li><img src="/icons/about.svg" alt="home"><a href="/pages/ingles/english-nosotros.html">About us</a></li>
-                <li><img src="/icons/projects.svg" alt="home"><a href="/pages/water-analysis.html">Projects</a></li>
+                <li class="menu-selected"><img src="/icons/home-selected.svg" alt="home"><a href="english-index.html">Home</a></li>
+                <li><img src="/icons/about.svg" alt="about"><a href="/pages/ingles/about-us.html">About Us</a></li>
+                <li><img src="/icons/projects.svg" alt="projects"><a href="/pages/ingles/english-index.html">Projects</a></li>
             </ul>
         </div>
     </header>
-    <main>
-        <section class="hero">
 
-           <!-- Card 1 -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Card 1 -->
             <div class="card card-blue">
-                <a href="/pages/water-analysis.html" class="image-link"> <!-- Link added -->
-                    <div class="image-container" style="background-image: url('/img/tratamiento-de-aguas/-portada-analisis-de-agua.jpg');"></div>
+                <a href="/pages/water-treatment.html" class="image-link">
+                    <div class="image-container" style="background-image: url('/img/nanotecnologia/-portada-nanotecnologia-en-procesos-industriales.jpg');"></div>
                 </a>
                 <h2 class="title">Water Treatment</h2>
                 <div class="card-content">
                     <h3 class="new-title">Water Treatment</h3>
-                    <p>Advanced and sustainable solutions for drinking and wastewater treatment</p>
-                    <button onclick="location.href='/pages/water-analysis.html'">Learn More</button>
+                    <p>Advanced and sustainable solutions for drinking and <br> wastewater treatment</p>
+                    <button><a href="pages/english/water-treatment.html" style="all: unset;"><b>Learn more</b></a></button>
                 </div>
             </div>
 
@@ -104,30 +130,27 @@
                 <div class="image-container" style="background-image: url('/img/hidrocarburos/-portada-hidrocarburos.jpg');"></div>
                 <h2 class="title">Hydrocarbons</h2>
                 <div class="card-content">
-                    <h3 class="new-title">Hydrocarbons</h3>
+                    <h2 class="new-title">Hydrocarbons</h2>
                     <p>Innovation in Hydrocarbon Extraction with Nanotechnology</p>
-                    <a href="/pages/water-analysis.html">
-                        <button> <b>Learn More</b></button>
-                    </a>
+                    <a href="/pages/english/hydrocarbons.html"><button><b>Learn more</b></button></a>
                 </div>
             </div>
 
             <!-- Card 3 -->
             <div class="card card-blue">
-                <div class="image-container" style="background-image: url('/img/nanotecnologia-en-procesos-industriales/-portada-nanotecnologia-en-procesos-industriales.jpg');"></div>
+                <div class="image-container" style="background-image: url('/img/nanotecnologia/-portada-nanotecnologia-en-procesos-industriales.jpg');"></div>
                 <h2 class="title">Nanotechnology in Industrial Processes</h2>
                 <div class="card-content">
                     <h3 class="new-title">Nanotechnology in Industrial Processes</h3>
                     <p>Innovation in Hydrocarbon Extraction with Nanotechnology</p>
-                    <a href="/pages/water-analysis.html">
-                        <button> <b>Learn More</b></button>
-                    </a>
+                    <a href="/pages/english/nanotechnology-in-industrial-processes.html"><button><b>Learn more</b></button></a>
                 </div>
             </div>
+        </section>
 
-        </section>                
+        <!-- Clients Section -->
         <section class="clients">
-            <h3 class="clients-text">Our clients support us</h3>
+            <h3 class="clients-text">Our clients trust us</h3>
             <div class="logos">
                 <img src="/img/britcham.png" alt="Britcham Colombia">
                 <img src="/img/unab.png" alt="UNAB">
@@ -136,30 +159,27 @@
                 <img src="/img/amb.png" alt="AMB">
             </div>
         </section>
-        
+
+        <!-- WhatsApp Button -->
         <section class="whatsapp-button">
-            <!-- Floating button and chat box -->
             <div class="whatsapp-container">
-                <!-- Floating WhatsApp icon -->
                 <div class="whatsapp-icon" id="whatsappIcon">
                     <img src="/icons/whatsapp.svg" alt="WhatsApp Icon">
                 </div>
-
-                <!-- WhatsApp popup window -->
                 <div class="whatsapp-box" id="whatsappBox">
                     <div class="whatsapp-header">
                         <p class="whatsapp-text">
-                             <strong>Our customer service team is at your disposal.</strong>
-                             <br> 
-                             <br>
-                             Are you interested in getting more information about any of our projects?</p>
+                            <strong>Our customer service team is at your disposal.</strong>
+                            <br><br>
+                            Are you interested in getting more information about any of our projects?
+                        </p>
                     </div>
                     <a href="https://wa.me/+573134322778" target="_blank" class="whatsapp-link">
                         <div class="whatsapp-body">
                             <div class="agent-info">
-                                <img src="https://cdn-icons-png.flaticon.com/512/14837/14837773.png" alt="Advisor">
+                                <img src="https://cdn-icons-png.flaticon.com/512/14837/14837773.png" alt="Agent">
                                 <div>
-                                    <p class="agent-name"><strong>Commercial Advisor</strong></p>
+                                    <p class="agent-name"><strong>Sales Advisor</strong></p>
                                     <p class="agent-status">Available</p>
                                 </div>
                             </div>
@@ -168,17 +188,16 @@
                     <div class="close-button" id="closeChatBox">×</div>
                 </div>
             </div>
-
         </section>
 
         <script src="/js/whatsapp.js"></script>
         <script src="/js/menu-movil.js"></script>
     </main>
+
     <footer>
         <div class="footer-bar">
             <p>© 2024 LABOTEC | ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
-   
 </body>
 </html>
