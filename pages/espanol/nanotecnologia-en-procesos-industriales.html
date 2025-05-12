@@ -12,6 +12,101 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+<style>
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem 1.5rem;
+}
+
+.volver {
+  flex: 1;
+}
+
+.logo {
+  flex: 1;
+  text-align: center;
+}
+
+.languages {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.btn-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-volver i {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+/* Hover solo en escritorio */
+@media (hover: hover) and (pointer: fine) {
+  .btn-volver:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-volver:hover i {
+    color: #6EC1E4;
+  }
+}
+
+/* Hover solo en escritorio */
+@media (hover: hover) and (pointer: fine) {
+  .btn-hero:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-hero:hover i {
+    color: #6EC1E4;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .volver,
+  .logo,
+  .languages {
+    flex: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  .languages {
+    justify-content: center;
+  }
+}
+
+
+
+</style>
     <header class="hero-nanotec">
         <!-- Barra superior con información de contacto -->
         <div class="top-bar">
@@ -22,53 +117,43 @@
             </div>
         </div>
         
-        <!-- Barra de navegación principal -->
-        <div class="navbar">
-            <!-- Menú de hamburguesa para dispositivos móviles -->
-            <div class="hamburger-menu" id="hamburgerMenu">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <!-- Logotipo del sitio -->
-            <div class="logo">
-                <a href="/index.html">
-                    <img src="/img/labotec.png" alt="logo-labotec">
-                </a>
-            </div>
-            <!-- Opciones de cambio de idioma -->
-            <div class="languages">
-                <div class="language-option selected">
-                    <a href="/index.html" class="language-change">
-                        <img src="/assets/logos/colombia.svg" alt="Colombia">
-                        <p>Español</p>
-                    </a>
-                </div>
-                <div class="language-option">
-                    <a href="/pages/english-index.html" class="language-change">
-                        <img src="/assets/logos/usa.svg" alt="USA">
-                        <p class="text-unselected">English</p>
-                    </a>
-                </div>
-            </div>
+<nav class="navbar">
+  <div class="volver">
+    <a href="/index.html" class="btn-volver">← Volver</a>
+  </div>
+
+  <div class="logo">
+    <img src="/img/labotec.png" alt="Logo">
+  </div>
+
+ <!-- Idiomas (derecha) -->
+    <div class="languages">
+        <div class="language-option selected">
+            <a href="/index.html" class="language-change">
+                <img src="/assets/logos/colombia.svg" alt="Colombia">
+                <p>Español</p>
+            </a>
         </div>
+        <div class="language-option">
+            <a href="/pages/english-index.html" class="language-change">
+                <img src="/assets/logos/usa.svg" alt="USA">
+                <p class="text-unselected">English</p>
+            </a>
+        </div>
+    </div>
+</nav>
+
         
         <!-- Hero Banner -->
         <div class="hero-content">
             <h1>Nanotecnología Industrial</h1>
             <p class="hero-subtitle">Soluciones avanzadas para procesos más eficientes y sostenibles</p>
             <a href="#servicios" class="btn-hero">Ver servicios</a>
+
         </div>
     </header>
 
     <main>
-        <!-- Botón Volver Atrás -->
-        <div class="back-button-container">
-            <a href="/index.html" class="back-button">
-                <i class="fas fa-arrow-left"></i> Volver al inicio
-            </a>
-        </div>
-
         <!-- Sección de Introducción -->
         <section class="intro-section">
             <div class="intro-container">
