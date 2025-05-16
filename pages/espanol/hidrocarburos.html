@@ -3,37 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidrocarburos - LABOTEC</title>
+    <title>Hidrocarburos | LABOTEC</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/styles-servicios.css">
+    <link rel="stylesheet" href="/css/styles-nanotecnologia.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 1rem 1.5rem;
+        }
+
+        .volver {
+            flex: 1;
+        }
+
+        .logo {
+            flex: 1;
+            text-align: center;
+        }
+
+        .languages {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        .btn-volver {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 2rem;
+            padding: 0.5rem 1.2rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-volver i {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+        }
+
+        /* Estilos para el logo */
+        .logo img {
+            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7))
+                    drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+            transition: filter 0.3s ease, transform 0.3s ease;
+            width: auto;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .hero-nanotec .logo img {
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8))
+                    drop-shadow(0 0 3px rgba(0, 0, 0, 0.7));
+        }
+
+        @media (hover: hover) {
+            .btn-volver:hover {
+                background-color: rgba(255, 255, 255, 0.25);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .btn-volver:hover i {
+                color: #6EC1E4;
+            }
+
+            .btn-hero:hover {
+                background-color: rgba(255, 255, 255, 0.25);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .btn-hero:hover i {
+                color: #6EC1E4;
+            }
+
+            .logo img:hover {
+                filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9))
+                        drop-shadow(0 0 4px rgba(0, 0, 0, 0.7));
+                transform: scale(1.05);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .volver,
+            .logo,
+            .languages {
+                flex: none;
+                text-align: center;
+                width: 100%;
+            }
+
+            .languages {
+                justify-content: center;
+            }
+        }
+
+        /* Estilos específicos para hidrocarburos */
+        .hydrocarbon-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .hydrocarbon-type {
+            background: var(--light-color);
+            padding: 1rem;
+            border-radius: 8px;
+            flex: 1 1 200px;
+            min-width: 200px;
+        }
+
+        .hydrocarbon-type h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .step-icon {
+            background: var(--secondary-color);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <!-- Barra superior con información de contacto -->
-        <div class="top-bar">
-            <div class="contact-info">
-                <p>Comunícate al </p>
-                <span><i class="fas fa-phone"></i> 313 432 2778</span>
-                <span><i class="fas fa-envelope"></i> <a href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
+    <header class="hero-nanotec">
+        <nav class="navbar">
+            <div class="volver">
+                <a href="/index.html" class="btn-volver">← Volver</a>
             </div>
-        </div>
-        <!-- Barra de navegación principal -->
-        <div class="navbar">
-            <!-- Menú de hamburguesa para dispositivos móviles -->
-            <div class="hamburger-menu" id="hamburgerMenu">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <!-- Logotipo del sitio -->
+
             <div class="logo">
-                <img src="/img/labotec.png" alt="logo-labotec">
+                <img src="/img/labotec.png" alt="LABOTEC">
             </div>
-            <!-- Opciones de cambio de idioma -->
+
             <div class="languages">
                 <div class="language-option selected">
                     <a href="/index.html" class="language-change">
@@ -48,104 +195,203 @@
                     </a>
                 </div>
             </div>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>Soluciones en Hidrocarburos</h1>
+            <p class="hero-subtitle">Tecnología avanzada para exploración, producción y transformación energética</p>
+            <a href="#servicios" class="btn-hero">Ver aplicaciones</a>
         </div>
     </header>
 
-    <!-- Decorative horizontal line -->
-    <hr class="decorative-line">
-
     <main>
-        <!-- Enlace para volver a la página principal -->
-        <a href="/index.html" class="back-button">
-            <img src="/icons/arrow_back.svg" alt="Volver">
-            Volver al inicio
-        </a>
-
-        <!-- Sección de Hidrocarburos -->
-        <section class="conocer-mas-hero">
-            <div class="conocer-mas-header">
-                <h1>Hidrocarburos</h1>
-                <h2>Soluciones tecnológicas avanzadas para la extracción de hidrocarburos</h2>
-                <p>En nuestro laboratorio, nos especializamos en el desarrollo de soluciones tecnológicas avanzadas para la extracción de hidrocarburos con enfoque en las arenas bituminosas. Mediante la aplicación de nanotecnología, optimizamos los procesos de extracción, mejorando la eficiencia y reduciendo significativamente el impacto ambiental.</p>
-                
-                <p>Nuestro objetivo es incrementar el rendimiento de las operaciones de extracción, utilizando métodos sostenibles que minimicen el consumo de recursos y maximicen el aprovechamiento de los hidrocarburos presentes en depósitos complejos.</p>
-    
-                <h2>Nuestros servicios incluyen:</h2>
-                <ul class="custom-list">
-                    <li><strong>Investigación y desarrollo de técnicas de extracción avanzadas:</strong> Utilizamos nanotecnología para mejorar la eficiencia de la extracción de hidrocarburo, minimizando el uso de agua y energía en comparación con los métodos tradicionales.</li>
-                    <li><strong>Optimización de procesos de extracción</strong> mediante <strong>nanotecnología avanzada</strong>, mejorando la eficiencia energética y reduciendo los residuos generados.</li>
-                    <li>Consultoría técnica y diseño de soluciones personalizadas, adaptadas a las necesidades de cada proyecto en el sector de los hidrocarburos.</li>
-                    <li>Implementación de tecnologías limpias: Aseguramos que los procesos de extracción sean más limpios y eco-eficientes, contribuyendo a la preservación del medio ambiente.</li>
-                </ul>
+        <section class="intro-section">
+            <div class="intro-container">
+                <div class="intro-text">
+                    <h2>Innovación en el sector energético</h2>
+                    <p>Los hidrocarburos constituyen la base de la economía energética moderna. En LABOTEC desarrollamos tecnologías para optimizar su extracción, procesamiento y uso sostenible, minimizando el impacto ambiental y maximizando la eficiencia operativa.</p>
+                    
+                    <div class="hydrocarbon-features">
+                        <div class="hydrocarbon-type">
+                            <h4><i class="fas fa-fire"></i> Alcanos</h4>
+                            <p>Hidrocarburos saturados con enlaces simples, fundamentales en combustibles.</p>
+                        </div>
+                        <div class="hydrocarbon-type">
+                            <h4><i class="fas fa-atom"></i> Alquenos</h4>
+                            <p>Compuestos insaturados con dobles enlaces, importantes en la industria petroquímica.</p>
+                        </div>
+                        <div class="hydrocarbon-type">
+                            <h4><i class="fas fa-ring"></i> Aromáticos</h4>
+                            <p>Estructuras cíclicas con propiedades únicas para síntesis química.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <img src="/img/hidrocarburos/refineria.jpg" alt="Planta de refinación de hidrocarburos">
+                </div>
             </div>
-    
-            <div class="conocer-mas-services">
-                <div class="service">
-                    <img src="/img/hidrocarburos/extraccion-avanzada.jpg" alt="Extracción avanzada">
+        </section>
+
+        <section class="services-section" id="servicios">
+            <h2 class="section-title">Procesos clave</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="/img/hidrocarburos/extraccion.jpg" alt="Extracción de hidrocarburos">
                     <div class="service-content">
-                        <h3>Técnicas de Extracción Avanzada</h3>
-                        <p>Nanotecnología aplicada para maximizar la eficiencia en la extracción de hidrocarburos.</p>
-                        <a href="#" class="btn">Saber más</a>
+                        <h3>Extracción</h3>
+                        <p>Técnicas avanzadas de perforación y recuperación mejorada para maximizar el rendimiento de yacimientos convencionales y no convencionales.</p>
+                        <a href="#" class="service-btn">Detalles técnicos</a>
                     </div>
                 </div>
-                <div class="service">
-                    <img src="/img/hidrocarburos/optimizacion-procesos.jpg" alt="Optimización de procesos">
+                
+                <div class="service-card">
+                    <img src="/img/hidrocarburos/refinacion.jpg" alt="Refinación de petróleo">
                     <div class="service-content">
-                        <h3>Optimización de Procesos</h3>
-                        <p>Reducción de residuos y mejora en la eficiencia energética mediante nanotecnología.</p>
-                        <a href="#" class="btn">Saber más</a>
+                        <h3>Refinación</h3>
+                        <p>Procesos de destilación, craqueo y tratamiento para transformar crudo en productos de alto valor agregado.</p>
+                        <a href="#" class="service-btn">Ver tecnologías</a>
                     </div>
                 </div>
-                <div class="service">
-                    <img src="/img/hidrocarburos/tecnologias-limpias.jpg" alt="Tecnologías limpias">
+                
+                <div class="service-card">
+                    <img src="/img/hidrocarburos/transporte.jpg" alt="Transporte de hidrocarburos">
                     <div class="service-content">
-                        <h3>Tecnologías Limpias</h3>
-                        <p>Soluciones eco-eficientes para una extracción más sostenible.</p>
-                        <a href="#" class="btn">Saber más</a>
+                        <h3>Transporte y Logística</h3>
+                        <p>Soluciones seguras y eficientes para el manejo de hidrocarburos a través de ductos, buques y almacenamiento.</p>
+                        <a href="#" class="service-btn">Más información</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Botón flotante de WhatsApp -->
-        <section class="whatsapp-button">
-            <div class="whatsapp-container">
-                <!-- Ícono flotante de WhatsApp -->
-                <div class="whatsapp-icon" id="whatsappIcon">
-                    <img src="/icons/whatsapp.svg" alt="WhatsApp">
+        <section class="benefits-section">
+            <div class="benefits-container">
+                <div class="benefits-image">
+                    <img src="/img/hidrocarburos/aplicaciones.jpg" alt="Aplicaciones de hidrocarburos">
                 </div>
-
-                <!-- Ventana emergente de WhatsApp -->
-                <div class="whatsapp-box" id="whatsappBox">
-                    <div class="whatsapp-header">
-                        <p>Nuestro equipo de atención al cliente está listo para ayudarte. ¿Te gustaría más información sobre algún proyecto?</p>
-                    </div>
-                    <a href="https://wa.me/+573134322778" target="_blank" class="whatsapp-link">
-                        <div class="whatsapp-body">
-                            <div class="agent-info">
-                                <img src="https://cdn-icons-png.flaticon.com/512/14837/14837773.png" alt="Asesor">
-                                <div>
-                                    <p class="agent-name"><strong>Asesor Comercial</strong></p>
-                                    <p class="agent-status">Disponible</p>
-                                </div>
+                <div class="benefits-content">
+                    <h2>Aplicaciones industriales</h2>
+                    
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-icon">
+                                <i class="fas fa-gas-pump"></i>
+                            </div>
+                            <div>
+                                <h3>Combustibles</h3>
+                                <p>Gasolinas, diésel, turbosina y otros derivados para transporte e industria.</p>
                             </div>
                         </div>
-                    </a>
-                    <!-- Botón para cerrar la ventana de whatsapp -->
-                    <div class="close-button" id="closeChatBox">×</div>
+                        <div class="process-step">
+                            <div class="step-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <div>
+                                <h3>Petroquímica</h3>
+                                <p>Materias primas para plásticos, fertilizantes, medicamentos y miles de productos.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h3>Generación energética</h3>
+                                <p>Combustibles para plantas termoeléctricas y cogeneración.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Script para funcionalidades -->
-        <script src="/js/whatsapp.js"></script>
+        <section class="intro-section" style="background-color: var(--light-color);">
+            <div class="intro-container">
+                <div class="intro-text">
+                    <h2>Sostenibilidad ambiental</h2>
+                    <p>Implementamos tecnologías para minimizar el impacto ambiental de los hidrocarburos:</p>
+                    
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-number"><i class="fas fa-leaf"></i></div>
+                            <div>
+                                <h3>Reducción de emisiones</h3>
+                                <p>Tecnologías de captura de carbono y combustión limpia.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-number"><i class="fas fa-recycle"></i></div>
+                            <div>
+                                <h3>Economía circular</h3>
+                                <p>Reutilización de subproductos y residuos del proceso.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-number"><i class="fas fa-water"></i></div>
+                            <div>
+                                <h3>Protección hídrica</h3>
+                                <p>Sistemas avanzados para tratamiento de aguas residuales.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <img src="/img/hidrocarburos/sostenibilidad.jpg" alt="Medidas de sostenibilidad">
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2>¿Necesitas soluciones para la industria de hidrocarburos?</h2>
+                <p>Nuestros expertos están listos para asesorarte en la optimización de tus procesos energéticos.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:contacto@labotec.com" class="btn-cta">
+                        <i class="fas fa-envelope"></i> Contactar experto
+                    </a>
+                    <a href="https://wa.me/+573134322778" class="btn-cta whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Pie de página -->
     <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="/index.html">
+                    <img src="/img/labotec.png" alt="LABOTEC">
+                </a>
+                <p>Tecnología avanzada para la industria energética y petroquímica.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Servicios</h3>
+                <ul>
+                    <li><a href="/servicios/hidrocarburos">Hidrocarburos</a></li>
+                    <li><a href="/servicios/nanotecnologia">Nanotecnología</a></li>
+                    <li><a href="/servicios/tratamiento-aguas">Tratamiento de Aguas</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-phone"></i> 313 432 2778</p>
+                <p><i class="fas fa-envelope"></i> contacto@labotec.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
         <div class="footer-bar">
-            <p>© 2025 LABOTEC | TODOS LOS DERECHOS RESERVADOS.</p>
+            <p>© 2025 LABOTEC | Todos los derechos reservados</p>
         </div>
     </footer>
+
+    <script src="/js/whatsapp.js"></script>
 </body>
 </html>
