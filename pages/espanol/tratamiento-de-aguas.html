@@ -3,37 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tratamiento de aguas</title>
+    <title>Tratamiento de Aguas | LABOTEC</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/styles-servicios.css">
+    <link rel="stylesheet" href="/css/styles-nanotecnologia.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 1rem 1.5rem;
+        }
+
+        .volver {
+            flex: 1;
+        }
+
+        .logo {
+            flex: 1;
+            text-align: center;
+        }
+
+        .languages {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        .btn-volver {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 2rem;
+            padding: 0.5rem 1.2rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-volver i {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+        }
+
+        /* Estilos para el logo (solución de visibilidad) */
+        .logo img {
+            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7))
+                    drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+            transition: filter 0.3s ease, transform 0.3s ease;
+            width: auto;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .hero-nanotec .logo img {
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8))
+                    drop-shadow(0 0 3px rgba(0, 0, 0, 0.7));
+        }
+
+        .intro-section .logo img,
+        .services-section .logo img,
+        .benefits-section .logo img {
+            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.9))
+                    drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+        }
+
+        @media (hover: hover) {
+            .btn-volver:hover {
+                background-color: rgba(255, 255, 255, 0.25);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .btn-volver:hover i {
+                color: #6EC1E4;
+            }
+
+            .btn-hero:hover {
+                background-color: rgba(255, 255, 255, 0.25);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+
+            .btn-hero:hover i {
+                color: #6EC1E4;
+            }
+
+            .logo img:hover {
+                filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9))
+                        drop-shadow(0 0 4px rgba(0, 0, 0, 0.7));
+                transform: scale(1.05);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .volver,
+            .logo,
+            .languages {
+                flex: none;
+                text-align: center;
+                width: 100%;
+            }
+
+            .languages {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <!-- Barra superior con información de contacto -->
-        <div class="top-bar">
-            <div class="contact-info">
-                <p>Comunícate al </p>
-                <span><i class="fas fa-phone"></i> 313 432 2778</span>
-                <span><i class="fas fa-envelope"></i> <a href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
+    <header class="hero-nanotec">
+        <nav class="navbar">
+            <div class="volver">
+                <a href="/index.html" class="btn-volver">← Volver</a>
             </div>
-        </div>
-        <!-- Barra de navegación principal -->
-        <div class="navbar">
-            <!-- Menú de hamburguesa para dispositivos móviles -->
-            <div class="hamburger-menu" id="hamburgerMenu">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <!-- Logotipo del sitio -->
+
             <div class="logo">
-                <img src="/img/labotec.png" alt="logo-labotec">
+                <img src="/img/labotec.png" alt="LABOTEC">
             </div>
-            <!-- Opciones de cambio de idioma -->
+
             <div class="languages">
                 <div class="language-option selected">
                     <a href="/index.html" class="language-change">
@@ -48,103 +152,159 @@
                     </a>
                 </div>
             </div>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>Tratamiento de Aguas Integral</h1>
+            <p class="hero-subtitle">Soluciones avanzadas para purificación, reutilización y gestión sostenible del agua</p>
+            <a href="#servicios" class="btn-hero">Nuestros sistemas</a>
         </div>
     </header>
 
-    <!-- Decorative horizontal line -->
-    <hr class="decorative-line">
-
     <main>
-        <!-- Enlace para volver a la página principal -->
-
-        <a href="/index.html" class="back-button">
-            <img src="/icons/arrow_back.svg" alt="Volver">
-            Volver al inicio
-        </a>
-
-        <!-- Sección de tratamiento de aguas -->
-        <section class="conocer-mas-hero">
-            <div class="conocer-mas-header">
-                <h1>Tratamiento de aguas</h1>
-                <h2>Soluciones avanzadas y sostenibles para el tratamiento de agua potable y residual.</h2>
-                <p>Nos dedicamos al diseño, fabricación y operación de plantas de tratamiento de agua potable y residual, con un enfoque en la sostenibilidad y la eficiencia.</p>
-    
-                <h2>Nuestros servicios incluyen:</h2>
-                <ul>
-                    <li>Investigación y desarrollo de tecnologías de tratamiento de agua basadas en nanotecnología.</li>
-                    <li>Diseño y fabricación de plantas de tratamiento adaptadas a las necesidades específicas.</li>
-                    <li>Consultoría y gestión de proyectos personalizados para tratamiento de aguas industriales y municipales.</li>
-                    <li>Tecnologías avanzadas de floculación, coagulación y desinfección para purificación del agua.</li>
-                </ul>
+        <section class="intro-section">
+            <div class="intro-container">
+                <div class="intro-text">
+                    <h2>Tecnología para la gestión hídrica</h2>
+                    <p>Desarrollamos sistemas de tratamiento de aguas adaptados a cada necesidad, desde procesos industriales hasta soluciones municipales, garantizando calidad, eficiencia y cumplimiento normativo.</p>
+                    <div class="intro-features">
+                        <div class="feature-item">
+                            <i class="fas fa-tint"></i>
+                            <span>Purificación avanzada</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-recycle"></i>
+                            <span>Reutilización eficiente</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Optimización de costos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <img src="/img/tratamiento-aguas/planta-tratamiento.jpg" alt="Planta de tratamiento de aguas">
+                </div>
             </div>
-    
-            <div class="conocer-mas-services">
-                <div class="service">
-                    <img src="/img/tratamiento-de-aguas/tratamiento-de-aguas-1.jpg" alt="Planta de tratamiento">
+        </section>
+
+        <section class="services-section" id="servicios">
+            <h2 class="section-title">Nuestras soluciones</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="/img/tratamiento-aguas/tratamiento-fisico.jpg" alt="Tratamiento físico">
                     <div class="service-content">
-                        <h3>Plantas de Tratamiento</h3>
-                        <p>Diseño y fabricación de plantas adaptadas a sus necesidades específicas.</p>
-                        <a href="#" class="btn">Saber más</a>
+                        <h3>Tratamientos Físicos</h3>
+                        <p>Sistemas de filtración, sedimentación y separación para remoción de sólidos y partículas en suspensión.</p>
+                        <a href="#" class="service-btn">Más información</a>
                     </div>
                 </div>
-                <div class="service">
-                    <img src="/img/tratamiento-de-aguas/tratamiento-de-aguas-2.jpg" alt="Tecnología avanzada">
+                
+                <div class="service-card">
+                    <img src="/img/tratamiento-aguas/tratamiento-quimico.jpg" alt="Tratamiento químico">
                     <div class="service-content">
-                        <h3>Tecnología Avanzada</h3>
-                        <p>Soluciones basadas en nanotecnología para máxima eficiencia.</p>
-                        <a href="#" class="btn">Saber más</a>
+                        <h3>Tratamientos Químicos</h3>
+                        <p>Coagulación, floculación, oxidación avanzada y otros procesos para eliminación de contaminantes.</p>
+                        <a href="#" class="service-btn">Más información</a>
                     </div>
                 </div>
-                <div class="service">
-                    <img src="/img/tratamiento-de-aguas/tratamiento-de-aguas-3.jpg" alt="Consultoría especializada">
+                
+                <div class="service-card">
+                    <img src="/img/tratamiento-aguas/tratamiento-biologico.jpg" alt="Tratamiento biológico">
                     <div class="service-content">
-                        <h3>Consultoría</h3>
-                        <p>Gestión de proyectos personalizados para tratamiento de aguas.</p>
-                        <a href="#" class="btn">Saber más</a>
+                        <h3>Tratamientos Biológicos</h3>
+                        <p>Reactores biológicos, humedales artificiales y sistemas de digestión para degradación de materia orgánica.</p>
+                        <a href="#" class="service-btn">Más información</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Botón flotante de WhatsApp -->
-        <section class="whatsapp-button">
-            <div class="whatsapp-container">
-                <!-- Ícono flotante de WhatsApp -->
-                <div class="whatsapp-icon" id="whatsappIcon">
-                    <img src="/icons/whatsapp.svg" alt="WhatsApp">
+        <section class="benefits-section">
+            <div class="benefits-container">
+                <div class="benefits-image">
+                    <img src="/img/tratamiento-aguas/beneficios-tratamiento.jpg" alt="Beneficios tratamiento de aguas">
                 </div>
-
-                <!-- Ventana emergente de WhatsApp -->
-                <div class="whatsapp-box" id="whatsappBox">
-                    <div class="whatsapp-header">
-                        <p>Nuestro equipo de atención al cliente está listo para ayudarte. ¿Te gustaría más información sobre algún proyecto?</p>
-                    </div>
-                    <a href="https://wa.me/+573134322778" target="_blank" class="whatsapp-link">
-                        <div class="whatsapp-body">
-                            <div class="agent-info">
-                                <img src="https://cdn-icons-png.flaticon.com/512/14837/14837773.png" alt="Asesor">
-                                <div>
-                                    <p class="agent-name"><strong>Asesor Comercial</strong></p>
-                                    <p class="agent-status">Disponible</p>
-                                </div>
+                <div class="benefits-content">
+                    <h2>Ventajas de nuestros sistemas</h2>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-number">01</div>
+                            <div>
+                                <h3>Cumplimiento normativo</h3>
+                                <p>Sistemas diseñados para cumplir con las regulaciones ambientales locales e internacionales.</p>
                             </div>
                         </div>
-                    </a>
-                    <!-- Botón para cerrar la ventana de whatsapp -->
-                    <div class="close-button" id="closeChatBox">×</div>
+                        <div class="benefit-item">
+                            <div class="benefit-number">02</div>
+                            <div>
+                                <h3>Ahorro significativo</h3>
+                                <p>Reducción de hasta 70% en consumo de agua mediante tecnologías de reutilización.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-number">03</div>
+                            <div>
+                                <h3>Tecnología adaptable</h3>
+                                <p>Soluciones escalables para diferentes volúmenes y tipos de contaminantes.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Script para funcionalidades -->
-        <script src="/js/whatsapp.js"></script>
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2>¿Necesitas una solución para el tratamiento de aguas?</h2>
+                <p>Contáctanos para un diagnóstico gratuito y una propuesta personalizada para tu proyecto.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:contacto@labotec.com" class="btn-cta">
+                        <i class="fas fa-envelope"></i> Escríbenos
+                    </a>
+                    <a href="https://wa.me/+573134322778" class="btn-cta whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Pie de página -->
     <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="/index.html">
+                    <img src="/img/labotec.png" alt="LABOTEC">
+                </a>
+                <p>Tecnología avanzada para la gestión sostenible del agua.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Servicios</h3>
+                <ul>
+                    <li><a href="/servicios/tratamiento-aguas">Tratamiento de Aguas</a></li>
+                    <li><a href="/servicios/nanotecnologia">Nanotecnología</a></li>
+                    <li><a href="/servicios/hidrocarburos">Hidrocarburos</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-phone"></i> 313 432 2778</p>
+                <p><i class="fas fa-envelope"></i> contacto@labotec.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
         <div class="footer-bar">
-            <p>© 2024 LABOTEC | TODOS LOS DERECHOS RESERVADOS.</p>
+            <p>© 2025 LABOTEC | Todos los derechos reservados</p>
         </div>
     </footer>
+
+    <script src="/js/whatsapp.js"></script>
 </body>
 </html>
