@@ -394,7 +394,6 @@ footer {
 .footer-logo img {
     width: 150px;
     margin-bottom: 1rem;
-    filter: brightness(0); /* Para que el logo negro tenga buen contraste */
 }
 
 .footer-logo p {
