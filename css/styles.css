@@ -670,20 +670,16 @@ footer .footer-bar {
     margin: 0;
     margin-bottom: 0.8rem; 
 }
-/* Textos de párrafo y listas con mayor tamaño */
 .info-box p,
 .info-box ul {
   margin-top: 0.5rem;
   color: #242A5A;
   line-height: 1.6;
   font-size: 1.1rem;
-  text-align: justify;
-  text-justify: inter-word; 
-  -webkit-hyphens: none; 
-  -moz-hyphens: none; 
-  -ms-hyphens: none; 
-  hyphens: none; 
+  text-align: left;
+  align-items: center; 
 }
+
 /* Botones alineados a la izquierda */
 .btn-modern {
     background-color: #002855;
