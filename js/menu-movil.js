@@ -1,46 +1,38 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('mobileMenuToggle');
-    const menuMobile = document.getElementById('menuMobile');
-    const hamburgerIcon = menuToggle.querySelector('.hamburger-icon');
-    const closeIcon = menuToggle.querySelector('.close-icon');
-    const body = document.body;
-    const whatsappSection = document.querySelector('.whatsapp-button');
-
-    menuToggle.addEventListener('click', function() {
-        // Alternar la visibilidad del menú
-        menuMobile.classList.toggle('active');
-        
-        // Alternar los íconos
-        if (menuMobile.classList.contains('active')) {
-            hamburgerIcon.style.display = 'none';
-            closeIcon.style.display = 'block';
-            body.classList.add('menu-open'); // Bloquear scroll
-            if (whatsappSection) whatsappSection.style.display = 'none';
-        } else {
-            hamburgerIcon.style.display = 'block';
-            closeIcon.style.display = 'none';
-            body.classList.remove('menu-open'); // Permitir scroll
-            if (whatsappSection) whatsappSection.style.display = 'block';
-        }
-    });
-});
-
 document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const menuMobile = document.getElementById('menuMobile');
-    const whatsappSection = document.querySelector('.whatsapp-button');
+  const menuToggle = document.getElementById('mobileMenuToggle');
+  const menuMobile = document.getElementById('menuMobile');
+  const hamburgerIcon = menuToggle?.querySelector('.hamburger-icon');
+  const closeIcon = menuToggle?.querySelector('.close-icon');
+  const body = document.body;
+  const whatsappSection = document.querySelector('.whatsapp-button');
 
-    mobileMenuToggle.addEventListener('click', () => {
-        const hamburgerIcon = mobileMenuToggle.querySelector('.hamburger-icon');
-        const closeIcon = mobileMenuToggle.querySelector('.close-icon');
+  if (!menuToggle || !menuMobile) return;
 
-        // Cuando el menú está abierto
-        if (hamburgerIcon.style.display === 'none') {
-            // Ocultar la sección de WhatsApp
-            whatsappSection.style.display = 'none';
-        } else {
-            // Mostrar la sección de WhatsApp cuando el menú se cierra
-            whatsappSection.style.display = 'block';
-        }
-    });
+  function setMenuState(open) {
+    menuMobile.classList.toggle('active', open);
+    hamburgerIcon.style.display = open ? 'none' : 'block';
+    closeIcon.style.display = open ? 'block' : 'none';
+    body.classList.toggle('menu-open', open);
+    if (whatsappSection) whatsappSection.style.display = open ? 'none' : 'block';
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  }
+
+  menuToggle.addEventListener('click', () => {
+    const open = !menuMobile.classList.contains('active');
+    setMenuState(open);
+  });
+
+  // Cerrar con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menuMobile.classList.contains('active')) {
+      setMenuState(false);
+      menuToggle.focus();
+    }
+  });
+
+  // Cierra al hacer click fuera
+  menuMobile.addEventListener('click', (e) => {
+    if (e.target === menuMobile) setMenuState(false);
+  });
 });

@@ -2,22 +2,26 @@ const whatsappIcon = document.getElementById("whatsappIcon");
 const whatsappBox = document.getElementById("whatsappBox");
 const closeChatBox = document.getElementById("closeChatBox");
 
-// Mostrar la caja de chat al hacer clic en el icono
-whatsappIcon.addEventListener("click", () => {
+if (whatsappIcon && whatsappBox) {
+  whatsappIcon.addEventListener("click", () => {
     whatsappBox.style.display = "block";
-});
+    whatsappBox.setAttribute('aria-hidden', 'false');
+  });
+}
 
-// Cerrar la caja de chat al hacer clic en el botón de cerrar
-closeChatBox.addEventListener("click", () => {
+if (closeChatBox) {
+  closeChatBox.addEventListener("click", () => {
     whatsappBox.style.display = "none";
-});
+    whatsappBox.setAttribute('aria-hidden', 'true');
+    whatsappIcon?.focus();
+  });
+}
 
-document.addEventListener('DOMContentLoaded', function() {
-    var cards = document.querySelectorAll('.card');
-    cards.forEach(function(card) {
-        card.addEventListener('click', function() {
-            // Toggle de la clase 'active' para mostrar/ocultar la información adicional
-            card.classList.toggle('active');
-        });
-    });
+// Cerrar con ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && whatsappBox?.style.display === 'block') {
+    whatsappBox.style.display = 'none';
+    whatsappBox.setAttribute('aria-hidden', 'true');
+    whatsappIcon?.focus();
+  }
 });
