@@ -1,77 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestros proyectos</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyectos | LABOTEC</title>
+
+    <!-- CSS principal del sitio -->
     <link rel="stylesheet" href="/css/styles.css">
+    <!-- Reuso del sistema de secciones/ tarjetas ya existente -->
+    <link rel="stylesheet" href="/css/styles-nanotecnologia.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body>
+
     <style>
-.vertical-line {
-    background: linear-gradient(
-        180deg,
-        rgba(0, 40, 85, 1) 0%,         /* Azul oscuro intenso */
-        rgba(36, 82, 125, 0.9) 50%,   /* Azul intermedio */
-        rgb(255, 255, 255) 100%   /* Azul claro elegante */
-    );
+        /* Ajustes mínimos propios de la página Proyectos (opcional) */
+        .iso-strip {
+            display: flex;
+            gap: .75rem;
+            align-items: center;
+            justify-content: center;
+            padding: .6rem 1rem;
+            background: #fff;
+            border: 1px solid #e9eef5;
+            border-radius: 999px;
+            width: fit-content;
+            margin: .75rem auto 0;
+            color: #243;
+            font-weight: 700;
+            font-size: .9rem;
+        }
 
-}
+        .iso-dot {
+            width: .5rem;
+            height: .5rem;
+            border-radius: 50%;
+            background: #00A0E3;
+        }
 
-.info-box {
-    padding: 1.2rem;
-}
+        .projects-note {
+            color: #556;
+            text-align: center;
+            margin: -.5rem auto 2rem;
+            font-size: .95rem;
+        }
 
-.nosotros-icon.modern-icon {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+        /* Consistencia visual con Inicio/Nosotros */
+        .section-title {
+            margin-bottom: 1.5rem;
+        }
 
-.btn-modern {
-    background-color: #002855;
-    color: white;
-    font-weight: bold;
-    padding: 0.7rem 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.btn-modern:hover {
-    background-color: #1f3c5d;
-    color: #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 768px) {
-    .hero-nosotros {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-
-    .info-box {
-        margin-bottom: 1.5rem;
-    }
-}
-
-
+        .services-section {
+            background: #F5F5F5;
+            padding: 0;
+        }
     </style>
-    
+</head>
+
+<body>
     <header>
         <!-- Top Bar -->
         <div class="top-bar">
             <div class="contact-info">
                 <p>Comunícate al</p>
-                <span><i class="fas fa-phone"></i> <a href="https://wa.me/573134322778?text=Hola,%20estoy%20interesado%20en%20obtener%20más%20información%20sobre%20sus%20servicios." target="_blank">313 432 2778</a></span>
-                <span><i class="fas fa-envelope"></i> <a href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
+                <span><i class="fas fa-phone"></i>
+                    <a href="https://wa.me/573134322778?text=Hola,%20estoy%20interesado%20en%20obtener%20más%20información%20sobre%20sus%20servicios."
+                        target="_blank" rel="noopener">313 432 2778</a>
+                </span>
+                <span><i class="fas fa-envelope"></i>
+                    <a href="mailto:contacto@labotec.com">contacto@labotec.com</a>
+                </span>
             </div>
         </div>
 
-        <!-- Navbar de Desktop -->
+        <!-- Navbar Desktop -->
         <div class="navbar">
             <div class="logo">
-                <img src="/img/labotec.png" alt="logo-labotec">
+                <img src="/img/labotec.png" alt="LABOTEC">
             </div>
             <div class="languages">
                 <div class="language-option selected">
@@ -89,171 +97,227 @@
             </div>
         </div>
 
-        <!-- Decorative Line -->
+        <!-- Línea decorativa -->
         <hr class="decorative-line">
 
-        <!-- Botón de menú móvil -->
-        <button id="mobileMenuToggle" class="menu-toggle" aria-label="Toggle menu">
+        <!-- Botón menú móvil -->
+        <button id="mobileMenuToggle" class="menu-toggle" aria-label="Abrir menú">
             <span class="hamburger-icon">☰</span>
-            <span class="close-icon" style="display: none;">×</span>
+            <span class="close-icon" style="display:none;">×</span>
         </button>
 
-        <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu-overlay" id="menuMobile">
+        <!-- Menú móvil -->
+        <div class="mobile-menu-overlay" id="menuMobile" aria-hidden="true">
             <div class="menu-mobile-container">
-                <!-- Logo en la parte superior -->
                 <div class="menu-header">
-                    <div class="logo">
-                        <img src="/img/labotec.png" alt="logo-labotec">
-                    </div>
+                    <div class="logo"><img src="/img/labotec.png" alt="LABOTEC"></div>
                 </div>
-                
-                <!-- Menú central -->
                 <ul class="mobile-nav-list">
                     <li>
                         <a href="/index.html">
-                            <img class="menu-mobile-icons" src="/icons/home.svg" alt="home">
+                            <img class="menu-mobile-icons" src="/icons/home.svg" alt="" aria-hidden="true">
                             <span>Inicio</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/pages/espanol/nosotros.html">
-                            <img class="menu-mobile-icons" src="/icons/about.svg" alt="about">
+                        <a href="/nosotros.html">
+                            <img class="menu-mobile-icons" src="/icons/about.svg" alt="" aria-hidden="true">
                             <span>Nosotros</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/pages/espanol/proyectos.html">
-                            <img class="menu-mobile-icons" src="/icons/projects.svg" alt="projects">
+                        <a href="/proyectos.html">
+                            <img class="menu-mobile-icons" src="/icons/projects.svg" alt="" aria-hidden="true">
                             <span>Proyectos</span>
                         </a>
                     </li>
                 </ul>
-                
-                <!-- Redes sociales en la parte inferior -->
-                <div class="mobile-social-media">
-                    <a href="https://www.facebook.com/share/16PZecLqx5/?mibextid=wwXIfr" target="_blank">
+                <div class="mobile-social-media" aria-label="Redes sociales">
+                    <a href="https://www.facebook.com/share/16PZecLqx5/?mibextid=wwXIfr" target="_blank" rel="noopener">
                         <img src="/icons/facebook.svg" alt="Facebook" class="social-icon">
                     </a>
-                    <a href="https://instagram.com/labotec" target="_blank">
+                    <a href="https://instagram.com/labotec" target="_blank" rel="noopener">
                         <img src="/icons/instagram.svg" alt="Instagram" class="social-icon">
                     </a>
-                    <a href="https://twitter.com/labotec" target="_blank">
+                    <a href="https://twitter.com/labotec" target="_blank" rel="noopener">
                         <img src="/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
                     </a>
                 </div>
             </div>
         </div>
-        <!-- Desktop Menu -->
+
+        <!-- Menú Desktop -->
         <div class="menu">
             <ul>
-                <li><img src="/icons/home.svg" alt="home"><a href="/index.html">Inicio</a></li>
-                <li ><img src="/icons/about.svg" alt="about"><a href="/pages/espanol/nosotros.html">Nosotros</a></li>
-                <li class="menu-selected"><img src="/icons/projects.svg" alt="projects"><a href="/pages/espanol/proyectos.html">Proyectos</a></li>
+                <li><img src="/icons/home.svg" alt="" aria-hidden="true"><a href="/index.html">Inicio</a></li>
+                <li><img src="/icons/about.svg" alt="" aria-hidden="true"><a href="/pages/espanol/nosotros.html">Nosotros</a></li>
+                <li class="menu-selected"><img src="/icons/projects.svg" alt="" aria-hidden="true"><a
+                        href="/proyectos.html" aria-current="page">Proyectos</a></li>
             </ul>
         </div>
     </header>
 
     <main>
-        <section class="hero-nosotros">
-            <!-- Quiénes Somos -->
-            <div class="info-box modern">
-                <div class="vertical-line"></div>
-                <div class="content">
-                    <div class="top-bar-info-box">
-                        <img src="/icons/who-we-are.svg" alt="Ícono de quiénes somos" class="nosotros-icon modern-icon">
-                        <h3>¿Quiénes somos?</h3>
-                    </div>
-                    <p>Somos un laboratorio especializado en el desarrollo de soluciones tecnológicas avanzadas para los sectores de hidrocarburos y tratamiento de aguas, con un enfoque innovador basado en la nanotecnología.</p>
-                    <a href="tratamiento-de-aguas.html"> <button class="btn-modern">Saber más</button> </a>
-                </div>
-            </div>
-        
-            <!-- Visión -->
-            <div class="info-box modern">
-                <div class="vertical-line"></div>
-                <div class="content">
-                    <div class="top-bar-info-box">
-                        <img src="/icons/vision.svg" alt="Ícono de visión" class="nosotros-icon modern-icon" style="background: rgba(243, 134, 7, 0.20);">
-                        <h3 style="color: #F38607;">Visión</h3>
-                    </div>
-                    <p>Ser reconocidos por la eficiencia en nuestros procesos industriales, en la investigación aplicada, diseño y operación de plantas de tratamiento de agua potable y residual, y en el sector de hidrocarburos  enfocándonos en la seguridad y respeto por el medio ambiente.  </p>
-                </div>
-            </div>
-        
-            <!-- Misión -->
-            <div class="info-box modern">
-                <div class="vertical-line"></div>
-                <div class="content">
-                    <div class="top-bar-info-box">
-                        <img src="/icons/mision.svg" alt="Ícono de misión" class="nosotros-icon modern-icon">
-                        <h3>Misión</h3>
-                    </div>
-                    <p>Fomentar la innovación en tecnologías para el tratamiento de aguas, extracción sostenible de hidrocarburos y nanotecnología, generando soluciones eficientes y responsables que contribuyan al progreso científico, a los objetivos del desarrollo sostenible y al cuidado del medio ambiente. </p>
-                </div>
-            </div>
-        
-            <!-- Objetivos -->
-            <div class="info-box modern">
-                <div class="vertical-line"></div>
-                <div class="content">
-                    <div class="top-bar-info-box">
-                        <img src="/icons/goals.svg" alt="Ícono de objetivos" class="nosotros-icon modern-icon" style="background: rgba(243, 134, 7, 0.20);">
-                        <h3  style="color: #F38607;">Objetivos</h3>
-                    </div>
-                    <ul style="transform: translateX(-2rem);">
-                        <li>Desarrollar soluciones nanotecnológicas.</li>
-                        <li>Optimizar procesos de tratamiento de agua.</li>
-                        <li>Promover la sostenibilidad ambiental.</li>
-                    </ul>
-                    <a href="tratamiento-de-aguas.html"> <button class="btn-modern">Saber más</button> </a>
-                </div>
-            </div>
-        </section>    
     
-        <section class="whatsapp-button">
-            <!-- Floating button and chat box -->
-            <div class="whatsapp-container">
-                <!-- Floating WhatsApp icon -->
-                <div class="whatsapp-icon" id="whatsappIcon">
-                    <img src="/icons/whatsapp.svg" alt="Ícono de WhatsApp">
-                </div>
+<!-- ===== PROYECTOS (encima de certificaciones) ===== -->
+        <section class="services-section" id="proyectos-actuales">
+        <h2 class="section-title">Proyectos en ejecución</h2>
 
-                <!-- WhatsApp popup window -->
-                <div class="whatsapp-box" id="whatsappBox">
-                    <div class="whatsapp-header">
-                        <p class="whatsapp-text">
-                             <strong>Nuestro equipo de atención al cliente está a tu disposición.</strong>
-                             <br> 
-                             <br>
-                             ¿Te interesa obtener más información sobre alguno de nuestros proyectos?</p>
+        <div class="services-grid">
+            <!-- PTAP modulares -->
+            <div class="service-card">
+            <img src="/img/tratamiento-de-aguas/tratamiento-de-aguas-3.jpg" alt="PTAP modulares rurales" loading="lazy" width="1200" height="800">
+            <div class="service-content">
+                <h3>PTAP modulares rurales</h3>
+                <p>Plantas 0.5–25 L/s con instalación rápida (72 h) para potabilización segura en comunidades.</p>
+                <a href="/tratamiento-de-aguas.html" class="service-btn">Ver proyecto</a>
+            </div>
+            </div>
+
+            <!-- PTAR industrial -->
+            <div class="service-card">
+            <img src="/img/tratamiento-de-aguas/tratamiento-de-aguas-4.jpg" alt="PTAR industrial" loading="lazy" width="1200" height="800">
+            <div class="service-content">
+                <h3>PTAR industrial</h3>
+                <p>Optimización MBR/MBBR con altos niveles de remoción para sectores textil, lácteo y alimentos.</p>
+                <a href="/tratamiento-de-aguas.html#servicios" class="service-btn">Ver proyecto</a>
+            </div>
+            </div>
+
+            <!-- Automatización SCADA/IoT -->
+            <div class="service-card">
+            <img src="/img/hidrocarburos/hidrocarburos-4.jpg" alt="Automatización SCADA/IoT" loading="lazy" width="1200" height="800">
+            <div class="service-content">
+                <h3>SCADA / IoT en plantas</h3>
+                <p>Monitoreo y control en tiempo real, telemetría y alertas para reducir OPEX y consumo energético.</p>
+                <a href="/hidrocarburos.html#servicios" class="service-btn">Ver proyecto</a>
+            </div>
+            </div>
+
+            <!-- Hidrocarburos SBWB 5X -->
+            <div class="service-card">
+            <img src="/img/hidrocarburos/hidrocarburos-3.jpg" alt="SBWB 5X Hidrocarburos" loading="lazy" width="1200" height="800">
+            <div class="service-content">
+                <h3>SBWB 5X – Hidrocarburos</h3>
+                <p>Limpieza nanotecnológica de cartuchos oleofílicos; extiende 7–10× la vida útil de filtración.</p>
+                <a href="/hidrocarburos.html" class="service-btn">Ver proyecto</a>
+            </div>
+            </div>
+
+            <!-- Fitorremediación -->
+            <div class="service-card">
+            <img src="/img/nanotecnologia/nanotecnologia-en-procesos-industriales-4.jpg" alt="Fitorremediación" loading="lazy" width="1200" height="800">
+            <div class="service-content">
+                <h3>Campos de fitorremediación</h3>
+                <p>Recuperación de suelos y aguas con especies seleccionadas; reducción sustancial de contaminantes.</p>
+                <a href="/nanotecnologia-en-procesos-industriales.html" class="service-btn">Ver proyecto</a>
+            </div>
+            </div>
+
+            <!-- Biogás / Energías emergentes -->
+            <div class="service-card">
+            <img src="/img/tratamiento-de-aguas/tratamiento-de-aguas.jpg" alt="Sistemas de biogás" loading="lazy" width="1200" height="800">
+            <div class="service-content">
+                <h3>Sistemas de biogás</h3>
+                <p>Digestión anaerobia para generación eléctrica/térmica y producción de biofertilizante.</p>
+                <a href="/proyectos.html#contacto" class="service-btn">Ver proyecto</a>
+            </div>
+            </div>
+        </div>
+        </section>
+        <!-- GRID ESTILO “NOSOTROS”, ADAPTADO A CERTIFICACIONES -->
+        <section class="hero-nosotros" id="certificaciones-iso">
+            <!-- ISO 9001 -->
+            <div class="info-box">
+                <span class="vertical-line"></span>
+                <div class="content">
+                    <div class="top-bar-info-box">
+                        <span class="nosotros-icon modern-icon"
+                            style="display:flex;align-items:center;justify-content:center;">
+                            <i class="fas fa-award" aria-hidden="true"></i>
+                        </span>
+                        <h3>ISO 9001 — Gestión de la Calidad</h3>
                     </div>
-                    <a href="https://wa.me/+573134322778" target="_blank" class="whatsapp-link">
-                        <div class="whatsapp-body">
-                            <div class="agent-info">
-                                <img src="https://cdn-icons-png.flaticon.com/512/14837/14837773.png" alt="Asesor">
-                                <div>
-                                    <p class="agent-name"><strong>Asesor Comercial</strong></p>
-                                    <p class="agent-status">Disponible</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="close-button" id="closeChatBox">×</div>
+                    <p>Procesos estandarizados para asegurar la calidad en diseño, implementación y operación de
+                        soluciones.</p>
+                    <ul>
+                        <li>Enfoque al cliente y mejora continua</li>
+                        <li>Control documental y trazabilidad</li>
+                    </ul>
                 </div>
             </div>
 
+            <!-- ISO 14001 -->
+            <div class="info-box">
+                <span class="vertical-line"></span>
+                <div class="content">
+                    <div class="top-bar-info-box">
+                        <span class="nosotros-icon modern-icon"
+                            style="display:flex;align-items:center;justify-content:center;">
+                            <i class="fas fa-leaf" aria-hidden="true"></i>
+                        </span>
+                        <h3>ISO 14001 — Gestión Ambiental</h3>
+                    </div>
+                    <p>Sistemas para identificar, controlar y reducir impactos ambientales en cada proyecto.</p>
+                    <ul>
+                        <li>Prevención de contaminación</li>
+                        <li>Cumplimiento normativo ambiental</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ISO 45001 -->
+            <div class="info-box">
+                <span class="vertical-line"></span>
+                <div class="content">
+                    <div class="top-bar-info-box">
+                        <span class="nosotros-icon modern-icon"
+                            style="display:flex;align-items:center;justify-content:center;">
+                            <i class="fas fa-shield" aria-hidden="true"></i>
+                        </span>
+                        <h3>ISO 45001 — Seguridad y Salud en el Trabajo</h3>
+                    </div>
+                    <p>Metodologías para prevenir riesgos y proteger a nuestro equipo y contratistas.</p>
+                    <ul>
+                        <li>Evaluación de riesgos operacionales</li>
+                        <li>Controles y capacitación permanente</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Alcance / Organismo / Vigencia (editable) -->
+            <div class="info-box">
+                <span class="vertical-line"></span>
+                <div class="content">
+                    <div class="top-bar-info-box">
+                        <span class="nosotros-icon modern-icon"
+                            style="display:flex;align-items:center;justify-content:center;">
+                            <i class="fas fa-file-contract" aria-hidden="true"></i>
+                        </span>
+                        <h3>Alcance y Certificador</h3>
+                    </div>
+                    <p><strong>Alcance:</strong> Diseño, implementación, operación y mantenimiento de soluciones en
+                        tratamiento de aguas, hidrocarburos y nanotecnología.</p>
+                    <ul>
+                        <li><strong>Organismo certificador:</strong> <em>SGS / ICONTEC / Bureau Veritas</em></li>
+                        <li><strong>Nº de certificado:</strong> <em>XXXX-YYYY</em> (reemplazar)</li>
+                        <li><strong>Vigencia:</strong> <em>dd/mm/aaaa</em> (reemplazar)</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
-
     </main>
+
     <footer>
         <div class="footer-bar">
-            <p>© 2024 LABOTEC | TODOS LOS DERECHOS RESERVADOS.</p>
+            <p>© 2025 LABOTEC | Todos los derechos reservados</p>
         </div>
     </footer>
-    <!-- Script para funcionalidades -->
-    <script src="/js/whatsapp.js"></script>     
-    <script src="/js/menu-movil.js"></script>
+
+    <!-- JS (mismo patrón que las otras páginas) -->
+    <script src="/js/whatsapp.js" defer></script>
+    <script src="/js/menu-movil.js" defer></script>
 </body>
+
 </html>
