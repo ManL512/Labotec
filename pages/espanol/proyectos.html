@@ -2,322 +2,614 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proyectos | LABOTEC</title>
-
-    <!-- CSS principal del sitio -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labotec</title>
+    <!-- Mantén tu CSS global solo para header/footer -->
     <link rel="stylesheet" href="/css/styles.css">
-    <!-- Reuso del sistema de secciones/ tarjetas ya existente -->
-    <link rel="stylesheet" href="/css/styles-nanotecnologia.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+    <!-- ======= ESTILOS PROPIOS (scope .px) PARA EVITAR CRUCES ======= -->
     <style>
-        /* Ajustes mínimos propios de la página Proyectos (opcional) */
-        .iso-strip {
+        .px {
+            --px-primary: #002855;
+            --px-secondary: #00A0E3;
+            --px-ink: #242A5A;
+            --px-muted: #64748b;
+        }
+
+        /* Hero */
+        .px .px-hero {
+            margin: 1.25rem;
+            background: linear-gradient(135deg, var(--px-primary), #0b3b76);
+            color: #fff;
+            padding: 1.25rem 1.25rem 1.35rem;
+            border-radius: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .px .px-hero h1 {
+            margin: 0 0 .25rem;
+            font-weight: 900;
+            font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+        }
+
+        .px .px-hero p {
+            margin: 0;
+            opacity: .95;
+        }
+
+        /* Filterbar */
+        .px .px-filterbar {
             display: flex;
-            gap: .75rem;
+            flex-wrap: wrap;
+            gap: .6rem;
             align-items: center;
-            justify-content: center;
-            padding: .6rem 1rem;
+            justify-content: space-between;
+            margin: 1rem 1.25rem 0;
+        }
+
+        .px .px-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem;
+        }
+
+        .px .px-chip {
+            border: 1px solid #dbe6f5;
             background: #fff;
-            border: 1px solid #e9eef5;
+            color: var(--px-ink);
             border-radius: 999px;
-            width: fit-content;
-            margin: .75rem auto 0;
-            color: #243;
-            font-weight: 700;
-            font-size: .9rem;
+            padding: .55rem 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: .2s;
         }
 
-        .iso-dot {
-            width: .5rem;
-            height: .5rem;
-            border-radius: 50%;
-            background: #00A0E3;
+        .px .px-chip[aria-pressed="true"],
+        .px .px-chip:hover {
+            border-color: var(--px-secondary);
+            box-shadow: 0 0 0 4px rgba(0, 160, 227, .15);
+            color: var(--px-secondary);
         }
 
-        .projects-note {
-            color: #556;
-            text-align: center;
-            margin: -.5rem auto 2rem;
-            font-size: .95rem;
+        .px .px-search {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            background: #fff;
+            border: 1px solid #dbe6f5;
+            border-radius: 999px;
+            padding: .4rem .75rem;
         }
 
-        /* Consistencia visual con Inicio/Nosotros */
-        .section-title {
-            margin-bottom: 1.5rem;
+        .px .px-search input {
+            border: none;
+            outline: 0;
+            font: inherit;
+            width: 18ch;
         }
 
-        .services-section {
-            background: #F5F5F5;
+        .px .px-count {
+            color: var(--px-muted);
+            font-weight: 800;
+            margin: .75rem 1.25rem;
+        }
+
+        /* Grid y Cards */
+        .px .px-section {
             padding: 0;
+            margin: 0 1.25rem 2rem;
+        }
+
+        .px .px-title {
+            margin: 1rem 0;
+            font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+            color: var(--px-ink);
+        }
+
+        .px .px-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.2rem;
+        }
+
+        .px .px-card {
+            grid-column: span 12;
+            position: relative;
+            overflow: hidden;
+            border-radius: 14px;
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+            box-shadow: 0 10px 24px rgba(0, 40, 85, .08);
+        }
+
+        @media (min-width: 740px) {
+            .px .px-card {
+                grid-column: span 6;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .px .px-card {
+                grid-column: span 4;
+            }
+        }
+
+        .px .px-img {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            filter: blur(0);
+            transition: filter .45s ease, transform .45s ease;
+            z-index: 0;
+        }
+
+        .px .px-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(36, 42, 90, 0) 0%, rgba(36, 42, 90, .28) 45%, rgba(7, 18, 38, .82) 100%);
+            z-index: 1;
+        }
+
+        @media (hover:hover) {
+            .px .px-card:hover .px-img {
+                filter: blur(3px) brightness(.95);
+                transform: scale(1.03);
+            }
+        }
+
+        .px .px-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            padding: 1rem;
+            width: 100%;
+        }
+
+        .px .px-content h3 {
+            margin: 0 0 .4rem;
+            font-weight: 900;
+            letter-spacing: .2px;
+            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .55));
+        }
+
+        .px .px-content p {
+            margin: 0 0 .9rem;
+            color: #F3F7FB;
+            font-weight: 600;
+        }
+
+        .px .px-btn {
+            display: inline-block;
+            background: var(--px-secondary);
+            color: #fff;
+            font-weight: 800;
+            padding: .45rem .9rem;
+            border-radius: .5rem;
+            text-decoration: none;
+        }
+
+        .px .px-btn:hover,
+        .px .px-btn:focus-visible {
+            background: var(--px-primary);
+        }
+
+        /* Etiquetas */
+        .px .px-tagbar {
+            position: absolute;
+            top: .75rem;
+            left: .75rem;
+            z-index: 2;
+            display: flex;
+            gap: .4rem;
+            flex-wrap: wrap;
+        }
+
+        .px .px-tag {
+            background: #ffffffee;
+            border: 1px solid #e6eef7;
+            color: #0b2447;
+            font-size: .75rem;
+            font-weight: 800;
+            padding: .25rem .5rem;
+            border-radius: 999px;
+            backdrop-filter: saturate(140%) blur(4px);
+        }
+
+        /* Responsivo */
+        @media (max-width: 480px) {
+            .px .px-search input {
+                width: 12ch;
+            }
+        }
+
+        /* --- Modal de imagen (scope .px) --- */
+        .px .px-lightbox {
+            border: none;
+            width: min(92vw, 980px);
+            max-height: 90vh;
+            padding: 0;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(2, 8, 23, .35);
+        }
+
+        .px .px-lightbox::backdrop {
+            background: rgba(2, 8, 23, .6);
+        }
+
+        .px .px-lightbox img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+            background: #000;
+        }
+
+        .px .px-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: .35rem .55rem;
+            font-size: 20px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .px .px-close:focus-visible {
+            outline: 3px solid rgba(0, 160, 227, .35);
+            outline-offset: 2px;
         }
     </style>
 </head>
 
-<body>
+<body class="px">
     <header>
         <!-- Top Bar -->
         <div class="top-bar">
             <div class="contact-info">
                 <p>Comunícate al</p>
-                <span><i class="fas fa-phone"></i>
-                    <a href="https://wa.me/573134322778?text=Hola,%20estoy%20interesado%20en%20obtener%20más%20información%20sobre%20sus%20servicios."
-                        target="_blank" rel="noopener">313 432 2778</a>
-                </span>
-                <span><i class="fas fa-envelope"></i>
-                    <a href="mailto:contacto@labotec.com">contacto@labotec.com</a>
-                </span>
+                <span><i class="fas fa-phone"></i> <a
+                        href="https://wa.me/573134322778?text=Hola,%20estoy%20interesado%20en%20obtener%20más%20información%20sobre%20sus%20servicios."
+                        target="_blank">313 432 2778</a></span>
+                <span><i class="fas fa-envelope"></i> <a
+                        href="mailto:contacto@labotec.com">contacto@labotec.com</a></span>
             </div>
         </div>
 
-        <!-- Navbar Desktop -->
+        <!-- Navbar de Desktop -->
         <div class="navbar">
             <div class="logo">
-                <img src="/img/labotec.png" alt="LABOTEC">
+                <img src="/img/labotec.png" alt="LABOTEC" loading="lazy">
             </div>
             <div class="languages">
                 <div class="language-option selected">
                     <a href="/index.html" class="language-change">
-                        <img src="/assets/logos/colombia.svg" alt="Colombia">
+                        <img src="/assets/logos/colombia.svg" alt="Colombia" loading="lazy">
                         <p>Español</p>
                     </a>
                 </div>
                 <div class="language-option">
                     <a href="/pages/ingles/english-index.html" class="language-change">
-                        <img src="/assets/logos/usa.svg" alt="USA">
+                        <img src="/assets/logos/usa.svg" alt="USA" loading="lazy">
                         <p class="text-unselected">English</p>
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Línea decorativa -->
+        <!-- Decorative Line -->
         <hr class="decorative-line">
 
-        <!-- Botón menú móvil -->
-        <button id="mobileMenuToggle" class="menu-toggle" aria-label="Abrir menú">
-            <span class="hamburger-icon">☰</span>
-            <span class="close-icon" style="display:none;">×</span>
+        <!-- Botón de menú móvil -->
+        <button id="mobileMenuToggle" class="menu-toggle" aria-label="Abrir menú" aria-haspopup="true"
+            aria-controls="menuMobile" aria-expanded="false">
+            <span class="hamburger-icon" aria-hidden="true">☰</span>
+            <span class="close-icon" aria-hidden="true" style="display:none;">×</span>
         </button>
 
-        <!-- Menú móvil -->
-        <div class="mobile-menu-overlay" id="menuMobile" aria-hidden="true">
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="menuMobile">
             <div class="menu-mobile-container">
                 <div class="menu-header">
-                    <div class="logo"><img src="/img/labotec.png" alt="LABOTEC"></div>
+                    <div class="logo"><img src="/img/labotec.png" alt="logo-labotec" loading="lazy"></div>
                 </div>
                 <ul class="mobile-nav-list">
-                    <li>
-                        <a href="/index.html">
-                            <img class="menu-mobile-icons" src="/icons/home.svg" alt="" aria-hidden="true">
-                            <span>Inicio</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/nosotros.html">
-                            <img class="menu-mobile-icons" src="/icons/about.svg" alt="" aria-hidden="true">
-                            <span>Nosotros</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/proyectos.html">
-                            <img class="menu-mobile-icons" src="/icons/projects.svg" alt="" aria-hidden="true">
-                            <span>Proyectos</span>
-                        </a>
-                    </li>
+                    <li><a href="/index.html"><img class="menu-mobile-icons" src="/icons/home.svg" alt="home"
+                                loading="lazy"><span>Inicio</span></a></li>
+                    <li><a href="/pages/espanol/nosotros.html"><img class="menu-mobile-icons" src="/icons/about.svg"
+                                alt="about" loading="lazy"><span>Nosotros</span></a></li>
+                    <li class="menu-selected"><a href="/pages/espanol/proyectos.html"><img class="menu-mobile-icons"
+                                src="/icons/projects.svg" alt="projects" loading="lazy"><span>Proyectos</span></a></li>
                 </ul>
-                <div class="mobile-social-media" aria-label="Redes sociales">
-                    <a href="https://www.facebook.com/share/16PZecLqx5/?mibextid=wwXIfr" target="_blank" rel="noopener">
-                        <img src="/icons/facebook.svg" alt="Facebook" class="social-icon">
-                    </a>
-                    <a href="https://instagram.com/labotec" target="_blank" rel="noopener">
-                        <img src="/icons/instagram.svg" alt="Instagram" class="social-icon">
-                    </a>
-                    <a href="https://twitter.com/labotec" target="_blank" rel="noopener">
-                        <img src="/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
-                    </a>
+                <div class="mobile-social-media">
+                    <a href="https://www.facebook.com/share/16PZecLqx5/?mibextid=wwXIfr" target="_blank"><img
+                            src="/icons/facebook.svg" alt="Facebook" class="social-icon" loading="lazy"></a>
+                    <a href="https://instagram.com/labotec" target="_blank"><img src="/icons/instagram.svg"
+                            alt="Instagram" class="social-icon" loading="lazy"></a>
+                    <a href="https://twitter.com/labotec" target="_blank"><img src="/icons/linkedin.svg" alt="LinkedIn"
+                            class="social-icon" loading="lazy"></a>
                 </div>
             </div>
         </div>
 
-        <!-- Menú Desktop -->
+        <!-- Desktop Menu -->
         <div class="menu">
             <ul>
-                <li><img src="/icons/home.svg" alt="" aria-hidden="true"><a href="/index.html">Inicio</a></li>
-                <li><img src="/icons/about.svg" alt="" aria-hidden="true"><a href="/pages/espanol/nosotros.html">Nosotros</a></li>
-                <li class="menu-selected"><img src="/icons/projects.svg" alt="" aria-hidden="true"><a
-                        href="/proyectos.html" aria-current="page">Proyectos</a></li>
+                <li><img src="/icons/home-selected.svg" alt="home"><a href="#inicio">Inicio</a></li>
+                <li><img src="/icons/about.svg" alt="about" loading="lazy"><a
+                        href="pages/espanol/nosotros.html">Nosotros</a></li>
+                <li class="menu-selected"><img src="/icons/projects.svg" alt="projects" loading="lazy"><a
+                        href="pages/espanol/proyectos.html">Proyectos</a></li>
             </ul>
         </div>
     </header>
+    <!-- Modal de imagen -->
+    <dialog class="px-lightbox" id="pxLightbox" aria-label="Imagen del proyecto">
+        <button class="px-close" id="pxClose" aria-label="Cerrar">×</button>
+        <img id="pxLightboxImg" alt="Vista del proyecto">
+    </dialog>
 
     <main>
-    
-<!-- ===== PROYECTOS (encima de certificaciones) ===== -->
-        <section class="services-section" id="proyectos-actuales">
-        <h2 class="section-title">Proyectos en ejecución</h2>
+       
 
-        <div class="services-grid">
-            <!-- PTAP modulares -->
-            <div class="service-card">
-            <img src="/img/tratamiento-de-aguas/tratamiento-de-aguas-3.jpg" alt="PTAP modulares rurales" loading="lazy" width="1200" height="800">
-            <div class="service-content">
-                <h3>PTAP modulares rurales</h3>
-                <p>Plantas 0.5–25 L/s con instalación rápida (72 h) para potabilización segura en comunidades.</p>
-                <a href="/tratamiento-de-aguas.html" class="service-btn">Ver proyecto</a>
-            </div>
-            </div>
+       
 
-            <!-- PTAR industrial -->
-            <div class="service-card">
-            <img src="/img/tratamiento-de-aguas/tratamiento-de-aguas-4.jpg" alt="PTAR industrial" loading="lazy" width="1200" height="800">
-            <div class="service-content">
-                <h3>PTAR industrial</h3>
-                <p>Optimización MBR/MBBR con altos niveles de remoción para sectores textil, lácteo y alimentos.</p>
-                <a href="/tratamiento-de-aguas.html#servicios" class="service-btn">Ver proyecto</a>
-            </div>
-            </div>
+        <!-- GRID PROYECTOS -->
+  <main>
+    <section class="px-hero"><h1>Proyectos en ejecución</h1><p>Explora por categoría o busca por palabra clave.</p></section>
+    <div class="px-filterbar">
+      <div class="px-chips">
+        <button class="px-chip" data-filter="all" aria-pressed="true">Todos</button>
+        <button class="px-chip" data-filter="aguas">Tratamiento de aguas</button>
+        <button class="px-chip" data-filter="hidrocarburos">Hidrocarburos</button>
+        <button class="px-chip" data-filter="nano">Nanotecnología</button>
+        <button class="px-chip" data-filter="energia">Energía / Biogás</button>
+        <button class="px-chip" data-filter="automatizacion">SCADA / IoT</button>
+      </div>
+      <label class="px-search"><i class="fa fa-search"></i><input id="px-q" type="search" placeholder="Buscar..."></label>
+    </div>
+    <div class="px-count"><strong id="px-count">0</strong> proyectos</div>
 
-            <!-- Automatización SCADA/IoT -->
-            <div class="service-card">
-            <img src="/img/hidrocarburos/hidrocarburos-4.jpg" alt="Automatización SCADA/IoT" loading="lazy" width="1200" height="800">
-            <div class="service-content">
-                <h3>SCADA / IoT en plantas</h3>
-                <p>Monitoreo y control en tiempo real, telemetría y alertas para reducir OPEX y consumo energético.</p>
-                <a href="/hidrocarburos.html#servicios" class="service-btn">Ver proyecto</a>
-            </div>
-            </div>
+    <section class="px-section"><div class="px-grid" id="px-grid">
+      <article class="px-card" data-cat="aguas" data-tags="ptap agua potable modular 0.5-200 l/s 72h scada remocion 99.9%">
+  <div class="px-img" style="background-image:url('/img/tratamiento-de-aguas/tratamiento-de-aguas-3.jpg')"></div>
+  <div class="px-tagbar">
+    <span class="px-tag">Aguas</span><span class="px-tag">PTAP</span>
+  </div>
+  <div class="px-content">
+    <h3>PTAP modulares rurales</h3>
+    <p>Sistemas portátiles 0.5–200 L/s con instalación en 72 h, remoción 99.9% de patógenos y 95% de turbidez; SCADA integrado.</p>
+    <a class="px-btn" href="#" data-img="/img/custom/ptap-detalle.jpg">Ver proyecto</a>
+  </div>
+</article>
 
-            <!-- Hidrocarburos SBWB 5X -->
-            <div class="service-card">
-            <img src="/img/hidrocarburos/hidrocarburos-3.jpg" alt="SBWB 5X Hidrocarburos" loading="lazy" width="1200" height="800">
-            <div class="service-content">
-                <h3>SBWB 5X – Hidrocarburos</h3>
-                <p>Limpieza nanotecnológica de cartuchos oleofílicos; extiende 7–10× la vida útil de filtración.</p>
-                <a href="/hidrocarburos.html" class="service-btn">Ver proyecto</a>
-            </div>
-            </div>
+<article class="px-card" data-cat="aguas" data-tags="ptar residual industrial domestica mbr mbbr uv dbo dqo sst coliformes 0.5-200 l/s">
+  <div class="px-img" style="background-image:url('/img/tratamiento-de-aguas/tratamiento-de-aguas-4.jpg')"></div>
+  <div class="px-tagbar">
+    <span class="px-tag">Aguas</span><span class="px-tag">PTAR</span>
+  </div>
+  <div class="px-content">
+    <h3>PTAR industrial</h3>
+    <p>Soluciones integrales con MBR/MBBR y UV: DBO₅ 95%, DQO 90%, SST 97%, Coliformes 99.9%; instalación 30–60 días.</p>
+    <a class="px-btn" href="#" data-img="/img/custom/ptar-industrial-detalle.jpg">Ver proyecto</a>
+  </div>
+</article>
 
-            <!-- Fitorremediación -->
-            <div class="service-card">
-            <img src="/img/nanotecnologia/nanotecnologia-en-procesos-industriales-4.jpg" alt="Fitorremediación" loading="lazy" width="1200" height="800">
-            <div class="service-content">
-                <h3>Campos de fitorremediación</h3>
-                <p>Recuperación de suelos y aguas con especies seleccionadas; reducción sustancial de contaminantes.</p>
-                <a href="/nanotecnologia-en-procesos-industriales.html" class="service-btn">Ver proyecto</a>
-            </div>
-            </div>
+<article class="px-card" data-cat="automatizacion" data-tags="automatizadas iot ia scada monitoreo 24/7 -40% energia -35% opex -70% tiempo operador">
+  <div class="px-img" style="background-image:url('/img/hidrocarburos/hidrocarburos-4.jpg')"></div>
+  <div class="px-tagbar">
+    <span class="px-tag">SCADA/IoT</span><span class="px-tag">Automatización</span>
+  </div>
+  <div class="px-content">
+    <h3>Plantas automatizadas IoT/IA</h3>
+    <p>Control avanzado con sensores IoT y analítica: hasta −40% energía, −35% OPEX y −70% tiempo de operador; monitoreo 24/7.</p>
+    <a class="px-btn" href="#" data-img="/img/custom/automatizacion-detalle.jpg">Ver proyecto</a>
+  </div>
+</article>
 
-            <!-- Biogás / Energías emergentes -->
-            <div class="service-card">
-            <img src="/img/tratamiento-de-aguas/tratamiento-de-aguas.jpg" alt="Sistemas de biogás" loading="lazy" width="1200" height="800">
-            <div class="service-content">
-                <h3>Sistemas de biogás</h3>
-                <p>Digestión anaerobia para generación eléctrica/térmica y producción de biofertilizante.</p>
-                <a href="/proyectos.html#contacto" class="service-btn">Ver proyecto</a>
-            </div>
-            </div>
-        </div>
-        </section>
-        <!-- GRID ESTILO “NOSOTROS”, ADAPTADO A CERTIFICACIONES -->
-        <section class="hero-nosotros" id="certificaciones-iso">
-            <!-- ISO 9001 -->
-            <div class="info-box">
-                <span class="vertical-line"></span>
-                <div class="content">
-                    <div class="top-bar-info-box">
-                        <span class="nosotros-icon modern-icon"
-                            style="display:flex;align-items:center;justify-content:center;">
-                            <i class="fas fa-award" aria-hidden="true"></i>
-                        </span>
-                        <h3>ISO 9001 — Gestión de la Calidad</h3>
-                    </div>
-                    <p>Procesos estandarizados para asegurar la calidad en diseño, implementación y operación de
-                        soluciones.</p>
-                    <ul>
-                        <li>Enfoque al cliente y mejora continua</li>
-                        <li>Control documental y trazabilidad</li>
-                    </ul>
+<article class="px-card" data-cat="hidrocarburos" data-tags="sbwb 5x nanotecnologia cartuchos oleofilicos 98% eficiencia 7-10x vida util 30-45 min">
+  <div class="px-img" style="background-image:url('/img/hidrocarburos/hidrocarburos-3.jpg')"></div>
+  <div class="px-tagbar">
+    <span class="px-tag">Hidrocarburos</span><span class="px-tag">SBWB 5X</span>
+  </div>
+  <div class="px-content">
+    <h3>Sistema SBWB 5X</h3>
+    <p>Limpieza nanotecnológica >98% de eficiencia; recupera 95% de hidrocarburos, reduce residuos 85% y extiende vida útil 7–10×.</p>
+    <a class="px-btn" href="#" data-img="img\proyectos\hidrocarburos\sistema-de-limpieza-sbwb-5x.jpg">Ver proyecto</a>
+  </div>
+</article>
+
+<article class="px-card" data-cat="nano" data-tags="fitorremediacion suelos aguas metales hidrocarburos 85% reduccion 6-24 meses">
+  <div class="px-img" style="background-image:url('/img/nanotecnologia/nanotecnologia-en-procesos-industriales-4.jpg')"></div>
+  <div class="px-tagbar">
+    <span class="px-tag">Nanotecnología</span><span class="px-tag">Remediación</span>
+  </div>
+  <div class="px-content">
+    <h3>Campos de fitorremediación</h3>
+    <p>Procesos de fitoextracción y rizofiltración para suelos/aguas; hasta 85% de reducción de contaminantes en 6–24 meses.</p>
+    <a class="px-btn" href="#" data-img="/img/custom/fitorremediacion-detalle.jpg">Ver proyecto</a>
+  </div>
+</article>
+
+<article class="px-card" data-cat="energia" data-tags="biogas digestor anaerobico energia renovable 50-100kw 0.5-3mw 150-400 kwh por tonelada roi 4-6 años">
+  <div class="px-img" style="background-image:url('/img/tratamiento-de-aguas/tratamiento-de-aguas.jpg')"></div>
+  <div class="px-tagbar">
+    <span class="px-tag">Energía</span><span class="px-tag">Biogás</span>
+  </div>
+  <div class="px-content">
+    <h3>Sistemas de biogás</h3>
+    <p>Digestión anaeróbica para energía eléctrica/térmica: 150–400 kWh/ton; escalas 50–100 kW hasta 0.5–3 MW; ROI 4–6 años.</p>
+    <a class="px-btn" href="" data-img="/img/proyectos/hidrocarburos/sistema-de-limpieza-sbwb-5x.jpg">Ver proyecto</a>
+  </div>
+</article>
+<!-- :contentReference[oaicite:0]{index=0} -->
+
+
+      <!-- agrega el resto igual con data-img personalizados -->
+    </div></section>
+  </main>
+
+        <!-- Botón WhatsApp (sin cambios) -->
+        <section class="whatsapp-button">
+            <div class="whatsapp-container">
+                <div class="whatsapp-icon" id="whatsappIcon">
+                    <img src="/icons/whatsapp.svg" alt="Ícono de WhatsApp">
                 </div>
-            </div>
-
-            <!-- ISO 14001 -->
-            <div class="info-box">
-                <span class="vertical-line"></span>
-                <div class="content">
-                    <div class="top-bar-info-box">
-                        <span class="nosotros-icon modern-icon"
-                            style="display:flex;align-items:center;justify-content:center;">
-                            <i class="fas fa-leaf" aria-hidden="true"></i>
-                        </span>
-                        <h3>ISO 14001 — Gestión Ambiental</h3>
+                <div class="whatsapp-box" id="whatsappBox" role="dialog" aria-modal="false" aria-hidden="true">
+                    <div class="whatsapp-header">
+                        <p class="whatsapp-text">
+                            <strong>Nuestro equipo de atención al cliente está a tu disposición.</strong>
+                            <br><br>
+                            ¿Te interesa obtener más información sobre alguno de nuestros proyectos?
+                        </p>
                     </div>
-                    <p>Sistemas para identificar, controlar y reducir impactos ambientales en cada proyecto.</p>
-                    <ul>
-                        <li>Prevención de contaminación</li>
-                        <li>Cumplimiento normativo ambiental</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- ISO 45001 -->
-            <div class="info-box">
-                <span class="vertical-line"></span>
-                <div class="content">
-                    <div class="top-bar-info-box">
-                        <span class="nosotros-icon modern-icon"
-                            style="display:flex;align-items:center;justify-content:center;">
-                            <i class="fas fa-shield" aria-hidden="true"></i>
-                        </span>
-                        <h3>ISO 45001 — Seguridad y Salud en el Trabajo</h3>
-                    </div>
-                    <p>Metodologías para prevenir riesgos y proteger a nuestro equipo y contratistas.</p>
-                    <ul>
-                        <li>Evaluación de riesgos operacionales</li>
-                        <li>Controles y capacitación permanente</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Alcance / Organismo / Vigencia (editable) -->
-            <div class="info-box">
-                <span class="vertical-line"></span>
-                <div class="content">
-                    <div class="top-bar-info-box">
-                        <span class="nosotros-icon modern-icon"
-                            style="display:flex;align-items:center;justify-content:center;">
-                            <i class="fas fa-file-contract" aria-hidden="true"></i>
-                        </span>
-                        <h3>Alcance y Certificador</h3>
-                    </div>
-                    <p><strong>Alcance:</strong> Diseño, implementación, operación y mantenimiento de soluciones en
-                        tratamiento de aguas, hidrocarburos y nanotecnología.</p>
-                    <ul>
-                        <li><strong>Organismo certificador:</strong> <em>SGS / ICONTEC / Bureau Veritas</em></li>
-                        <li><strong>Nº de certificado:</strong> <em>XXXX-YYYY</em> (reemplazar)</li>
-                        <li><strong>Vigencia:</strong> <em>dd/mm/aaaa</em> (reemplazar)</li>
-                    </ul>
+                    <a href="https://wa.me/+573134322778" target="_blank" class="whatsapp-link">
+                        <div class="whatsapp-body">
+                            <div class="agent-info">
+                                <img src="https://cdn-icons-png.flaticon.com/512/14837/14837773.png" alt="Asesor">
+                                <div>
+                                    <p class="agent-name"><strong>Asesor Comercial</strong></p>
+                                    <p class="agent-status">Disponible</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="close-button" id="closeChatBox">×</div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer>
         <div class="footer-bar">
-            <p>© 2025 LABOTEC | Todos los derechos reservados</p>
+            <p>© 2025 LABOTEC | TODOS LOS DERECHOS RESERVADOS.</p>
         </div>
     </footer>
 
-    <!-- JS (mismo patrón que las otras páginas) -->
-    <script src="/js/whatsapp.js" defer></script>
-    <script src="/js/menu-movil.js" defer></script>
+    <!-- ======= JS PROPIO (scope .px) ======= -->
+    <script>
+        (function () {
+            const root = document.body.classList.contains('px') ? document.body : document;
+            const grid = root.querySelector('#px-grid');
+            if (!grid) return;
+            const cards = Array.from(grid.querySelectorAll('.px-card'));
+            const chips = root.querySelectorAll('.px-chip');
+            const input = root.querySelector('#px-q');
+            const countEl = root.querySelector('#px-count');
+
+            let active = 'all';
+            let q = '';
+
+            const normalize = s => (s || '').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+
+            function matches(card) {
+                const cat = card.dataset.cat;
+                const haystack = normalize(card.innerText + ' ' + (card.dataset.tags || ''));
+                const okCat = (active === 'all') || (cat === active);
+                const okQ = q === '' || haystack.includes(q);
+                return okCat && okQ;
+            }
+            function render() {
+                let vis = 0;
+                cards.forEach(c => { const show = matches(c); c.style.display = show ? '' : 'none'; if (show) vis++; });
+                if (countEl) countEl.textContent = vis;
+            }
+            chips.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    chips.forEach(b => b.setAttribute('aria-pressed', 'false'));
+                    btn.setAttribute('aria-pressed', 'true');
+                    active = btn.dataset.filter;
+                    render();
+                });
+            });
+            if (input) { input.addEventListener('input', () => { q = normalize(input.value.trim()); render(); }); }
+            render();
+        })();
+    </script>
+
+    <script>
+(function(){
+  function init(){
+    const dlg   = document.getElementById('pxLightbox');
+    const imgEl = document.getElementById('pxLightboxImg');
+    const btnX  = document.getElementById('pxClose');
+    if(!dlg || !imgEl){ return; }
+
+    // Extrae la URL del background de .px-img de forma segura
+    const extractBg = (card)=>{
+      const bgEl = card?.querySelector('.px-img');
+      if(!bgEl) return '';
+      const s = getComputedStyle(bgEl).backgroundImage; // url("...") / url(...)
+      if(!s || s === 'none') return '';
+      const m = s.match(/^url\((['"]?)(.+?)\1\)$/);
+      return m ? m[2] : '';
+    };
+
+    const open = (url, title)=>{
+      if(!url) return;
+      imgEl.src = url;
+      imgEl.alt = title ? `Vista del proyecto: ${title}` : 'Vista del proyecto';
+      try { dlg.showModal(); } catch(_) { dlg.show(); } // fallback no-modal
+    };
+
+    // Delegación global: cualquier <a.px-btn>
+    document.addEventListener('click',(ev)=>{
+      const a = ev.target.closest('a.px-btn');
+      if(!a) return;
+
+      ev.preventDefault(); // evita navegar por href
+      let url = (a.dataset.img || '').trim();
+      if(!url){
+        const card = a.closest('.px-card');
+        url = extractBg(card);
+      }
+      const title = a.closest('.px-card')?.querySelector('h3')?.textContent?.trim() || '';
+      open(url, title);
+    });
+
+    // Cerrar (X)
+    btnX?.addEventListener('click', ()=> dlg.close());
+    // Cerrar click fuera
+    dlg.addEventListener('click',(ev)=>{
+      const r = dlg.getBoundingClientRect();
+      const inside = ev.clientX >= r.left && ev.clientX <= r.right && ev.clientY >= r.top && ev.clientY <= r.bottom;
+      if(!inside) dlg.close();
+    });
+    // Esc para cerrar
+    window.addEventListener('keydown',(ev)=>{
+      if(ev.key === 'Escape' && dlg.open) dlg.close();
+    });
+  }
+
+  // Corre ya, o espera al DOM si aún se está cargando
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+
+    <!-- JS global existentes -->
+    <script src="/js/whatsapp.js"></script>
+    <script src="/js/menu-movil.js"></script>
+    <script src="/js/hero-cards.js"></script>
 </body>
 
 </html>
