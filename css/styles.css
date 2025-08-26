@@ -66,7 +66,9 @@ body {
     gap: 1rem; /* Espaciado entre elementos */
 }
 .logo img {
-    width: clamp(8rem, 10vw, 12rem); /* Responsivo para el logo */
+    height: clamp(5rem, 12vh, 7rem); /* altura máx 80-112px */
+    max-width: 100%; /* permite versión horizontal más grande */
+    width: auto; /* mantiene proporción */
 }
 .languages {
     display: flex;
@@ -702,6 +704,14 @@ footer .footer-bar {
 }
 /* --- TERMINA PAGINA NOSOTROS --- */
 
+/* PAGINA PROYECTOS */
+
+.proyectos-ejecucion {
+    background-color: #F5F5F5 !important;
+}
+
+/* --- TERMINA PAGINA PROYECTOS --- */
+
 /* --- MEDIA QUERIES --- */
 
 /* Tablet (768px en adelante) */
@@ -724,7 +734,9 @@ footer .footer-bar {
         margin: 1rem 0;
     }
     .logo img {
-        width: clamp(6rem, 40vw, 8rem);
+        width: 60vw;
+        max-width: 8rem;
+        min-width: 6rem;
     }
     /* Menú móvil */
     .hamburger-menu {
